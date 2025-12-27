@@ -17,6 +17,8 @@ Foi pensado mais como um setup pos-instalação
 - dwmblocks
 - st
 - surf
+- dmenu
+- tabbed
 
 ## Dependências
 
@@ -122,6 +124,12 @@ cd ../st
 sudo make clean install
 
 cd ../surf
+sudo make clean install
+
+cd ../dmenu
+sudo make clean install
+
+cd ../tabbed
 sudo make clean install
 
 # Vim-plug
