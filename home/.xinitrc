@@ -2,8 +2,7 @@
 
 setxkbmap br
 
-THEME=mocha
-WALLPAPER=catppuccin-mocha
+WALLPAPER=gruvbox1
 
 picom &
 $HOME/.dwmbar.sh &
