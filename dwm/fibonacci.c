@@ -1,17 +1,24 @@
+
 void
 fibonacci(Monitor *mon, int s) {
 	unsigned int i, n, nx, ny, nw, nh;
+	unsigned int oe, ie; // outer e inner gaps
 	Client *c;
 
 	for(n = 0, c = nexttiled(mon->clients); c; c = nexttiled(c->next), n++);
 	if(n == 0)
 		return;
-	
-	nx = mon->wx;
-	ny = 0;
-	nw = mon->ww;
-	nh = mon->wh;
-	
+
+	// pega gaps direto do monitor
+	oe = ie = enablegaps;
+	if(smartgaps && n == 1)
+		oe = ie = 0;
+
+	nx = mon->wx + mon->gappov*oe;
+	ny = mon->wy + mon->gappoh*oe;
+	nw = mon->ww - 2*mon->gappov*oe;
+	nh = mon->wh - 2*mon->gappoh*oe;
+
 	for(i = 0, c = nexttiled(mon->clients); c; c = nexttiled(c->next)) {
 		if((i % 2 && nh / 2 > 2 * c->bw)
 		   || (!(i % 2) && nw / 2 > 2 * c->bw)) {
@@ -30,8 +37,7 @@ fibonacci(Monitor *mon, int s) {
 					ny += nh;
 				else
 					ny -= nh;
-			}
-			else if((i % 4) == 1)
+			} else if((i % 4) == 1)
 				nx += nw;
 			else if((i % 4) == 2)
 				ny += nh;
@@ -41,17 +47,16 @@ fibonacci(Monitor *mon, int s) {
 				else
 					nx -= nw;
 			}
-			if(i == 0)
-			{
+			if(i == 0) {
 				if(n != 1)
 					nw = mon->ww * mon->mfact;
-				ny = mon->wy;
-			}
-			else if(i == 1)
+				ny = mon->wy + mon->gappoh*oe;
+			} else if(i == 1)
 				nw = mon->ww - nw;
 			i++;
 		}
-		resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, False);
+		resize(c, nx, ny, nw - 2 * c->bw - mon->gappiv*ie,
+		           nh - 2 * c->bw - mon->gappih*ie, False);
 	}
 }
 

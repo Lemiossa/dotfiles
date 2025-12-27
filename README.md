@@ -57,6 +57,7 @@ Foi pensado mais como um setup pos-instalação
 - xclip
 - nodejs
 - git
+- feh
 
 ## Como instalar
 ```bash
@@ -99,6 +100,7 @@ nerd-fonts \
 pavucontrol \
 xclip \
 nodejs \
+feh \
 dbus \
 NetworkManager \
 elogind \
