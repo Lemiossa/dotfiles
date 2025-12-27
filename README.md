@@ -1,4 +1,4 @@
-# leme-dotfiles
+# dotfiles
 
 Atenção: isso foi pensado para ser instalado no void-linux, caso queira instalar em arch-linux ou outros, você terá que adaptar
 Foi pensado mais como um setup pos-instalação
@@ -33,6 +33,7 @@ Foi pensado mais como um setup pos-instalação
 - libXinerama-devel
 - libXft-devel
 - fontconfig-devel
+- imlib2-devel 
 
 ### surf 
 - libwebkit2gtk41
@@ -80,7 +81,8 @@ sudo xbps-install -y \
 libX11-devel \
 libXinerama-devel \
 libXft-devel \
-fontconfig-devel
+fontconfig-devel \
+imlib2-devel
 
 sudo xbps-install -y \
 libwebkit2gtk41 \
@@ -109,8 +111,8 @@ sudo ln -s /etc/sv/udevd /var/service
 sudo ln -s /etc/sv/NetworkManager /var/service
 sudo ln -s /etc/sv/polkitd /var/service
 
-git clone https://github.com/Lemiossa/leme-dotfiles.git
-cd leme-dotfiles
+git clone https://github.com/Lemiossa/dotfiles.git
+cd dotfiles
 ./install.sh
 
 # Compilar dwm, st e surf
