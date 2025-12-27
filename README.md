@@ -3,9 +3,6 @@
 Atenção: isso foi pensado para ser instalado no void-linux, caso queira instalar em arch-linux ou outros, você terá que adaptar
 Foi pensado mais como um setup pos-instalação
 
-## Pacotes do xbps para void
-- discord
-
 ## Configurações
 - cava
 - picom
@@ -149,4 +146,4 @@ depois de logar, use:
 startx
 ```
 
-Inclue um instalador
+Inclue um script de instalação
