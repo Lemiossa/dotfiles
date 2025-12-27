@@ -13,9 +13,7 @@ Foi pensado mais como um setup pos-instalação
 - dwm
 - dwmblocks
 - st
-- surf
 - dmenu
-- tabbed
 
 ## Dependências
 
@@ -28,19 +26,12 @@ Foi pensado mais como um setup pos-instalação
 - xev
 - mesa
 
-### dwm e st
+### dwm, st
 - libX11-devel
 - libXinerama-devel
 - libXft-devel
 - fontconfig-devel
 - imlib2-devel 
-
-### surf 
-- libwebkit2gtk41
-- libwebkit2gtk41-devel
-- gcr-devel
-- libX11-devel
-- libXinerama-devel
 
 ## Outros pacotes para instalar
 - picom
@@ -58,6 +49,7 @@ Foi pensado mais como um setup pos-instalação
 - nodejs
 - git
 - feh
+- luakit
 
 ## Como instalar
 ```bash
@@ -86,11 +78,6 @@ fontconfig-devel \
 imlib2-devel
 
 sudo xbps-install -y \
-libwebkit2gtk41 \
-libwebkit2gtk41-devel \
-gcr-devel
-
-sudo xbps-install -y \
 picom \
 vim-x11 \
 fastfetch \
@@ -101,6 +88,7 @@ pavucontrol \
 xclip \
 nodejs \
 feh \
+luakit \
 dbus \
 NetworkManager \
 elogind \
@@ -117,7 +105,7 @@ git clone https://github.com/Lemiossa/dotfiles.git
 cd dotfiles
 ./install.sh
 
-# Compilar dwm, dwmblocks, st, surf, dmenu e tabbed
+# Compilar dwm, dwmblocks, st e dmenu
 cd dwm
 sudo make clean install
 
@@ -127,13 +115,7 @@ sudo make clean install
 cd ../st
 sudo make clean install
 
-cd ../surf
-sudo make clean install
-
 cd ../dmenu
-sudo make clean install
-
-cd ../tabbed
 sudo make clean install
 
 # Vim-plug
