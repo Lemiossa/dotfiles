@@ -5,7 +5,7 @@ setxkbmap br
 WALLPAPER=gruvbox1
 
 picom &
-$HOME/.dwmbar.sh &
+dwmblocks &
 
 feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png
 

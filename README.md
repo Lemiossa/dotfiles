@@ -117,8 +117,11 @@ git clone https://github.com/Lemiossa/dotfiles.git
 cd dotfiles
 ./install.sh
 
-# Compilar dwm, st e surf
+# Compilar dwm, dwmblocks, st, surf, dmenu e tabbed
 cd dwm
+sudo make clean install
+
+cd ../dwmblocks
 sudo make clean install
 
 cd ../st
