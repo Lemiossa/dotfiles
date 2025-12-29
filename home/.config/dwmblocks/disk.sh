@@ -1,7 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 ICON=""
-
-DISK=$(df / | awk 'NR==2 {print int($3/$2*100)}')
-
-echo "${ICON} ${DISK}%"
+DISK=$(df -h / | awk 'NR==2 {print $5}')
+echo "$ICON $DISK"

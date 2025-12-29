@@ -1,7 +1,4 @@
-#!/bin/bash
-
-ICON=""  
-
-RAM=$(free | awk '/^Mem/ {printf "%d", $3/$2*100}')
-
-echo "${ICON} ${RAM}%"
+#!/bin/sh
+ICON=""
+RAM=$(free | awk '/^Mem/ {printf "%d", ($2 - $7)/$2 * 100}')
+echo "$ICON $RAM%"

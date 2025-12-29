@@ -141,7 +141,7 @@ static unsigned int defaultrcs = 15;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
+ * 9: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
 

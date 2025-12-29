@@ -32,7 +32,7 @@ static const int systraypinningfailfirst = 1;   /* 1: se pinning falhar, exibe n
 static const int showsystray = 1;               /* 0 = sem systray */
 
 /* tagging */
-static const char *tags[] = { "", "󰈹", "", "", ""};
+static const char *tags[] = { "1", "2", "3", "4", "5"};
 
 static const Rule rules[] = {
 	/* xprop(1):
