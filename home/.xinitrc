@@ -2,9 +2,8 @@
 
 setxkbmap br
 
-WALLPAPER=gruvbox1
+WALLPAPER=gruvbox3
 
-picom &
 dwmblocks &
 
 feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png

@@ -5,9 +5,7 @@ Foi pensado mais como um setup pos-instalação
 
 ## Configurações
 - cava
-- picom
 - vim
-- fastfetch
 
 ## Programas
 - dwm
@@ -31,7 +29,7 @@ Foi pensado mais como um setup pos-instalação
 - libXinerama-devel
 - libXft-devel
 - fontconfig-devel
-- imlib2-devel 
+- imlib2-devel
 
 ## Outros pacotes para instalar
 - picom
@@ -39,9 +37,8 @@ Foi pensado mais como um setup pos-instalação
 - fastfetch
 - cava
 - bash
-- nerd-fonts
 - NetworkManager
-- dbus 
+- dbus
 - elogind
 - pavucontrol
 - polkit
@@ -70,7 +67,7 @@ sudo make clean install
 cd ../dmenu
 sudo make clean install
 
-chsh -s $(which bash) 
+chsh -s $(which bash)
 
 sudo reboot # Aplicar mudanças
 ```

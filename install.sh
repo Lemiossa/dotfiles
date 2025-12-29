@@ -1,13 +1,14 @@
 #!/bin/sh
 
-set -e 
+set -e
 
 echo "Instalando configurações..."
 
 mkdir -p "${HOME}"
 cp -rv home/. "${HOME}/"
 
-sudo xbps-install -S 
+echo "Instalando pacotes"
+sudo xbps-install -S
 
 sudo xbps-install -y \
 xorg \
@@ -16,7 +17,7 @@ xrandr \
 xsetroot \
 xprop \
 xev \
-mesa 
+mesa
 
 sudo xbps-install -y \
 base-devel \
@@ -32,12 +33,10 @@ fontconfig-devel \
 imlib2-devel
 
 sudo xbps-install -y \
-picom \
 vim-x11 \
-fastfetch \
+pfetch \
 cava \
 bash \
-nerd-fonts \
 pavucontrol \
 xclip \
 nodejs \
@@ -46,7 +45,10 @@ luakit \
 dbus \
 NetworkManager \
 elogind \
-polkit
+polkit \
+unzip
+
+echo "Configurando serviços..."
 
 # Serviços
 sudo ln -s /etc/sv/dbus /var/service
@@ -58,6 +60,13 @@ sudo ln -s /etc/sv/polkitd /var/service
 # Serviços que geralmente vem com void
 sudo rm /var/service/dhcpcd
 sudo rm /var/service/wpa_supplicant
+
+echo "Instalando FiraCode Nerd Font..."
+mkdir -p FiraCodeNerd
+unzip FiraCode.zip -d FiraCodeNerd
+
+sudo mkdir -p /usr/share/fonts/TTF/FiraCodeNerd
+sudo cp FiraCodeNerd/*.ttf /usr/share/fonts/TTF/FiraCodeNerd
 
 echo "Concluído."
 
