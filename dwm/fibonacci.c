@@ -53,8 +53,6 @@ fibonacci(Monitor *mon, int s) {
 				nw = mon->ww - nw - mon->gappiv * ie - 2 * mon->gappov * oe;
 			i++;
 		}
-		/* Subtraímos apenas o border weight (bw) pois os gaps já foram 
-		   tratados no cálculo de nx, ny, nw e nh */
 		resize(c, nx, ny, nw - 2 * c->bw, nh - 2 * c->bw, False);
 	}
 }
