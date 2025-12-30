@@ -30,6 +30,7 @@ Foi pensado mais como um setup pos-instalação
 - libXft-devel
 - fontconfig-devel
 - imlib2-devel
+- harfbuzz-devel
 
 ## Outros pacotes para instalar
 - picom
