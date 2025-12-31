@@ -2,7 +2,7 @@
 
 setxkbmap br
 
-WALLPAPER=gruvbox3
+WALLPAPER=od_gargantua
 
 dwmblocks &
 
