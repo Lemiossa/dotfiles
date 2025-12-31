@@ -41,6 +41,7 @@ pavucontrol \
 xclip \
 nodejs \
 feh \
+alacritty \
 luakit \
 dbus \
 NetworkManager \

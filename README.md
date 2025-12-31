@@ -10,7 +10,7 @@ Foi pensado mais como um setup pos-instalação
 ## Programas
 - dwm
 - dwmblocks
-- st
+- alacritty
 - dmenu
 
 ## Dependências
@@ -24,13 +24,12 @@ Foi pensado mais como um setup pos-instalação
 - xev
 - mesa
 
-### dwm, st
+### dwm
 - libX11-devel
 - libXinerama-devel
 - libXft-devel
 - fontconfig-devel
 - imlib2-devel
-- harfbuzz-devel
 
 ## Outros pacotes para instalar
 - picom
@@ -40,6 +39,7 @@ Foi pensado mais como um setup pos-instalação
 - bash
 - NetworkManager
 - dbus
+- alacritty
 - elogind
 - pavucontrol
 - polkit
@@ -60,9 +60,6 @@ cd dwm
 sudo make clean install
 
 cd ../dwmblocks
-sudo make clean install
-
-cd ../st
 sudo make clean install
 
 cd ../dmenu
