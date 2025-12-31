@@ -1,43 +1,35 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int borderpx = 1; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
-static const unsigned int gappih = 10;  /* horiz inner gap between windows */
-static const unsigned int gappiv = 10;  /* vert inner gap between windows */
-static const unsigned int gappoh =
-    10; /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov =
-    10; /* vert outer gap between windows and screen edge */
-static const int smartgaps =
-    0; /* 1 means no outer gap when there is only one window */
-static const int showbar = 1; /* 0 means no bar */
-static const int topbar = 1;  /* 0 means bottom bar */
+static const unsigned int systraypinning =
+    0; /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor
+          X */
+static const unsigned int systrayonleft =
+    0; /* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 2; /* systray spacing */
+static const int systraypinningfailfirst =
+    1; /* 1: if pinning fails, display systray on the first monitor, False:
+          display systray on the last monitor*/
+static const int showsystray = 1; /* 0 means no systray */
+static const int showbar = 1;     /* 0 means no bar */
+static const int topbar = 1;      /* 0 means bottom bar */
 static const char *fonts[] = {"FiraCode Nerd Font:size=10"};
 static const char dmenufont[] = "FiraCode Nerd Font:size=10";
 
-static char normbgcolor[] = "#282c34";
-static char normbordercolor[] = "#3e4451";
-static char normfgcolor[] = "#abb2bf";
-static char selfgcolor[] = "#ffffff";
-static char selbordercolor[] = "#61afef";
-static char selbgcolor[] = "#3e4451";
+static const char normbgcolor[] = "#282c34";
+static const char normbordercolor[] = "#3e4451";
+static const char normfgcolor[] = "#abb2bf";
+static const char selfgcolor[] = "#ffffff";
+static const char selbordercolor[] = "#61afef";
+static const char selbgcolor[] = "#3e4451";
 
-static char *colors[][3] = {
+static const char *colors[][3] = {
     /*               fg           bg           border   */
     [SchemeNorm] = {normfgcolor, normbgcolor, normbordercolor},
     [SchemeSel] = {selfgcolor, selbgcolor, selbordercolor},
 };
-
-/* systray */
-static const unsigned int systraypinning =
-    0; /* 0: siga o monitor com foco, >0: pin no monitor X */
-static const unsigned int systrayonleft =
-    0; /* 0: systray no canto direito, 1: esquerdo */
-static const unsigned int systrayspacing = 2; /* espaçamento entre ícones */
-static const int systraypinningfailfirst =
-    1; /* 1: se pinning falhar, exibe no primeiro monitor, 0: exibe no último */
-static const int showsystray = 1; /* 0 = sem systray */
 
 /* tagging */
 static const char *tags[] = {"1", "2", "3", "4", "5"};
@@ -49,8 +41,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Gimp", NULL, NULL, 0, 1, -1},
-    {"Surf", NULL, NULL, 1 << 1, 0, -1},
-    {"qemu", NULL, NULL, 0, 1, -1},
+    {"Firefox", NULL, NULL, 1 << 8, 0, -1},
 };
 
 /* layout(s) */
@@ -60,6 +51,8 @@ static const int resizehints =
     1; /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen =
     1; /* 1 will force focus on the fullscreen window */
+static const int refreshrate =
+    120; /* refresh rate (per second) for client move/resize */
 
 #include "fibonacci.c"
 static const Layout layouts[] = {
@@ -91,8 +84,6 @@ static const char *dmenucmd[] = {"dmenu_run", "-m",  dmenumon,       "-fn",
                                  normfgcolor, "-sb", selbordercolor, "-sf",
                                  selfgcolor,  NULL};
 static const char *termcmd[] = {"st", NULL};
-static const char *screenshotcmd[] = {
-    "scrot", "~/Pictures/Screenshoots/%Y-%m-%d-%H%M%S.png", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
@@ -105,28 +96,14 @@ static const Key keys[] = {
     {MODKEY, XK_d, incnmaster, {.i = -1}},
     {MODKEY, XK_h, setmfact, {.f = -0.05}},
     {MODKEY, XK_l, setmfact, {.f = +0.05}},
-    {MODKEY | Mod4Mask, XK_h, incrgaps, {.i = +1}},
-    {MODKEY | Mod4Mask, XK_l, incrgaps, {.i = -1}},
-    {MODKEY | Mod4Mask | ShiftMask, XK_h, incrogaps, {.i = +1}},
-    {MODKEY | Mod4Mask | ShiftMask, XK_l, incrogaps, {.i = -1}},
-    {MODKEY | Mod4Mask | ControlMask, XK_h, incrigaps, {.i = +1}},
-    {MODKEY | Mod4Mask | ControlMask, XK_l, incrigaps, {.i = -1}},
-    {MODKEY | Mod4Mask, XK_0, togglegaps, {0}},
-    {MODKEY | Mod4Mask | ShiftMask, XK_0, defaultgaps, {0}},
-    {MODKEY, XK_y, incrihgaps, {.i = +1}},
-    {MODKEY, XK_o, incrihgaps, {.i = -1}},
-    {MODKEY | ControlMask, XK_y, incrivgaps, {.i = +1}},
-    {MODKEY | ControlMask, XK_o, incrivgaps, {.i = -1}},
-    {MODKEY | Mod4Mask, XK_y, incrohgaps, {.i = +1}},
-    {MODKEY | Mod4Mask, XK_o, incrohgaps, {.i = -1}},
-    {MODKEY | ShiftMask, XK_y, incrovgaps, {.i = +1}},
-    {MODKEY | ShiftMask, XK_o, incrovgaps, {.i = -1}},
     {MODKEY | ShiftMask, XK_Return, zoom, {0}},
     {MODKEY, XK_Tab, view, {0}},
     {MODKEY, XK_q, killclient, {0}},
-    {MODKEY, XK_t, setlayout, {.v = &layouts[0]}},
-    {MODKEY, XK_f, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XK_m, setlayout, {.v = &layouts[2]}},
+    {MODKEY, XK_r, setlayout, {.v = &layouts[0]}},
+    {MODKEY, XK_t, setlayout, {.v = &layouts[1]}},
+    {MODKEY, XK_f, setlayout, {.v = &layouts[2]}},
+    {MODKEY, XK_m, setlayout, {.v = &layouts[3]}},
+    {MODKEY | ShiftMask, XK_r, setlayout, {.v = &layouts[4]}},
     {MODKEY, XK_space, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY | ShiftMask, XK_f, togglefullscr, {0}},
@@ -136,12 +113,9 @@ static const Key keys[] = {
     {MODKEY, XK_period, focusmon, {.i = +1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
-    {MODKEY, XK_F5, xrdb, {.v = NULL}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_q, quit, {0}},
-    {MODKEY | ShiftMask, XK_r, quit, {1}},
-    {0, XK_Print, spawn, {.v = screenshotcmd}},
 };
 
 /* button definitions */
