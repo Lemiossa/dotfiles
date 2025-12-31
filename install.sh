@@ -64,6 +64,16 @@ sudo ln -s /etc/sv/polkitd /var/service
 sudo rm /var/service/dhcpcd
 sudo rm /var/service/wpa_supplicant
 
+echo "Instalando colorscript..."
+sudo git clone https://github.com/charitarthchugh/shell-color-scripts.git /opt/shell-color-scripts
+sudo ln -s /opt/shell-color-scripts/colorscript.sh /usr/local/bin/colorscript
+sudo chmod +x /usr/local/bin/colorscript
+
+echo "Instalando pipes.sh"
+sudo git clone https://github.com/pipeseroni/pipes.sh /opt/pipes.sh
+sudo ln -s /opt/pipes.sh/pipes.sh /usr/local/bin/pipes
+sudo chmod +x /usr/local/bin/pipes
+
 echo "Instalando FiraCode Nerd Font..."
 mkdir -p FiraCodeNerd
 unzip FiraCode.zip -d FiraCodeNerd
