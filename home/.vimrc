@@ -18,14 +18,17 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'sheerun/vim-polyglot'
+Plug 'shirk/vim-gas'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 set background=dark
 set termguicolors
-let g:gruvbox_contrast_dark = 'medium'
-colorscheme gruvbox
+let g:onedark_contrast = "medium"
+colorscheme onedark
 
-let g:airline_theme='gruvbox'
+let g:airline_theme='onedark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
@@ -64,12 +67,12 @@ set noswapfile
 let mapleader = " "
 
 " Clipboard xclip
-"vnoremap <C-c> y:call system('xclip -selection clipboard', @")<CR>
-"vnoremap <C-x> d:call system('xclip -selection clipboard', @")<CR>
-"nnoremap <C-v> :call setreg('"', system('xclip -selection clipboard -o'))<CR>p
-"inoremap <C-v> <C-r>=system('xclip -selection clipboard -o')<CR>
-"nnoremap <leader>p :set paste<CR>:call setreg('"', system('xclip -selection clipboard -o'))<CR>p:set nopaste<CR>
-"nnoremap <C-a> ggVG
+vnoremap <C-c> y:call system('xclip -selection clipboard', @")<CR>
+vnoremap <C-x> d:call system('xclip -selection clipboard', @")<CR>
+nnoremap <C-v> :call setreg('"', system('xclip -selection clipboard -o'))<CR>p
+inoremap <C-v> <C-r>=system('xclip -selection clipboard -o')<CR>
+nnoremap <leader>p :set paste<CR>:call setreg('"', system('xclip -selection clipboard -o'))<CR>p:set nopaste<CR>
+nnoremap <C-a> ggVG
 
 " FZF
 nnoremap <C-p> :Files<CR>
@@ -112,7 +115,6 @@ if executable('clangd')
             \ })
 endif
 
-
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
@@ -153,3 +155,4 @@ inoremap <expr> <TAB> pumvisible() ? "\<C-n>" :
 
 inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+autocmd BufNewFile,BufRead *.s,*.S set filetype=asm
