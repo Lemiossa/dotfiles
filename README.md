@@ -40,7 +40,6 @@ Foi pensado mais como um setup pos-instalação
 - bash
 - NetworkManager
 - dbus
-- alacritty
 - elogind
 - pavucontrol
 - polkit
