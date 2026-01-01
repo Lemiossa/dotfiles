@@ -6,6 +6,7 @@ Foi pensado mais como um setup pos-instalação
 ## Configurações
 - cava
 - vim
+- picom
 
 ## Programas
 - dwm

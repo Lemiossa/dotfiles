@@ -49,6 +49,7 @@ elogind \
 polkit \
 unzip \
 clang \
+picom \
 clang-tools-extra
 
 echo "Configurando serviços..."
