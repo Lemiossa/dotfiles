@@ -11,7 +11,7 @@ Foi pensado mais como um setup pos-instalação
 ## Programas
 - dwm
 - dwmblocks
-- alacritty
+- st
 - dmenu
 
 ## Dependências
@@ -25,7 +25,7 @@ Foi pensado mais como um setup pos-instalação
 - xev
 - mesa
 
-### dwm
+### dwm, st
 - libX11-devel
 - libXinerama-devel
 - libXft-devel
@@ -58,6 +58,9 @@ cd dotfiles
 
 # Compilar dwm, dwmblocks, st e dmenu
 cd dwm
+sudo make clean install
+
+cd ../st
 sudo make clean install
 
 cd ../dwmblocks
