@@ -1,0 +1,843 @@
+/**
+ * eval.c
+ * Criado por Matheus Leme Da Silva
+ * Licença MIT
+ */
+#include <complex.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <string.h>
+
+#include "../lexer/token.h"
+#include "../parser/ast.h"
+#include "arena.h"
+#include "eval.h"
+
+#define KEYBOARD_BUFFER_SIZE 1024
+
+// Funções built-in
+Value builtinPrint(Value *args, size_t argc, Arena *arena,
+                   Environment *environment) {
+  (void)arena;
+  (void)environment;
+  for (size_t i = 0; i < argc; i++) {
+    valuePrint(args[i]);
+    if (i < argc - 1)
+      printf(" ");
+  }
+  return null();
+}
+
+Value builtinInput(Value *args, size_t argc, Arena *arena,
+                   Environment *environment) {
+  builtinPrint(args, argc, arena, environment);
+
+  char *buffer = arenaAlloc(arena, KEYBOARD_BUFFER_SIZE);
+  if (fgets(buffer, KEYBOARD_BUFFER_SIZE, stdin) == NULL)
+    return null();
+
+  size_t len = strlen(buffer);
+  if (len > 0 && buffer[len - 1] == '\n') {
+    buffer[len - 1] = 0;
+    len--;
+  }
+
+  Value v;
+  v.type = VALUE_STRING;
+  v.value.string.start = buffer;
+  v.value.string.length = len;
+  return v;
+}
+
+Value builtinLength(Value *args, size_t argc, Arena *arena,
+                    Environment *environment) {
+  (void)arena;
+  (void)environment;
+  if (argc == 0 || argc > 1) {
+    logger(LOG_ERROR, "Runtime error: length(): invalid arguments\n");
+    return errorSignal();
+  }
+
+  // Por enquanto, só strings
+  if (args[0].type != VALUE_STRING || args[0].type != VALUE_ARRAY) {
+    logger(LOG_ERROR, "Runtime error: length(): invalid type\n");
+    return errorSignal();
+  }
+
+  switch (args[0].type) {
+  case VALUE_STRING:
+    return integer(args[0].value.string.length);
+  case VALUE_ARRAY:
+    return integer(args[0].value.array.count);
+  default:
+    return errorSignal();
+  }
+}
+
+Value builtinTypeof(Value *args, size_t argc, Arena *arena,
+                    Environment *environment) {
+  (void)arena;
+  (void)environment;
+
+  if (argc == 0 || argc > 1) {
+    logger(LOG_ERROR, "Runtime error: typeof(): invalid arguments\n");
+    return errorSignal();
+  }
+
+  const char *str = valueTypeToString(args[0].type);
+  size_t length = strlen(str);
+
+  return string(str, length);
+}
+
+// registra builtins caso o env não tenha pai
+void registerBuiltins(Environment *environment) {
+  if (!environment)
+    return;
+  if (environment->parent)
+    return;
+
+  Object object;
+
+  object.start = "print";
+  object.length = 5;
+  object.value.type = VALUE_FUNCTION_BUILTIN;
+  object.value.value.builtin = builtinPrint;
+  environmentPushObject(environment, object);
+
+  object.start = "input";
+  object.length = 5;
+  object.value.type = VALUE_FUNCTION_BUILTIN;
+  object.value.value.builtin = builtinInput;
+  environmentPushObject(environment, object);
+
+  object.start = "length";
+  object.length = 6;
+  object.value.type = VALUE_FUNCTION_BUILTIN;
+  object.value.value.builtin = builtinLength;
+  environmentPushObject(environment, object);
+
+  object.start = "typeof";
+  object.length = 6;
+  object.value.type = VALUE_FUNCTION_BUILTIN;
+  object.value.value.builtin = builtinTypeof;
+  environmentPushObject(environment, object);
+}
+
+Value evalProgram(AstNode *root, Arena *arena, Environment *environment);
+Value evalBlockStatement(AstNode *root, Arena *arena, Environment *environment);
+Value evalExpressionStatement(AstNode *root, Arena *arena,
+                              Environment *environment);
+Value evalReturnStatement(AstNode *root, Arena *arena,
+                          Environment *environment);
+Value evalIfStatement(AstNode *root, Arena *arena, Environment *environment);
+Value evalVarStatement(AstNode *root, Arena *arena, Environment *environment);
+Value evalWhileStatement(AstNode *root, Arena *arena, Environment *environment);
+
+Value evalNumber(AstNode *root, Arena *arena, Environment *environment);
+Value evalString(AstNode *root, Arena *arena, Environment *environment);
+Value evalBoolean(AstNode *root, Arena *arena, Environment *environment);
+Value evalNull(AstNode *root, Arena *arena, Environment *environment);
+Value evalArray(AstNode *root, Arena *arena, Environment *environment);
+Value evalIdentifier(AstNode *root, Arena *arena, Environment *environment);
+Value evalFunction(AstNode *root, Arena *arena, Environment *environment);
+Value evalAssignment(AstNode *root, Arena *arena, Environment *environment);
+Value evalBinaryOp(AstNode *root, Arena *arena, Environment *environment);
+Value evalUnaryOp(AstNode *root, Arena *arena, Environment *environment);
+Value evalIndex(AstNode *root, Arena *arena, Environment *environment);
+Value evalCall(AstNode *root, Arena *arena, Environment *environment);
+
+// Executa uma ast
+Value eval(AstNode *root, Arena *arena, Environment *environment) {
+  Value v = null();
+  registerBuiltins(environment);
+
+  if (!root) {
+    logger(LOG_ERROR, "Internal error: Failed to execute code: no have ast\n");
+    v.type = VALUE_INTEGER;
+    v.value.integer = -1;
+    return v;
+  }
+
+  if (!arena) {
+    logger(LOG_ERROR,
+           "Internal error: Failed to execute code: no have arena\n");
+    v.type = VALUE_INTEGER;
+    v.value.integer = -1;
+    return v;
+  }
+
+  if (!environment) {
+    logger(LOG_ERROR,
+           "Internal error: Failed to execute code: no have environment\n");
+    v.type = VALUE_INTEGER;
+    v.value.integer = -1;
+    return v;
+  }
+
+  switch (root->type) {
+  case NODE_PROGRAM: {
+    v = evalProgram(root, arena, environment);
+  } break;
+  case NODE_BLOCK_STATEMENT: {
+    v = evalBlockStatement(root, arena, environment);
+  } break;
+  case NODE_EXPRESSION_STATEMENT: {
+    v = evalExpressionStatement(root, arena, environment);
+  } break;
+  case NODE_RETURN_STATEMENT: {
+    v = evalReturnStatement(root, arena, environment);
+  } break;
+  case NODE_IF_STATEMENT: {
+    v = evalIfStatement(root, arena, environment);
+  } break;
+  case NODE_VAR_STATEMENT: {
+    v = evalVarStatement(root, arena, environment);
+  } break;
+  case NODE_WHILE_STATEMENT: {
+    v = evalWhileStatement(root, arena, environment);
+    } break;
+  case NODE_NUMBER: {
+    v = evalNumber(root, arena, environment);
+  } break;
+  case NODE_STRING: {
+    v = evalString(root, arena, environment);
+  } break;
+  case NODE_BOOLEAN: {
+    v = evalBoolean(root, arena, environment);
+  } break;
+  case NODE_NULL: {
+    v = evalNull(root, arena, environment);
+  } break;
+  case NODE_ARRAY: {
+    v = evalArray(root, arena, environment);
+  } break;
+  case NODE_IDENTIFIER: {
+    v = evalIdentifier(root, arena, environment);
+  } break;
+  case NODE_FUNCTION: {
+    v = evalFunction(root, arena, environment);
+  } break;
+  case NODE_ASSIGNMENT: {
+    v = evalAssignment(root, arena, environment);
+  } break;
+  case NODE_BINARYOP: {
+    v = evalBinaryOp(root, arena, environment);
+  } break;
+  case NODE_UNARYOP: {
+    v = evalUnaryOp(root, arena, environment);
+  } break;
+  case NODE_INDEX: {
+    v = evalIndex(root, arena, environment);
+  } break;
+  case NODE_CALL: {
+    v = evalCall(root, arena, environment);
+  } break;
+  }
+
+  return v;
+}
+
+// Program
+Value evalProgram(AstNode *root, Arena *arena, Environment *environment) {
+  Value v = null();
+
+  for (size_t i = 0; i < root->data.program.count; i++) {
+    AstNode *statement = root->data.program.statements[i];
+    if (statement->type == NODE_FUNCTION ||
+        statement->type == NODE_VAR_STATEMENT) {
+      v = eval(statement, arena, environment);
+    } else {
+      tokenLogger(
+          LOG_ERROR, *(statement->token),
+          "Runtime error: Only declarations on global scope are allowed");
+      return errorSignal();
+    }
+    if (v.type == VALUE_ERROR_SIGNAL)
+      return v;
+  }
+
+  // Procurar start
+  Value *startFunction = environmentFindObject(environment, "start", 5);
+  if (!startFunction) {
+    logger(LOG_ERROR, "Runtime error: start() function not found\n");
+    return errorSignal();
+  }
+
+  if (startFunction->type != VALUE_FUNCTION_DEFINITION) {
+    logger(LOG_ERROR, "Runtime error: start must be a function\n");
+    return errorSignal();
+  }
+
+  // Por enquanto, não vamos passar argv, nem  argc
+  Environment *functionEnvironment =
+      environmentCreate(8, startFunction->value.function.closure);
+  v = eval(startFunction->value.function.node->data.function.statement, arena,
+           functionEnvironment);
+  environmentDestroy(functionEnvironment);
+
+  return returnSignalToValue(v); // Para caso o usuario use return direto
+}
+
+// Block
+Value evalBlockStatement(AstNode *root, Arena *arena,
+                         Environment *environment) {
+  for (size_t i = 0; i < root->data.blockStatement.count; i++) {
+    Value tmp =
+        eval(root->data.blockStatement.statements[i], arena, environment);
+    if (tmp.type == VALUE_RETURN_SIGNAL) {
+      return tmp;
+    }
+  }
+  return null();
+}
+
+// Expression
+Value evalExpressionStatement(AstNode *root, Arena *arena,
+                              Environment *environment) {
+  return eval(root->data.expressionStatement.expression, arena, environment);
+}
+
+// Return
+Value evalReturnStatement(AstNode *root, Arena *arena,
+                          Environment *environment) {
+  return returnSignal(
+      returnSignalToValue(
+          eval(root->data.returnStatement.expression, arena, environment)),
+      arena);
+}
+
+// If
+Value evalIfStatement(AstNode *root, Arena *arena, Environment *environment) {
+  Value condition = eval(root->data.ifStatement.condition, arena, environment);
+
+  Value ret;
+  if (isTrue(condition)) {
+    ret = eval(root->data.ifStatement.thenBranch, arena, environment);
+  } else {
+    ret = eval(root->data.ifStatement.elseBranch, arena, environment);
+  }
+
+  return returnSignalToValue(ret);
+}
+
+// Var
+Value evalVarStatement(AstNode *root, Arena *arena, Environment *environment) {
+  Object variable;
+  variable.start =
+      (char *)root->data.varStatement.identifier->data.identifier.name;
+  variable.length = root->data.varStatement.identifier->data.identifier.length;
+  variable.value = eval(root->data.varStatement.expression, arena, environment);
+
+  if (variable.value.type == VALUE_ERROR_SIGNAL)
+    return errorSignal();
+
+  if (!environmentPushObject(environment, variable)) {
+    logger(LOG_ERROR, "Internal error: Failed to push variable\n");
+    return errorSignal();
+  }
+
+  return null();
+}
+
+// Number
+Value evalNumber(AstNode *root, Arena *arena, Environment *environment) {
+  (void)arena;
+  (void)environment;
+  Value v = null();
+  if (root->data.number.isFloat) {
+    v = floating(root->data.number.value.floating);
+  } else {
+    v = integer(root->data.number.value.integer);
+  }
+  return v;
+}
+
+// String
+Value evalString(AstNode *root, Arena *arena, Environment *environment) {
+  (void)arena;
+  (void)environment;
+  return string(root->data.string.start, root->data.string.length);
+}
+
+// Boolean
+Value evalBoolean(AstNode *root, Arena *arena, Environment *environment) {
+  (void)arena;
+  (void)environment;
+  return boolean(root->data.boolean.value);
+}
+
+// Null
+Value evalNull(AstNode *root, Arena *arena, Environment *environment) {
+  (void)root;
+  (void)arena;
+  (void)environment;
+  return null();
+}
+
+// Array
+Value evalArray(AstNode *root, Arena *arena, Environment *environment) {
+  Value *elements = arenaAlloc(arena, root->data.array.total * sizeof(Value));
+  if (!elements) {
+    logger(LOG_ERROR, "Internal error: Failed to alloc array\n");
+    return errorSignal();
+  }
+
+  for (size_t i = 0; i < root->data.array.total; i++) {
+    elements[i] = eval(root->data.array.nodes[i], arena, environment);
+    if (elements[i].type == VALUE_ERROR_SIGNAL)
+      return errorSignal();
+  }
+
+  return array(elements, root->data.array.total);
+}
+
+// Identifier
+Value evalIdentifier(AstNode *root, Arena *arena, Environment *environment) {
+  (void)arena;
+  Value *value =
+      environmentFindObject(environment, (char *)root->data.identifier.name,
+                            root->data.identifier.length);
+  if (!value) {
+    tokenLogger(LOG_ERROR, *root->token,
+                "Runtime error: Undefined reference: %.*s\n",
+                root->data.identifier.length, root->data.identifier.name);
+    return errorSignal();
+  }
+
+  return *value;
+}
+
+// Function
+Value evalFunction(AstNode *root, Arena *arena, Environment *environment) {
+  (void)arena;
+  Object object;
+  if (root->data.function.functionName) {
+    object.start =
+        (char *)root->data.function.functionName->data.identifier.name;
+    object.length = root->data.function.functionName->data.identifier.length;
+  }
+  object.value = function(root, environment);
+  environment->referenceCount++;
+
+  if (!environmentPushObject(environment, object)) {
+    logger(LOG_ERROR, "Internal error: Failed to push function\n");
+    return errorSignal();
+  }
+
+  return object.value;
+}
+
+// Assignment
+Value evalAssignment(AstNode *root, Arena *arena, Environment *environment) {
+  Value *v = environmentFindObject(
+      environment, (char *)root->data.assigment.target->data.identifier.name,
+      root->data.assigment.target->data.identifier.length);
+  if (!v) {
+    tokenLogger(LOG_ERROR, *root->data.assigment.target->token,
+                "Runtime error: Undefined reference: %.*s\n",
+                root->data.assigment.target->data.identifier.length,
+                root->data.assigment.target->data.identifier.name);
+    return errorSignal();
+  }
+
+  *v = eval(root->data.assigment.value, arena, environment);
+
+  return null();
+}
+
+// BinaryOp
+Value evalBinaryOp(AstNode *root, Arena *arena, Environment *environment) {
+  Value v = null();
+
+  Value left = eval(root->data.binaryOp.left, arena, environment);
+  Value right = eval(root->data.binaryOp.right, arena, environment);
+  if (root->data.binaryOp.op == TOKEN_OR) {
+    v = boolean(isTrue(left) || isTrue(right));
+  } else if (root->data.binaryOp.op == TOKEN_AND) {
+    v = boolean(isTrue(left) && isTrue(right));
+  } else if (root->data.binaryOp.op == TOKEN_BIT_OR) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer | right.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Bitwise or with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_BIT_XOR) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer ^ right.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Bitwise xor with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_BIT_AND) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer & right.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Bitwise and with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_EQ) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer == right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating == right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating == (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer == right.value.floating);
+    } else if (left.type == VALUE_STRING && right.type == VALUE_STRING) {
+      if (left.value.string.length != right.value.string.length) {
+        v = boolean(false);
+      } else {
+        v = boolean(strncmp(left.value.string.start, right.value.string.start,
+                            left.value.string.length) == 0);
+      }
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Comparison with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_NEQ) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer != right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating != right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating != (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer != right.value.floating);
+    } else if (left.type == VALUE_STRING && right.type == VALUE_STRING) {
+      if (left.value.string.length != right.value.string.length) {
+        v = boolean(true);
+      } else {
+        v = boolean(strncmp(left.value.string.start, right.value.string.start,
+                            left.value.string.length) != 0);
+      }
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Comparison with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_LT) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer < right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating < right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating < (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer < right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Comparison with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_GT) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer > right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating > right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating > (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer > right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Comparison with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_LTE) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer <= right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating <= right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating <= (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer <= right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Comparison with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_GTE) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.integer >= right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = boolean(left.value.floating >= right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = boolean(left.value.floating >= (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = boolean((double)left.value.integer >= right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Comparison with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_SHIFT_LEFT) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer << right.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Shift with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_SHIFT_RIGHT) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer >> right.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Shift with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_PLUS) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer + right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = floating(left.value.floating + right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = floating(left.value.floating + (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = floating((double)left.value.integer + right.value.floating);
+    } else if (left.type == VALUE_STRING && right.type == VALUE_STRING) {
+      size_t newLength = left.value.string.length + right.value.string.length;
+      char *start = (char *)arenaAlloc(arena, newLength);
+      memcpy(start, left.value.string.start, left.value.string.length);
+      memcpy(start + left.value.string.length, right.value.string.start,
+             right.value.string.length);
+      v = string(start, newLength);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Sum with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_MINUS) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer - right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = floating(left.value.floating - right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = floating(left.value.floating - (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = floating((double)left.value.integer - right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Subtraction with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_STAR) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      v = integer(left.value.integer * right.value.integer);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      v = floating(left.value.floating * right.value.floating);
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      v = floating(left.value.floating * (double)right.value.integer);
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      v = floating((double)left.value.integer * right.value.floating);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Multiplication with "
+                  "incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_SLASH) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      if (right.value.integer == 0) {
+        if (root->token)
+          tokenLogger(LOG_ERROR, *root->token,
+                      "Runtime error: Division by zero");
+        return errorSignal();
+      } else {
+        return integer(left.value.integer / right.value.integer);
+      }
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      if (right.value.floating == 0.0f) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Division by zero");
+        return errorSignal();
+      } else {
+        return floating(left.value.floating / right.value.floating);
+      }
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      if (right.value.integer == 0) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Division by zero");
+        return errorSignal();
+      } else {
+        return floating(left.value.floating / (double)right.value.integer);
+      }
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      if (right.value.floating == 0.0f) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Division by zero");
+        return errorSignal();
+      } else {
+        return floating((double)left.value.integer / right.value.floating);
+      }
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Division with incompatible types");
+      return errorSignal();
+    }
+  } else if (root->data.binaryOp.op == TOKEN_PERCENT) {
+    if (left.type == VALUE_INTEGER && right.type == VALUE_INTEGER) {
+      if (right.value.integer == 0) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Module by zero");
+        return errorSignal();
+      } else {
+        return integer(left.value.integer % right.value.integer);
+      }
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_FLOATING) {
+      if (right.value.floating == 0.0f) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Module by zero");
+        return errorSignal();
+      } else {
+        return floating(fmod(left.value.floating, right.value.floating));
+      }
+    } else if (left.type == VALUE_FLOATING && right.type == VALUE_INTEGER) {
+      if (right.value.integer == 0) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Module by zero");
+
+        return errorSignal();
+      } else {
+        return floating(fmod(left.value.floating, (double)right.value.integer));
+      }
+    } else if (left.type == VALUE_INTEGER && right.type == VALUE_FLOATING) {
+      if (right.value.floating == 0.0f) {
+        tokenLogger(LOG_ERROR, *root->token, "Runtime error: Module by zero");
+        return errorSignal();
+      } else {
+        return floating(fmod((double)left.value.integer, right.value.floating));
+      }
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Module with incompatible types");
+      return errorSignal();
+    }
+  }
+
+  return v;
+}
+
+// UnaryOp
+Value evalUnaryOp(AstNode *root, Arena *arena, Environment *environment) {
+  Value v = null();
+  Value operand = eval(root->data.unaryOp.operand, arena, environment);
+  TokenType op = root->data.unaryOp.op;
+
+  if (op == TOKEN_PLUS) {
+    if (operand.type == VALUE_INTEGER) {
+      v = integer(operand.value.integer);
+    } else if (operand.type == VALUE_FLOATING) {
+      v = floating(operand.value.floating);
+    } else {
+      tokenLogger(
+          LOG_ERROR, *root->token,
+          "Runtime error: Unary plus operator with incompatible type\n");
+      return errorSignal();
+    }
+  } else if (op == TOKEN_MINUS) {
+    if (operand.type == VALUE_INTEGER) {
+      v = integer(-operand.value.integer);
+    } else if (operand.type == VALUE_FLOATING) {
+      v = floating(-operand.value.floating);
+    } else {
+      tokenLogger(
+          LOG_ERROR, *root->token,
+          "Runtime error: Unary minus operator with incompatible type\n");
+      return errorSignal();
+    }
+  } else if (op == TOKEN_BIT_NOT) {
+    if (operand.type == VALUE_INTEGER) {
+      v = integer(~operand.value.integer);
+    } else {
+      tokenLogger(LOG_ERROR, *root->token,
+                  "Runtime error: Unary bitwise not operator with "
+                  "incompatible type\n");
+      return errorSignal();
+    }
+  }
+
+  return v;
+}
+
+// Index
+Value evalIndex(AstNode *root, Arena *arena, Environment *environment) {
+  Value target = eval(root->data.index.target, arena, environment);
+  if (target.type != VALUE_ARRAY) {
+    tokenLogger(LOG_ERROR, *(root->data.index.target->token),
+                "Runtime error: Index with no array");
+    return errorSignal();
+  }
+
+  Value index = eval(root->data.index.value, arena, environment);
+  if (index.type != VALUE_INTEGER) {
+    tokenLogger(LOG_ERROR, *(root->data.index.value->token),
+                "Runtime error: Only integer index are allowed");
+    return errorSignal();
+  }
+
+  if ((size_t)index.value.integer > target.value.array.count) {
+    tokenLogger(LOG_ERROR, *(root->data.index.value->token),
+                "Runtime error: Index out of range");
+    return errorSignal();
+  }
+
+  return target.value.array.elements[index.value.integer];
+}
+
+// Call
+Value evalCall(AstNode *root, Arena *arena, Environment *environment) {
+  Value callee = eval(root->data.call.callee, arena, environment);
+
+  Value *args = arenaAlloc(arena, sizeof(Value) * root->data.call.argc);
+  for (size_t i = 0; i < root->data.call.argc; i++) {
+    args[i] = eval(root->data.call.args[i], arena, environment);
+  }
+
+  Value result;
+
+  if (callee.type == VALUE_FUNCTION_DEFINITION) {
+
+    AstNode *function = callee.value.function.node;
+
+    if (root->data.call.argc != function->data.function.paramCount) {
+      tokenLogger(LOG_ERROR, *root->token, "Runtime error: Invalid parameters");
+      return errorSignal();
+    }
+
+    Environment *functionEnvironment =
+        environmentCreate(8, callee.value.function.closure);
+    for (size_t i = 0; i < function->data.function.paramCount; i++) {
+      Object object;
+      object.start =
+          (char *)function->data.function.params[i]->data.identifier.name;
+      object.length = function->data.function.params[i]->data.identifier.length;
+      object.value = args[i];
+      environmentPushObject(functionEnvironment, object);
+    }
+
+    result =
+        eval(function->data.function.statement, arena, functionEnvironment);
+
+    environmentDestroy(functionEnvironment);
+  } else if (callee.type == VALUE_FUNCTION_BUILTIN) {
+    result =
+        callee.value.builtin(args, root->data.call.argc, arena, environment);
+  } else {
+    tokenLogger(LOG_ERROR, *root->token,
+                "Runtime error: Called something that isn't a function");
+    return errorSignal();
+  }
+
+  return returnSignalToValue(result);
+}

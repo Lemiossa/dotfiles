@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/matheus/projects/Potato/src/lexer'
+let g:netrw_dirhist_2='/home/matheus/projects/Potato/src'
+let g:netrw_dirhist_1='/home/matheus/projects/Potato'
+let g:netrw_dirhist_0='/home/matheus/projects/Potato/src/lexer'
+let g:netrw_dirhist_9='/home/matheus/projects/Potato/src'
+let g:netrw_dirhist_8='/home/matheus/projects/Potato'
+let g:netrw_dirhist_7='/home/matheus/projects/Potato/src/lexer'
+let g:netrw_dirhist_6='/home/matheus/projects/Potato/src'
+let g:netrw_dirhist_5='/home/matheus/projects/Potato'
+let g:netrw_dirhist_4='/home/matheus/projects/Potato/src/lexer'
