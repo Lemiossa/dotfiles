@@ -11,28 +11,331 @@
 # hlsearch on (H) or off (h):
 ~h
 # Último padrão de busca :
-~MSle0~/postfix
+~MSle0~/#
+
+# Último padrão de busca  de substituição:
+~MSle0&#
 
 # Última string de substituição:
 $
 
 # Histórico de Linha de comando (mais recente primeiro):
 :q
-|2,0,1767213274,,"q"
-:wq
-|2,0,1767213062,,"wq"
+|2,0,1767983559,,"q"
 :w
-|2,0,1767213002,,"w"
+|2,0,1767983558,,"w"
+:s
+|2,0,1767983419,,"s"
+:wq
+|2,0,1767982772,,"wq"
+:q!
+|2,0,1767982292,,"q!"
+:PlugInstall
+|2,0,1767982001,,"PlugInstall"
+:'<,'>s/#/█/g
+|2,0,1767980548,,"'<,'>s/#/█/g"
+:'<,'>s/.*/\/\/ &/
+|2,0,1767978029,,"'<,'>s/.*/\\/\\/ &/"
+:'<,'>s/.*/\/\/&/
+|2,0,1767978008,,"'<,'>s/.*/\\/\\/&/"
+:'<,'>s/vga_entry/char_entry/g
+|2,0,1767976797,,"'<,'>s/vga_entry/char_entry/g"
+:'<,'>s/vga_buffer/buffer/g
+|2,0,1767976773,,"'<,'>s/vga_buffer/buffer/g"
+:qw
+|2,0,1767976499,,"qw"
+:we
+|2,0,1767975362,,"we"
+:'<,'>s/ i/ row/g
+|2,0,1767929971,,"'<,'>s/ i/ row/g"
+:'<,'>s/terminal_heigth/terminal_height/g
+|2,0,1767925381,,"'<,'>s/terminal_heigth/terminal_height/g"
+:'<,'>s/y /i /g
+|2,0,1767919026,,"'<,'>s/y /i /g"
+:'<,'>s/TERMINAL_HEIGTH/terminal_heigth/g
+|2,0,1767917120,,"'<,'>s/TERMINAL_HEIGTH/terminal_heigth/g"
+:'<,'>s/TERMINAL_HEIGTH/
+|2,0,1767917095,,"'<,'>s/TERMINAL_HEIGTH/"
+:'<,'>s/TERMINAL_WIDTH/terminal_width/g
+|2,0,1767917068,,"'<,'>s/TERMINAL_WIDTH/terminal_width/g"
+:.q
+|2,0,1767915500,,".q"
+:'<,'>s/uint32_t/u32/g
+|2,0,1767913265,,"'<,'>s/uint32_t/u32/g"
+:'<,'>s/uint8_t/u8/g
+|2,0,1767913250,,"'<,'>s/uint8_t/u8/g"
+:'<,'>s/uint16_t/u16/g
+|2,0,1767913235,,"'<,'>s/uint16_t/u16/g"
+:6885
+<! # & * ++ -- < = > @ Ag AirlineExtensions AirlineRefresh AirlineTheme AirlineToggle AirlineToggleWhitespace BCommits BLines BMarks BTags Buffers Changes ColorClear ColorHighlight ColorToggle Colors Commands Commentary Commits DoMatchParen EditorConfigDisable EditorConfigEnable EditorConfigReload Explore FZF Files Filetypes GFiles GLVS GetLatestVimScripts GetScripts GitFiles GitGutter GitGutterAll GitGutterBufferDisable GitGutterBufferEnable GitGutterBufferToggle GitGutterDebug GitGutterDiffOrig GitGutterDisable GitGutterEnable GitGutterFold GitGutterLineHighlightsDisable GitGutterLineHighlightsEnable GitGutterLineHighlightsToggle GitGutterLineNrHighlightsDisable GitGutterLineNrHighlightsEnable GitGutterLineNrHighlightsToggle GitGutterNextHunk GitGutterPrevHunk GitGutterPreviewHunk GitGutterQuickFix GitGutterQuickFixCurrentFile GitGutterSignsDisable GitGutterSignsEnable GitGutterSignsToggle GitGutterStageHunk GitGutterToggle GitGutterUndoHunk Helptags Hexplore History IndentLinesDisable IndentLinesEnable IndentLinesReset IndentLinesToggle Jumps LP LPE LPF LPR Launch LeadingSpaceDisable LeadingSpaceEnable LeadingSpaceToggle Lexplore Lines Locate LogiPat LogiPatFlags LspAddTreeCallHierarchyIncoming LspAddTreeReferences LspCallHierarchyIncoming LspCallHierarchyOutgoing LspCodeAction LspCodeActionSync LspCodeLens LspDeclaration LspDefinition LspDocumentDiagnostics LspDocumentFold LspDocumentFoldSync LspDocumentFormat LspDocumentFormatSync LspDocumentRangeFormat LspDocumentRangeFormatSync LspDocumentSymbol LspDocumentSymbolSearch LspHover LspImplementation LspInstallServer LspManageServers LspNextDiagnostic LspNextError LspNextReference LspNextWarning LspPeekDeclaration LspPeekDefinition LspPeekImplementation LspPeekTypeDefinition LspPreviousDiagnostic LspPreviousError LspPreviousReference LspPreviousWarning LspReferences LspRename LspSemanticTokenModifiers LspSemanticTokenTypes LspSettingsGlobalEdit LspSettingsLocalEdit LspSettingsStatus LspSignatureHelp LspStatus LspStopServer LspTypeDefinition LspTypeHierarchy LspUninstallServer LspWorkspaceSymbol LspWorkspaceSymbolSearch MANPAGER Maps Marks MatchDebug MatchDisable MatchEnable MkVimball NetUserPass NetrwClean NetrwSettings Nexplore Next NoMatchParen Nread Nsource Ntree Nwrite Open Pexplore Plug PlugClean PlugDiff PlugInstall PlugSnapshot PlugStatus PlugUpdate PlugUpgrade Print RG Rg RmVimball Sexplore Sleuth Snippets TOhtml Tags Texplore Tutor UseVimball Vexplore VimballList Vimuntar Windows X abbreviate abclear aboveleft abstract all amenu anoremenu append argadd argdedupe argdelete argdo argedit argglobal arglocal args argument ascii augroup aunmenu autocmd bNext badd ball balt bdelete behave belowright bfirst blast bmodified bnext botright bprevious break breakadd breakdel breaklist brewind browse bufdo buffer buffers bunload bwipeout cNext cNfile cabbrev cabclear cabove caddbuffer caddexpr caddfile cafter call catch cbefore cbelow cbottom cbuffer cc cclose cd cdo center cexpr cfdo cfile cfirst cgetbuffer cgetexpr cgetfile change changes chdir checkpath checktime chistory class clast clearjumps clist close cmap cmapclear cmenu cnewer cnext cnfile cnoreabbrev cnoremap cnoremenu colder colorscheme comclear command compiler confirm const continue copen copy cpfile cprevious cquit crewind cscope cstag cunabbrev cunmap cunmenu cwindow debug debuggreedy def defcompile defer delcommand delete delfunction delmarks diffget diffoff diffpatch diffput diffsplit diffthis diffupdate digraphs disassemble display djump dlist doautoall doautocmd drop dsearch dsplit earlier echo echoconsole echoerr echohl echomsg echon echowindow edit else elseif emenu endclass enddef endenum endfor endfunction endif endinterface endtry endwhile enew enum eval ex execute exit export exusage file files filetype filter final finally find finish first fixdel fold foldclose folddoclosed folddoopen foldopen for function global goto grep grepadd gui gvim hardcopy help helpclose helpfind helpgrep helptags hide highlight history horizontal iabbrev iabclear if ijump ilist imap imapclear imenu import inoreabbrev inoremap inoremenu insert interface intro iput isearch isplit iunabbrev iunmap iunmenu join jumps k keepalt keepjumps keepmarks keeppatterns lNext lNfile labove laddbuffer laddexpr laddfile lafter language last later lbefore lbelow lbottom lbuffer lcd lchdir lclose lcscope ldo left leftabove legacy let lexpr lfdo lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep lhistory list ll llast llist lmake lmap lmapclear lnewer lnext lnfile lnoremap loadkeymap loadview lockmarks lockvar lolder lopen lpfile lprevious lrewind ls ltag lua luado luafile lunmap lvimgrep lvimgrepadd lwindow make map mapclear mark marks match menu menutranslate messages mkexrc mksession mkspell mkview mkvimrc mode move mzfile mzscheme nbclose nbkey nbstart new next nmap nmapclear nmenu nnoremap nnoremenu noautocmd nohlsearch noreabbrev noremap noremenu normal noswapfile number nunmap nunmenu oldfiles omap omapclear omenu only onoremap onoremenu open options ounmap ounmenu ownsyntax packadd packloadall pbuffer pclose pedit perl perldo pop popup ppop preserve previous print profdel profile promptfind promptrepl psearch ptNext ptag ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect public put pwd py3 py3do py3file pydo pyfile python python3 pythonx pyx pyxdo pyxfile qall quit quitall read recover redir redo redraw redrawstatus redrawtabline registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo sNext sall sandbox sargument saveas sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind sbuffer scriptencoding scriptnames scriptversion scscope set setfiletype setglobal setlocal sfind sfirst shell sign silent simalt slast sleep smagic smap smapclear smenu smile snext snomagic snoremap snoremenu sort source spelldump spellgood spellinfo spellrare spellrepall spellundo spellwrong split sprevious srewind stag startgreplace startinsert startreplace static stjump stop stopinsert stselect substitute sunhide sunmap sunmenu suspend sview swapname syncbind syntax syntime t tNext tab tabNext tabclose tabdo tabedit tabfind tabfirst tablast tabmove tabnew tabnext tabonly tabprevious tabrewind tabs tag tags tcd tchdir tcl tcldo tclfile tearoff terminal tfirst this throw tjump tlast tlmenu tlnoremenu tlunmenu tmap tmapclear tmenu tnext tnoremap topleft tprevious trewind try tselect tunmap tunmenu type unabbreviate undo undojoin undolist unhide unlet unlockvar unmap unmenu unsilent update var verbose version vertical vglobal view vim9cmd vim9script vimgrep vimgrepadd visual viusage vmap vmapclear vmenu vnew vnoremap vnoremenu vsplit vunmap vunmenu wNext wall while wincmd windo winpos winsize wnext wprevious wq wqall write wundo wviminfo xall xit xmap xmapclear xmenu xnoremap xnoremenu xrestore xunmap xunmenu yank z ~
+|2,0,1767908867,,>6884
+|<"! # & * ++ -- < = > @ Ag AirlineExtensions AirlineRefresh AirlineTheme AirlineToggle AirlineToggleWhitespace BCommits BLines BMarks BTags Buffers Changes ColorClear ColorHighlight ColorToggle Colors Commands Commentary Commits DoMatchParen EditorConfigDisable EditorConfigEnable EditorConfigReload Explore FZF Files Filetypes GFiles GLVS GetLatestVimScripts GetScripts GitFiles GitGutter GitGutterAll GitGutterBufferDisable GitGutterBufferEnable GitGutterBufferToggle GitGutterDebug GitGutt
+|<erDiffOrig GitGutterDisable GitGutterEnable GitGutterFold GitGutterLineHighlightsDisable GitGutterLineHighlightsEnable GitGutterLineHighlightsToggle GitGutterLineNrHighlightsDisable GitGutterLineNrHighlightsEnable GitGutterLineNrHighlightsToggle GitGutterNextHunk GitGutterPrevHunk GitGutterPreviewHunk GitGutterQuickFix GitGutterQuickFixCurrentFile GitGutterSignsDisable GitGutterSignsEnable GitGutterSignsToggle GitGutterStageHunk GitGutterToggle GitGutterUndoHunk Helptags Hexplore Histo
+|<ry IndentLinesDisable IndentLinesEnable IndentLinesReset IndentLinesToggle Jumps LP LPE LPF LPR Launch LeadingSpaceDisable LeadingSpaceEnable LeadingSpaceToggle Lexplore Lines Locate LogiPat LogiPatFlags LspAddTreeCallHierarchyIncoming LspAddTreeReferences LspCallHierarchyIncoming LspCallHierarchyOutgoing LspCodeAction LspCodeActionSync LspCodeLens LspDeclaration LspDefinition LspDocumentDiagnostics LspDocumentFold LspDocumentFoldSync LspDocumentFormat LspDocumentFormatSync LspDocument
+|<RangeFormat LspDocumentRangeFormatSync LspDocumentSymbol LspDocumentSymbolSearch LspHover LspImplementation LspInstallServer LspManageServers LspNextDiagnostic LspNextError LspNextReference LspNextWarning LspPeekDeclaration LspPeekDefinition LspPeekImplementation LspPeekTypeDefinition LspPreviousDiagnostic LspPreviousError LspPreviousReference LspPreviousWarning LspReferences LspRename LspSemanticTokenModifiers LspSemanticTokenTypes LspSettingsGlobalEdit LspSettingsLocalEdit LspSetting
+|<sStatus LspSignatureHelp LspStatus LspStopServer LspTypeDefinition LspTypeHierarchy LspUninstallServer LspWorkspaceSymbol LspWorkspaceSymbolSearch MANPAGER Maps Marks MatchDebug MatchDisable MatchEnable MkVimball NetUserPass NetrwClean NetrwSettings Nexplore Next NoMatchParen Nread Nsource Ntree Nwrite Open Pexplore Plug PlugClean PlugDiff PlugInstall PlugSnapshot PlugStatus PlugUpdate PlugUpgrade Print RG Rg RmVimball Sexplore Sleuth Snippets TOhtml Tags Texplore Tutor UseVimball Vexp
+|<lore VimballList Vimuntar Windows X abbreviate abclear aboveleft abstract all amenu anoremenu append argadd argdedupe argdelete argdo argedit argglobal arglocal args argument ascii augroup aunmenu autocmd bNext badd ball balt bdelete behave belowright bfirst blast bmodified bnext botright bprevious break breakadd breakdel breaklist brewind browse bufdo buffer buffers bunload bwipeout cNext cNfile cabbrev cabclear cabove caddbuffer caddexpr caddfile cafter call catch cbefore cbelow cbot
+|<tom cbuffer cc cclose cd cdo center cexpr cfdo cfile cfirst cgetbuffer cgetexpr cgetfile change changes chdir checkpath checktime chistory class clast clearjumps clist close cmap cmapclear cmenu cnewer cnext cnfile cnoreabbrev cnoremap cnoremenu colder colorscheme comclear command compiler confirm const continue copen copy cpfile cprevious cquit crewind cscope cstag cunabbrev cunmap cunmenu cwindow debug debuggreedy def defcompile defer delcommand delete delfunction delmarks diffget di
+|<ffoff diffpatch diffput diffsplit diffthis diffupdate digraphs disassemble display djump dlist doautoall doautocmd drop dsearch dsplit earlier echo echoconsole echoerr echohl echomsg echon echowindow edit else elseif emenu endclass enddef endenum endfor endfunction endif endinterface endtry endwhile enew enum eval ex execute exit export exusage file files filetype filter final finally find finish first fixdel fold foldclose folddoclosed folddoopen foldopen for function global goto grep
+|< grepadd gui gvim hardcopy help helpclose helpfind helpgrep helptags hide highlight history horizontal iabbrev iabclear if ijump ilist imap imapclear imenu import inoreabbrev inoremap inoremenu insert interface intro iput isearch isplit iunabbrev iunmap iunmenu join jumps k keepalt keepjumps keepmarks keeppatterns lNext lNfile labove laddbuffer laddexpr laddfile lafter language last later lbefore lbelow lbottom lbuffer lcd lchdir lclose lcscope ldo left leftabove legacy let lexpr lfdo 
+|<lfile lfirst lgetbuffer lgetexpr lgetfile lgrep lgrepadd lhelpgrep lhistory list ll llast llist lmake lmap lmapclear lnewer lnext lnfile lnoremap loadkeymap loadview lockmarks lockvar lolder lopen lpfile lprevious lrewind ls ltag lua luado luafile lunmap lvimgrep lvimgrepadd lwindow make map mapclear mark marks match menu menutranslate messages mkexrc mksession mkspell mkview mkvimrc mode move mzfile mzscheme nbclose nbkey nbstart new next nmap nmapclear nmenu nnoremap nnoremenu noauto
+|<cmd nohlsearch noreabbrev noremap noremenu normal noswapfile number nunmap nunmenu oldfiles omap omapclear omenu only onoremap onoremenu open options ounmap ounmenu ownsyntax packadd packloadall pbuffer pclose pedit perl perldo pop popup ppop preserve previous print profdel profile promptfind promptrepl psearch ptNext ptag ptfirst ptjump ptlast ptnext ptprevious ptrewind ptselect public put pwd py3 py3do py3file pydo pyfile python python3 pythonx pyx pyxdo pyxfile qall quit quitall rea
+|<d recover redir redo redraw redrawstatus redrawtabline registers resize retab return rewind right rightbelow ruby rubydo rubyfile rundo runtime rviminfo sNext sall sandbox sargument saveas sbNext sball sbfirst sblast sbmodified sbnext sbprevious sbrewind sbuffer scriptencoding scriptnames scriptversion scscope set setfiletype setglobal setlocal sfind sfirst shell sign silent simalt slast sleep smagic smap smapclear smenu smile snext snomagic snoremap snoremenu sort source spelldump spe
+|<llgood spellinfo spellrare spellrepall spellundo spellwrong split sprevious srewind stag startgreplace startinsert startreplace static stjump stop stopinsert stselect substitute sunhide sunmap sunmenu suspend sview swapname syncbind syntax syntime t tNext tab tabNext tabclose tabdo tabedit tabfind tabfirst tablast tabmove tabnew tabnext tabonly tabprevious tabrewind tabs tag tags tcd tchdir tcl tcldo tclfile tearoff terminal tfirst this throw tjump tlast tlmenu tlnoremenu tlunmenu tmap
+|< tmapclear tmenu tnext tnoremap topleft tprevious trewind try tselect tunmap tunmenu type unabbreviate undo undojoin undolist unhide unlet unlockvar unmap unmenu unsilent update var verbose version vertical vglobal view vim9cmd vim9script vimgrep vimgrepadd visual viusage vmap vmapclear vmenu vnew vnoremap vnoremenu vsplit vunmap vunmenu wNext wall while wincmd windo winpos winsize wnext wprevious wq wqall write wundo wviminfo xall xit xmap xmapclear xmenu xnoremap xnoremenu xrestore x
+|<unmap xunmenu yank z ~"
+:116
+|2,0,1767900186,,"116"
+:'<,'>s/".*"/terminal_putstring(&);/g
+|2,0,1767900010,,"'<,'>s/\".*\"/terminal_putstring(&);/g"
+:'<,'>s/".*"/terminal_putstring(&)/g
+|2,0,1767900001,,"'<,'>s/\".*\"/terminal_putstring(&)/g"
+:'<,'>s/".*"/terminal_putstring(&);
+|2,0,1767899981,,"'<,'>s/\".*\"/terminal_putstring(&);"
+:'<,'>s/.*/"&"/g
+|2,0,1767899916,,"'<,'>s/.*/\"&\"/g"
+:'<,'>q
+|2,0,1767890069,,"'<,'>q"
+:.w
+|2,0,1767842213,,".w"
+:'<,'>s/0x0e/0x8e/g
+|2,0,1767841114,,"'<,'>s/0x0e/0x8e/g"
+:'<,'>s/offset /(u32)isr /g
+|2,0,1767841077,,"'<,'>s/offset /(u32)isr /g"
+:'<,'>s/offset /(u32)isr /ŋ
+|2,0,1767841069,,"'<,'>s/offset /(u32)isr /ŋ"
+:'<,'>s/ .*/"&"/g
+|2,0,1767840602,,"'<,'>s/ .*/\"&\"/g"
+:'<,'>s/\./->/g
+|2,0,1767839876,,"'<,'>s/\\./->/g"
+:'<,'>s/    /(/g
+|2,0,1767837019,,"'<,'>s/    /(/g"
+:'<,'>s/    //
+|2,0,1767837005,,"'<,'>s/    //"
+:'<,'>s/[0-9]\+/&)/g
+|2,0,1767836982,,"'<,'>s/[0-9]\\+/&)/g"
+:'<,'>s/[0-9]/&)/g
+|2,0,1767836964,,"'<,'>s/[0-9]/&)/g"
+:'<,'>s/ISR_NO_ERR_STUB /ISR_NO_ERR_STUB(/g
+|2,0,1767836940,,"'<,'>s/ISR_NO_ERR_STUB /ISR_NO_ERR_STUB(/g"
+:'<,'>s/isr_err_stub/ISR_ERR_STUB/
+|2,0,1767836490,,"'<,'>s/isr_err_stub/ISR_ERR_STUB/"
+:'<,'>s/isr_no_err_stub/ISR_NO_ERR_STUB
+|2,0,1767836469,,"'<,'>s/isr_no_err_stub/ISR_NO_ERR_STUB"
+:set ft=sh
+|2,0,1767832358,,"set ft=sh"
+:ww
+|2,0,1767832354,,"ww"
+:'<,'>s/\\n/(n)/g
+|2,0,1767829147,,"'<,'>s/\\\\n/(n)/g"
+:'<,'>s/(e/(regs.e/g
+|2,0,1767827689,,"'<,'>s/(e/(regs.e/g"
+:'<,'>s/e/
+|2,0,1767827592,,"'<,'>s/e/"
+:'<,'>
+|2,0,1767826050,,"'<,'>"
+:'<,'>s/eax/ecx
+|2,0,1767826040,,"'<,'>s/eax/ecx"
+:'<,'>s/eax/ebx
+|2,0,1767826027,,"'<,'>s/eax/ebx"
+:'<,'>s/low/high/g
+|2,0,1767825239,,"'<,'>s/low/high/g"
+:>q
+|2,0,1767824047,,">q"
+:w:q
+|2,0,1767822578,,"w:q"
+:'<,'>s/U/O/g
+|2,0,1767819684,,"'<,'>s/U/O/g"
+:'<,'>s/U/og
+|2,0,1767819672,,"'<,'>s/U/og"
+:'<,'>s/write/read/g
+|2,0,1767816757,,"'<,'>s/write/read/g"
+::q
+|2,0,1767815572,,":q"
+:'<,'>s/terminal_set_cursor/terminal_set_cursor_visual_position/g
+|2,0,1767814581,,"'<,'>s/terminal_set_cursor/terminal_set_cursor_visual_position/g"
+:'<,'>s/vga_set_cursor/terminal_set_cursor/g
+|2,0,1767810447,,"'<,'>s/vga_set_cursor/terminal_set_cursor/g"
+:i
+|2,0,1767809152,,"i"
+:47
+|2,0,1767804786,,"47"
+:447
+|2,0,1767804784,,"447"
+:'<,'>s/uint._t/u&/g
+|2,0,1767804064,,"'<,'>s/uint._t/u&/g"
+:set list
+|2,0,1767733059,,"set list"
+:'<,'>s/\.o/.d/g
+|2,0,1767731850,,"'<,'>s/\\.o/.d/g"
+:'<,'>s/(TO/(LOAD_ADDR/g
+|2,0,1767730290,,"'<,'>s/(TO/(LOAD_ADDR/g"
+:'<,'>s/putchar/terminal_putchar/g
+|2,0,1767726969,,"'<,'>s/putchar/terminal_putchar/g"
+:'<,'>s/bootloader/kernel/g
+|2,0,1767725099,,"'<,'>s/bootloader/kernel/g"
+:'<,'>s/dx/ax/g
+|2,0,1767719369,,"'<,'>s/dx/ax/g"
+:76
+|2,0,1767719106,,"76"
+:48
+|2,0,1767719093,,"48"
+:37
+|2,0,1767713663,,"37"
+:105
+|2,0,1767640373,,"105"
+:57
+|2,0,1767640354,,"57"
+:182
+|2,0,1767635992,,"182"
+:'<,'>s/read/write/g
+|2,0,1767633192,,"'<,'>s/read/write/g"
+:'<,'>s/realContent/real_content/g
+|2,0,1767629969,,"'<,'>s/realContent/real_content/g"
+:'<,'>s/2)/2, NULL)/g
+|2,0,1767628744,,"'<,'>s/2)/2, NULL)/g"
+:'<,'>s/1)/1, NULL)/g
+|2,0,1767628706,,"'<,'>s/1)/1, NULL)/g"
+:'<,'>s/zyntaRunFileOperands/zynta_run_file_operands/g
+|2,0,1767584052,,"'<,'>s/zyntaRunFileOperands/zynta_run_file_operands/g"
+:'<,'>s/lastCommandReturn/last_command_return/g
+|2,0,1767584017,,"'<,'>s/lastCommandReturn/last_command_return/g"
+:'<,'>s/operandCount/operand_count/g
+|2,0,1767583954,,"'<,'>s/operandCount/operand_count/g"
+:'<,'>s/longname/long_name/g
+|2,0,1767583933,,"'<,'>s/longname/long_name/g"
+:'<,'>s/findCommandByLetter/find_command_by_letter/g
+|2,0,1767583913,,"'<,'>s/findCommandByLetter/find_command_by_letter/g"
+:'<,'>s/findCommandByLongName/find_commands_by_long_name/g
+|2,0,1767583894,,"'<,'>s/findCommandByLongName/find_commands_by_long_name/g"
+:'<,'>s/parseCommands/parse_commands/g
+|2,0,1767583849,,"'<,'>s/parseCommands/parse_commands/g"
+:'<,'>s/showhelp/show_help/g
+|2,0,1767583838,,"'<,'>s/showhelp/show_help/g"
+:'<,'>s/showVersion/show_version/g
+|2,0,1767583799,,"'<,'>s/showVersion/show_version/g"
+:'<,'>s/tokenError/token_error/g
+|2,0,1767583775,,"'<,'>s/tokenError/token_error/g"
+:'<,'>s/contentsLength/contents_length/g
+|2,0,1767583733,,"'<,'>s/contentsLength/contents_length/g"
+:'<,'>s/lexer_peekReal/lexer_peek_real/g
+|2,0,1767583626,,"'<,'>s/lexer_peekReal/lexer_peek_real/g"
+:'<,'>s/LexerSkipWhitespaces/lexer_skip_whitespaces/g
+|2,0,1767583597,,"'<,'>s/LexerSkipWhitespaces/lexer_skip_whitespaces/g"
+:s/
+|2,0,1767583546,,"s/"
+:'<,'>s/TokenArrayPush/token_array_push/g
+|2,0,1767583524,,"'<,'>s/TokenArrayPush/token_array_push/g"
+:'<,'>s/LexerAdvance/lexer_advance/g
+|2,0,1767583498,,"'<,'>s/LexerAdvance/lexer_advance/g"
+:'<,'>s/LexerPeek/lexer_peek/g
+|2,0,1767583484,,"'<,'>s/LexerPeek/lexer_peek/g"
+:'<,'>s/TokenArray/token_array/g
+|2,0,1767583391,,"'<,'>s/TokenArray/token_array/g"
+:'<,'>s/pointToWord/point_to_word/g
+|2,0,1767583348,,"'<,'>s/pointToWord/point_to_word/g"
+:'<,'>s/Array/array_/g
+|2,0,1767583258,,"'<,'>s/Array/array_/g"
+:'<,'>s/token/token_t
+|2,0,1767583226,,"'<,'>s/token/token_t"
+:'<,'>s/Token/token_
+|2,0,1767583212,,"'<,'>s/Token/token_"
+:'<,'>s/TokenArrayPush/token
+|2,0,1767583186,,"'<,'>s/TokenArrayPush/token"
+:'<,'>s/LexerNext/lexer_next/g
+|2,0,1767583114,,"'<,'>s/LexerNext/lexer_next/g"
+:'<,'>s/LexerAddToken/lexer_add_token/g
+|2,0,1767583092,,"'<,'>s/LexerAddToken/lexer_add_token/g"
+:'<,'>s/LexerAtEnd/lexer_at_end/g
+|2,0,1767583074,,"'<,'>s/LexerAtEnd/lexer_at_end/g"
+:'<,'>s/token_ /token_t /g
+|2,0,1767582925,,"'<,'>s/token_ /token_t /g"
+:'<,'>s/token_t/token_/g
+|2,0,1767582912,,"'<,'>s/token_t/token_/g"
+:'<,'>s/(parser_)/(parser_t)/g
+|2,0,1767582896,,"'<,'>s/(parser_)/(parser_t)/g"
+:'<,'>s/parser_ /parser_t /g
+|2,0,1767582873,,"'<,'>s/parser_ /parser_t /g"
+:'<,'>s/parser_t/parser_/g
+|2,0,1767582854,,"'<,'>s/parser_t/parser_/g"
+:/parse
+|2,0,1767582791,,"/parse"
+:'<,'>s/parser_t/parser_/ŋ
+|2,0,1767582774,,"'<,'>s/parser_t/parser_/ŋ"
+:'<,'>s/parser_t
+|2,0,1767582754,,"'<,'>s/parser_t"
+:'<,'>s/TokenArray /token_array_t /g
+|2,0,1767582665,,"'<,'>s/TokenArray /token_array_t /g"
+:'<,'>s/Node /ast_node_t /g
+|2,0,1767582630,,"'<,'>s/Node /ast_node_t /g"
+:'<,'>s/Parser /parser_t /g
+|2,0,1767582577,,"'<,'>s/Parser /parser_t /g"
+:'<,'>s/Lexer /lexer_t /g
+|2,0,1767582566,,"'<,'>s/Lexer /lexer_t /g"
+:'<,'>s/Token /token_t /g
+|2,0,1767582554,,"'<,'>s/Token /token_t /g"
+:'<,'>s/Operand /operand_t /g
+|2,0,1767582473,,"'<,'>s/Operand /operand_t /g"
+:'<,'>s/Command /command_t /g
+|2,0,1767582355,,"'<,'>s/Command /command_t /g"
+:'<,'>s/Command;/command_t;/g
+|2,0,1767582324,,"'<,'>s/Command;/command_t;/g"
+:'<,'>s/Lexer;/lexer_t;/g
+|2,0,1767582277,,"'<,'>s/Lexer;/lexer_t;/g"
+:'<,'>s/struct lexer/struct lexer {/g
+|2,0,1767582261,,"'<,'>s/struct lexer/struct lexer {/g"
+:'<,'>s/struct lexer_t {/ struct lexer /g
+|2,0,1767582237,,"'<,'>s/struct lexer_t {/ struct lexer /g"
+:'<,'>s/(Lexer)/(lexer_t)/g
+|2,0,1767582153,,"'<,'>s/(Lexer)/(lexer_t)/g"
+:'<,'>s/TokenType /token_type_t /g
+|2,0,1767582025,,"'<,'>s/TokenType /token_type_t /g"
+:'<,'>s/TOKEN/TOK/g
+|2,0,1767581971,,"'<,'>s/TOKEN/TOK/g"
+:'<,'>s/(TokenArray)/(token_array_t)/g
+|2,0,1767581867,,"'<,'>s/(TokenArray)/(token_array_t)/g"
+:'<,'>s/(Token)/(token_t)/g
+|2,0,1767581850,,"'<,'>s/(Token)/(token_t)/g"
+:'<,'>s/ Token / token_t /g
+|2,0,1767581640,,"'<,'>s/ Token / token_t /g"
+:'<,'>s/TokenArray/token_array_t/g
+|2,0,1767581555,,"'<,'>s/TokenArray/token_array_t/g"
+:'<,'>s/Token/token_t/g
+|2,0,1767581532,,"'<,'>s/Token/token_t/g"
+:%s/}Token
+|2,0,1767581493,,"%s/}Token"
+:'<,'>s/TokenType/token_type_t/g
+|2,0,1767581246,,"'<,'>s/TokenType/token_type_t/g"
+:'<,'>s/Keyword/keyword_t/g
+|2,0,1767581115,,"'<,'>s/Keyword/keyword_t/g"
+:'<,'>s/ast_node_tType/ast_node_type_t/g
+|2,0,1767581013,,"'<,'>s/ast_node_tType/ast_node_type_t/g"
+:'<,'>s/Node/ast_node_t/g
+|2,0,1767580988,,"'<,'>s/Node/ast_node_t/g"
+:'<,'>s/token_tType/token_type_t/g
+|2,0,1767580923,,"'<,'>s/token_tType/token_type_t/g"
+:'<,'>s/Parser/parser_t/g
+|2,0,1767580811,,"'<,'>s/Parser/parser_t/g"
+:'<,'>s/ls/mkfs/g
+|2,0,1767578349,,"'<,'>s/ls/mkfs/g"
+:'<,'>s/.o/.d/g
+|2,0,1767578152,,"'<,'>s/.o/.d/g"
+:'<,'>s/OBJ/DEP/
+|2,0,1767578078,,"'<,'>s/OBJ/DEP/"
+:'<,'>s/bootloader/quarkfs
+|2,0,1767577914,,"'<,'>s/bootloader/quarkfs"
+:'<,'>s/picom//
+|2,0,1767577662,,"'<,'>s/picom//"
+:'<,'>s/fastfetch//
+|2,0,1767567663,,"'<,'>s/fastfetch//"
+:1q
+|2,0,1767566039,,"1q"
+:wq!
+|2,0,1767564628,,"wq!"
 :800
 |2,0,1767211382,,"800"
 :486
 |2,0,1767211270,,"486"
-:q!
-|2,0,1767211242,,"q!"
-:.w
-|2,0,1767210657,,".w"
-:PlugInstall
-|2,0,1767208682,,"PlugInstall"
 :set ft=asm
 |2,0,1767201814,,"set ft=asm"
 :d11
@@ -57,8 +360,6 @@ $
 |2,0,1767138352,,"d 3"
 :w2
 |2,0,1767129706,,"w2"
-:'<,'>q
-|2,0,1767128851,,"'<,'>q"
 :d6
 |2,0,1767121734,,"d6"
 :a
@@ -123,16 +424,12 @@ $
 |2,0,1766951044,,"832"
 :243
 |2,0,1766951022,,"243"
-:i
-|2,0,1766950362,,"i"
 :fn
 |2,0,1766950308,,"fn"
 :W
 |2,0,1766950257,,"W"
 :1000
 |2,0,1766938743,,"1000"
-::q
-|2,0,1766935378,,":q"
 :Plug
 |2,0,1766934548,,"Plug"
 :CocInstall coc-sh
@@ -163,12 +460,8 @@ $
 |2,0,1766783068,,"255"
 :62
 |2,0,1766775362,,"62"
-:we
-|2,0,1766775083,,"we"
 :Q
 |2,0,1766704047,,"Q"
-:>q
-|2,0,1766702983,,">q"
 :'<,'>wq
 |2,0,1766702485,,"'<,'>wq"
 :240
@@ -209,14 +502,8 @@ $
 |2,0,1766422825,,"refresh"
 :reload
 |2,0,1766422823,,"reload"
-:.q
-|2,0,1766422569,,".q"
 :CocInstall coc-clangd coc-snippets coc-json coc-vimlsp
 |2,0,1766422533,,"CocInstall coc-clangd coc-snippets coc-json coc-vimlsp"
-:1q
-|2,0,1766354848,,"1q"
-:wq!
-|2,0,1766344083,,"wq!"
 :81
 |2,0,1766277082,,"81"
 :251
@@ -241,16 +528,208 @@ $
 |2,0,1766015514,,".wq"
 :68
 |2,0,1765998020,,"68"
-:v
-|2,0,1765995738,,"v"
-:ColorHighLight
-|2,0,1765995019,,"ColorHighLight"
-:r
-|2,0,1765994930,,"r"
 
 # Histórico de expressões de busca (mais recente primeiro):
 ? \s\+$
-|2,1,1767213062,,"\\s\\+$"
+|2,1,1767983558,,"\\s\\+$"
+? #
+|2,1,1767980548,,"#"
+? .*
+|2,1,1767978029,,".*"
+? vga_entry
+|2,1,1767976797,,"vga_entry"
+? vga_buffer
+|2,1,1767976773,,"vga_buffer"
+?  i
+|2,1,1767929971,," i"
+? terminal_heigth
+|2,1,1767925381,,"terminal_heigth"
+? y 
+|2,1,1767919026,,"y "
+? TERMINAL_HEIGTH
+|2,1,1767917120,,"TERMINAL_HEIGTH"
+? TERMINAL_WIDTH
+|2,1,1767917068,,"TERMINAL_WIDTH"
+? uint32_t
+|2,1,1767913265,,"uint32_t"
+? uint8_t
+|2,1,1767913250,,"uint8_t"
+? uint16_t
+|2,1,1767913235,,"uint16_t"
+? ".*"
+|2,1,1767900010,,"\".*\""
+? 0x0e
+|2,1,1767841114,,"0x0e"
+? offset 
+|2,1,1767841077,,"offset "
+?  .*
+|2,1,1767840602,," .*"
+? \.
+|2,1,1767839876,,"\\."
+?     
+|2,1,1767837019,,"    "
+? [0-9]\+
+|2,1,1767836982,,"[0-9]\\+"
+? [0-9]
+|2,1,1767836964,,"[0-9]"
+? ISR_NO_ERR_STUB 
+|2,1,1767836940,,"ISR_NO_ERR_STUB "
+? isr_err_stub
+|2,1,1767836490,,"isr_err_stub"
+? isr_no_err_stub
+|2,1,1767836469,,"isr_no_err_stub"
+? \\n
+|2,1,1767829147,,"\\\\n"
+? (e
+|2,1,1767827689,,"(e"
+? eax
+|2,1,1767826040,,"eax"
+? low
+|2,1,1767825239,,"low"
+? U
+|2,1,1767819684,,"U"
+? write
+|2,1,1767816757,,"write"
+? \<buf\>
+|2,1,1767816250,,"\\<buf\\>"
+? terminal_set_cursor
+|2,1,1767814581,,"terminal_set_cursor"
+? );
+|2,1,1767810972,,");"
+? vga_set_cursor
+|2,1,1767810447,,"vga_set_cursor"
+? uint._t
+|2,1,1767804064,,"uint._t"
+? \.o
+|2,1,1767731850,,"\\.o"
+? (TO
+|2,1,1767730290,,"(TO"
+? putchar
+|2,1,1767726969,,"putchar"
+? bootloader
+|2,1,1767725099,,"bootloader"
+? dx
+|2,1,1767719369,,"dx"
+? read
+|2,1,1767633192,,"read"
+? realContent
+|2,1,1767629969,,"realContent"
+? 2)
+|2,1,1767628744,,"2)"
+? 1)
+|2,1,1767628706,,"1)"
+? zyntaRunFileOperands
+|2,1,1767584052,,"zyntaRunFileOperands"
+? lastCommandReturn
+|2,1,1767584017,,"lastCommandReturn"
+? operandCount
+|2,1,1767583954,,"operandCount"
+? longname
+|2,1,1767583933,,"longname"
+? findCommandByLetter
+|2,1,1767583913,,"findCommandByLetter"
+? findCommandByLongName
+|2,1,1767583894,,"findCommandByLongName"
+? parseCommands
+|2,1,1767583849,,"parseCommands"
+? showhelp
+|2,1,1767583838,,"showhelp"
+? showVersion
+|2,1,1767583799,,"showVersion"
+? tokenError
+|2,1,1767583775,,"tokenError"
+? contentsLength
+|2,1,1767583733,,"contentsLength"
+? lexer_peekReal
+|2,1,1767583626,,"lexer_peekReal"
+? LexerSkipWhitespaces
+|2,1,1767583597,,"LexerSkipWhitespaces"
+? TokenArrayPush
+|2,1,1767583524,,"TokenArrayPush"
+? LexerAdvance
+|2,1,1767583498,,"LexerAdvance"
+? LexerPeek
+|2,1,1767583484,,"LexerPeek"
+? TokenArray
+|2,1,1767583391,,"TokenArray"
+? pointToWord
+|2,1,1767583348,,"pointToWord"
+? Array
+|2,1,1767583258,,"Array"
+? Token
+|2,1,1767583212,,"Token"
+? LexerNext
+|2,1,1767583114,,"LexerNext"
+? LexerAddToken
+|2,1,1767583092,,"LexerAddToken"
+? LexerAtEnd
+|2,1,1767583074,,"LexerAtEnd"
+? token_ 
+|2,1,1767582925,,"token_ "
+? token_t
+|2,1,1767582912,,"token_t"
+? (parser_)
+|2,1,1767582896,,"(parser_)"
+? parser_ 
+|2,1,1767582873,,"parser_ "
+? parser_t
+|2,1,1767582854,,"parser_t"
+? TokenArray 
+|2,1,1767582665,,"TokenArray "
+? Node 
+|2,1,1767582630,,"Node "
+? Parser 
+|2,1,1767582577,,"Parser "
+? Lexer 
+|2,1,1767582566,,"Lexer "
+? Token 
+|2,1,1767582554,,"Token "
+? Operand 
+|2,1,1767582473,,"Operand "
+? Command 
+|2,1,1767582355,,"Command "
+? Command;
+|2,1,1767582324,,"Command;"
+? Lexer;
+|2,1,1767582277,,"Lexer;"
+? struct lexer
+|2,1,1767582261,,"struct lexer"
+? struct lexer_t {
+|2,1,1767582237,,"struct lexer_t {"
+? (Lexer)
+|2,1,1767582153,,"(Lexer)"
+? TokenType 
+|2,1,1767582025,,"TokenType "
+? TOKEN
+|2,1,1767581971,,"TOKEN"
+? (TokenArray)
+|2,1,1767581867,,"(TokenArray)"
+? (Token)
+|2,1,1767581850,,"(Token)"
+?  Token 
+|2,1,1767581640,," Token "
+? TokenType
+|2,1,1767581246,,"TokenType"
+? Keyword
+|2,1,1767581115,,"Keyword"
+? ast_node_tType
+|2,1,1767581013,,"ast_node_tType"
+? Node
+|2,1,1767580988,,"Node"
+? token_tType
+|2,1,1767580923,,"token_tType"
+? Parser
+|2,1,1767580811,,"Parser"
+? ls
+|2,1,1767578349,,"ls"
+? .o
+|2,1,1767578152,,".o"
+? OBJ
+|2,1,1767578078,,"OBJ"
+? picom
+|2,1,1767577662,,"picom"
+? fastfetch
+|2,1,1767567663,,"fastfetch"
 ??postfix
 |2,1,1766964088,63,"postfix"
 ??w
@@ -285,2608 +764,2757 @@ $
 # Histórico de linha de debug (mais recente primeiro):
 
 # Registradores:
-"0	CHAR	0
-	resizebarwin(m);
-|3,0,0,0,1,0,1767211521,"resizebarwin(m);"
+"0	LINE	0
+	" Manter o atalho que você gosta para selecionar tudo
+|3,0,0,1,1,0,1767982214,"\" Manter o atalho que você gosta para selecionar tudo"
 ""1	LINE	0
-	sudo make clean install
-|3,1,1,1,1,0,1767213006,"sudo make clean install"
+	    " Garante que .s e .S sejam GAS e não R
+|3,1,1,1,1,0,1767983557,"    \" Garante que .s e .S sejam GAS e não R"
 "2	LINE	0
-	cd ../st
-|3,0,2,1,1,0,1767213006,"cd ../st"
+	  
+|3,0,2,1,1,0,1767983337,"  "
 "3	LINE	0
-	- harfbuzz-devel
-|3,0,3,1,1,0,1767212951,"- harfbuzz-devel"
-"4	CHAR	0
+	# ==============================================================================
+	# 1. OBTER LIMINE (Bootloader)
+	# ==============================================================================
+	echo "[*] Baixando Limine (Binary Release)..."
 	
-		/* draw status first so it can be overdrawn by tags later */
-		if (m == selmon) { /* status is only drawn on selected monitor */
-			tw = m->ww - drawstatusbar(m, bh, stext);
-		}
-|3,0,4,0,5,0,1767211450,"","	/* draw status first so it can be overdrawn by tags later */","	if (m == selmon) { /* status is only drawn on selected monitor */","		tw = m->ww - drawstatusbar(m, bh, stext);","	}"
+	# URLs diretas do raw.githubusercontent (mais estáveis para scripts)
+	BASE_URL="https://raw.githubusercontent.com/limine-bootloader/limine/v8.x-binary"
+	
+	# Função para baixar com verificação
+	download_file() {
+	    echo "    Baixando $1..."
+	    wget --no-check-certificate --show-progress -O "$1" "$BASE_URL/$1"
+	    if [ ! -f "$1" ]; then
+	        echo "[ERRO] Falha ao baixar $1"
+	        exit 1
+	    fi
+	}
+	
+	download_file "limine-bios.sys"
+	download_file "limine-bios-cd.bin"
+	download_file "limine-uefi-cd.bin"
+	download_file "limine"
+	download_file "limine.h"
+	
+	chmod +x limine
+|3,0,3,1,25,0,1767983177,"# ==============================================================================","# 1. OBTER LIMINE (Bootloader)","# ==============================================================================","echo \"[*] Baixando Limine (Binary Release)...\"","","# URLs diretas do raw.githubusercontent (mais estáveis para scripts)","BASE_URL=\"https://raw.githubusercontent.com/limine-bootloader/limine/v8.x-binary\"","",>42
+|<"# Função para baixar com verificação","download_file() {","    echo \"    Baixando $1...\"","    wget --no-check-certificate --show-progress -O \"$1\" \"$BASE_URL/$1\"","    if [ ! -f \"$1\" ]; then","        echo \"[ERRO] Falha ao baixar $1\"","        exit 1","    fi","}","","download_file \"limine-bios.sys\"","download_file \"limine-bios-cd.bin\"","download_file \"limine-uefi-cd.bin\"","download_file \"limine\"","download_file \"limine.h\"","","chmod +x limine"
+"4	LINE	0
+	# ==============================================================================
+	# 1. OBTER LIMINE (Bootloader)
+	# ==============================================================================
+	echo "[*] Baixando Limine (Binary Release)..."
+	# Usamos a branch v8.x-binary para ter os binários prontos
+	wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-bios.sys
+	wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-bios-cd.bin
+	wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-uefi-cd.bin
+	wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine
+	chmod +x limine
+	# Baixar o cabeçalho C do protocolo Limine
+	wget -q https://raw.githubusercontent.com/limine-bootloader/limine/v8.x-binary/limine.h
+|3,0,4,1,12,0,1767983000,"# ==============================================================================","# 1. OBTER LIMINE (Bootloader)","# ==============================================================================","echo \"[*] Baixando Limine (Binary Release)...\"","# Usamos a branch v8.x-binary para ter os binários prontos","wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-bios.sys",>88
+|<"wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-bios-cd.bin","wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine-uefi-cd.bin","wget -q https://github.com/limine-bootloader/limine/raw/v8.x-binary/limine","chmod +x limine","# Baixar o cabeçalho C do protocolo Limine","wget -q https://raw.githubusercontent.com/limine-bootloader/limine/v8.x-binary/limine.h"
 "5	LINE	0
-		# Configurar stack e segmentos
-|3,0,5,1,1,0,1767210560,"	# Configurar stack e segmentos"
+		kernel_panic("coco");
+|3,0,5,1,1,0,1767982340,"	kernel_panic(\"coco\");"
 "6	LINE	0
-		movw $0x9000, %ax
-|3,0,6,1,1,0,1767210554,"	movw $0x9000, %ax"
+	" Manter o atalho que você gosta para selecionar tudo
+	
+|3,0,6,1,2,0,1767982231,"\" Manter o atalho que você gosta para selecionar tudo",""
 "7	LINE	0
-		movw $0, %ax
-|3,0,7,1,1,0,1767210553,"	movw $0, %ax"
+	" Manter o atalho que você gosta para selecionar tudo
+	
+|3,0,7,1,2,0,1767982230,"\" Manter o atalho que você gosta para selecionar tudo",""
 "8	LINE	0
-		tes
-|3,0,8,1,1,0,1767210198,"	tes"
-"9	CHAR	0
-	tb %al, %al
-		jz 0
-|3,0,9,0,2,0,1767210197,"tb %al, %al","	jz 0"
+	
+|3,0,8,1,1,0,1767982214,""
+"9	LINE	0
+	
+|3,0,9,1,1,0,1767982214,""
 "-	CHAR	0
-	{
-|3,0,36,0,1,0,1767132772,"{"
+	(Configuração limpa)
+|3,0,36,0,1,0,1767981989,"(Configuração limpa)"
 
 # variáveis globais:
 
 # Marcas nos arquivos:
-'0  87  0  ~/dotfiles/dwm/config.h
-|4,48,87,0,1767213274,"~/dotfiles/dwm/config.h"
-'1  40  0  ~/dotfiles/README.md
-|4,49,40,0,1767213262,"~/dotfiles/README.md"
-'2  86  41  ~/dotfiles/dwm/config.h
-|4,50,86,41,1767213063,"~/dotfiles/dwm/config.h"
-'3  86  41  ~/dotfiles/dwm/config.h
-|4,51,86,41,1767213063,"~/dotfiles/dwm/config.h"
-'4  33  0  ~/dotfiles/dwm/Makefile
-|4,52,33,0,1767213049,"~/dotfiles/dwm/Makefile"
-'5  44  10  ~/dotfiles/install.sh
-|4,53,44,10,1767213023,"~/dotfiles/install.sh"
-'6  64  0  ~/dotfiles/README.md
-|4,54,64,0,1767213011,"~/dotfiles/README.md"
-'7  64  0  ~/dotfiles/README.md
-|4,55,64,0,1767213011,"~/dotfiles/README.md"
-'8  36  5  ~/dotfiles/install.sh
-|4,56,36,5,1767212934,"~/dotfiles/install.sh"
-'9  36  5  ~/dotfiles/install.sh
-|4,57,36,5,1767212934,"~/dotfiles/install.sh"
+'0  4  4  ~/.vimrc
+|4,48,4,4,1767983559,"~/.vimrc"
+'1  133  0  ~/Projects/Quark/kernel/src/entry.S
+|4,49,133,0,1767983550,"~/Projects/Quark/kernel/src/entry.S"
+'2  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,50,24,38,1767983470,"~/Projects/Quark/kernel/src/graphics.h"
+'3  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,51,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+'4  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,52,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+'5  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,53,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+'6  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,54,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+'7  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,55,25,17,1767983401,"~/Projects/Quark/kernel/src/kmain.c"
+'8  20  0  ~/Projects/Quark/kernel/src/kmain.c
+|4,56,20,0,1767983308,"~/Projects/Quark/kernel/src/kmain.c"
+'9  20  0  ~/Projects/Quark/kernel/src/kmain.c
+|4,57,20,0,1767983308,"~/Projects/Quark/kernel/src/kmain.c"
 
 # Lista de saltos (mais recente primeiro):
--'  87  0  ~/dotfiles/dwm/config.h
-|4,39,87,0,1767213274,"~/dotfiles/dwm/config.h"
--'  86  41  ~/dotfiles/dwm/config.h
-|4,39,86,41,1767213271,"~/dotfiles/dwm/config.h"
--'  40  0  ~/dotfiles/README.md
-|4,39,40,0,1767213262,"~/dotfiles/README.md"
--'  40  0  ~/dotfiles/README.md
-|4,39,40,0,1767213262,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213257,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213257,"~/dotfiles/README.md"
--'  86  41  ~/dotfiles/dwm/config.h
-|4,39,86,41,1767213063,"~/dotfiles/dwm/config.h"
--'  86  41  ~/dotfiles/dwm/config.h
-|4,39,86,41,1767213063,"~/dotfiles/dwm/config.h"
--'  102  11  ~/dotfiles/dwm/config.h
-|4,39,102,11,1767213054,"~/dotfiles/dwm/config.h"
--'  102  11  ~/dotfiles/dwm/config.h
-|4,39,102,11,1767213054,"~/dotfiles/dwm/config.h"
--'  102  11  ~/dotfiles/dwm/config.h
-|4,39,102,11,1767213054,"~/dotfiles/dwm/config.h"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  33  0  ~/dotfiles/dwm/Makefile
-|4,39,33,0,1767213049,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  1  0  ~/dotfiles/dwm/Makefile
-|4,39,1,0,1767213045,"~/dotfiles/dwm/Makefile"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  44  10  ~/dotfiles/install.sh
-|4,39,44,10,1767213023,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767213016,"~/dotfiles/install.sh"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  64  0  ~/dotfiles/README.md
-|4,39,64,0,1767213011,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  38  5  ~/dotfiles/README.md
-|4,39,38,5,1767212938,"~/dotfiles/README.md"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
--'  36  5  ~/dotfiles/install.sh
-|4,39,36,5,1767212934,"~/dotfiles/install.sh"
+-'  4  4  ~/.vimrc
+|4,39,4,4,1767983559,"~/.vimrc"
+-'  1  0  ~/.vimrc
+|4,39,1,0,1767983553,"~/.vimrc"
+-'  133  0  ~/Projects/Quark/kernel/src/entry.S
+|4,39,133,0,1767983550,"~/Projects/Quark/kernel/src/entry.S"
+-'  133  0  ~/Projects/Quark/kernel/src/entry.S
+|4,39,133,0,1767983550,"~/Projects/Quark/kernel/src/entry.S"
+-'  44  27  ~/Projects/Quark/kernel/src/entry.S
+|4,39,44,27,1767983482,"~/Projects/Quark/kernel/src/entry.S"
+-'  44  27  ~/Projects/Quark/kernel/src/entry.S
+|4,39,44,27,1767983482,"~/Projects/Quark/kernel/src/entry.S"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983470,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983470,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983470,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983470,"~/Projects/Quark/kernel/src/graphics.h"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  36  13  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,36,13,1767983431,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  54  30  ~/Projects/Quark/kernel/src/graphics.c
+|4,39,54,30,1767983419,"~/Projects/Quark/kernel/src/graphics.c"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  24  38  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,24,38,1767983417,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  10  27  ~/Projects/Quark/kernel/src/graphics.h
+|4,39,10,27,1767983410,"~/Projects/Quark/kernel/src/graphics.h"
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  1  0  ~/Projects/Quark/kernel/src/graphics.
+|4,39,1,0,1767983408,"~/Projects/Quark/kernel/src/graphics."
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
+-'  25  17  ~/Projects/Quark/kernel/src/kmain.c
+|4,39,25,17,1767983405,"~/Projects/Quark/kernel/src/kmain.c"
 
 # Histórico de marcas nos arquivos (mais recente primeiro):
 
-> ~/dotfiles/dwm/config.h
-	*	1767213274	0
-	"	87	0
-	^	86	42
-	.	86	41
-	+	21	0
-	+	20	45
-	+	4	38
-	+	10	38
-	+	4	38
-	+	57	0
-	+	10	38
-	+	92	11
-	+	100	22
-	+	102	12
-	+	86	41
-
-> ~/dotfiles/README.md
-	*	1767213262	0
-	"	40	0
-	^	64	0
-	.	65	0
-	+	1	2
-	+	35	0
-	+	34	1
-	+	112	38
-	+	113	3
-	+	34	13
-	+	82	11
-	+	60	0
-	+	59	4
-	+	99	4
-	+	17	0
-	+	16	8
-	+	17	0
-	+	116	44
-	+	117	0
-	+	120	0
-	+	122	0
-	+	120	5
-	+	8	5
-	+	8	0
-	+	8	5
-	+	9	0
-	+	32	0
-	+	33	15
-	+	13	10
-	+	27	7
-	+	33	0
-	+	42	10
-	+	64	0
-	+	65	0
-
-> ~/dotfiles/dwm/Makefile
-	*	1767213047	0
-	"	33	0
-
-> ~/dotfiles/install.sh
-	*	1767213023	0
-	"	44	10
-	^	44	11
-	.	44	10
-	+	34	22
-	+	35	0
-	+	3	0
-	+	36	5
-	+	44	10
-
-> ~/dotfiles/dwm/dwm.c
-	*	1767211533	0
-	"	919	15
-	^	920	0
-	.	920	0
-	+	490	34
-	+	914	0
-	+	921	0
-	+	920	0
-
-> ~/dotfiles/dwm/dwm.c.rej
-	*	1767211484	0
-	"	1	0
-	.	4	0
-	+	4	0
-
-> ~/projects/QuarkOS/bootsector.S
-	*	1767210828	0
-	"	1	0
-	^	22	51
-	.	22	50
-	+	1	0
-	+	25	5
-	+	9	31
-	+	10	1
-	+	10	4
-	+	12	2
-	+	10	4
-	+	12	28
-	+	10	8
-	+	12	23
-	+	12	13
-	+	14	6
-	+	10	8
-	+	14	7
-	+	12	27
-	+	14	13
-	+	3	0
-	+	45	5
-	+	46	9
-	+	10	11
-	+	14	12
-	+	12	13
-	+	5	6
-	+	24	3
-	+	25	8
-	+	10	8
-	+	14	10
-	+	24	4
-	+	27	0
-	+	26	0
-	+	28	10
-	+	32	11
-	+	35	17
-	+	39	1
-	+	30	0
-	+	32	1
-	+	32	5
-	+	32	1
-	+	35	1
-	+	35	11
-	+	36	1
-	+	37	0
-	+	40	3
-	+	43	29
-	+	21	0
-	+	20	18
-	+	35	5
-	+	19	4
-	+	36	0
-	+	31	5
-	+	32	9
-	+	32	12
-	+	33	5
-	+	10	11
-	+	14	7
-	+	12	15
-	+	14	12
-	+	12	14
-	+	19	5
-	+	10	12
-	+	12	15
-	+	9	3
-	+	15	3
-	+	12	14
-	+	10	8
-	+	30	5
-	+	36	14
-	+	33	4
-	+	37	16
-	+	33	19
-	+	3	6
-	+	10	0
-	+	13	0
-	+	14	12
-	+	10	13
-	+	13	0
-	+	29	9
-	+	38	8
-	+	43	31
-	+	42	18
-	+	19	6
-	+	17	20
-	+	22	50
-
-> ~/projects/QuarkOS/Makefile
-	*	1767210798	0
-	"	14	25
-	^	14	26
-	.	14	25
-	+	28	0
-	+	4	0
-	+	4	8
-	+	4	0
-	+	6	0
-	+	8	21
-	+	12	6
-	+	8	0
-	+	4	0
-	+	12	0
-	+	11	0
-	+	8	29
-	+	9	0
-	+	13	35
-	+	25	9
-	+	24	25
-	+	28	0
-	+	12	0
-	+	22	0
-	+	25	11
-	+	22	39
-	+	27	21
-	+	18	5
-	+	19	25
-	+	18	19
-	+	13	28
-	+	14	36
-	+	15	0
-	+	14	1
-	+	16	0
-	+	15	27
-	+	14	25
-
 > ~/.vimrc
-	*	1767208730	0
-	"	28	31
-	^	28	32
-	.	28	31
+	*	1767983559	0
+	"	4	4
+	.	3	0
+	+	1	19
+	+	1	0
+	+	1	8
+	+	1	1
+	+	1	0
+	+	1	41
+	+	1	50
+	+	1	30
+	+	1	3
+	+	1	0
+	+	1	8
+	+	1	0
+	+	1	20
+	+	1	24
+	+	1	25
+	+	1	32
+	+	1	17
+	+	1	5
+	+	1	0
+	+	1	5
+	+	1	11
+	+	1	12
+	+	1	11
+	+	1	12
+	+	1	33
+	+	1	56
+	+	1	18
+	+	1	74
+	+	1	0
+	+	1	57
+	+	1	66
+	+	1	8
+	+	1	37
+	+	1	0
+	+	1	58
+	+	1	74
+	+	1	0
+	+	1	24
+	+	1	0
+	+	1	28
+	+	1	0
+	+	1	25
+	+	1	0
+	+	1	27
+	+	1	0
+	+	1	29
+	+	1	0
+	+	1	53
+	+	1	0
+	+	1	1
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	34
+	+	1	26
+	+	1	18
+	+	1	23
+	+	1	31
+	+	1	23
+	+	1	0
+	+	19	0
+	+	1	0
+	+	7	0
+	+	15	19
+	+	16	8
+	+	35	24
+	+	26	21
+	+	23	28
+	+	38	18
+	+	47	0
+	+	53	0
+	+	52	0
 	+	62	0
-	+	62	19
-	+	55	16
-	+	55	0
-	+	57	0
-	+	58	0
-	+	59	0
-	+	60	0
 	+	61	0
-	+	62	0
-	+	14	0
-	+	82	0
-	+	16	6
-	+	91	85
-	+	92	5
-	+	92	0
-	+	17	22
-	+	17	0
-	+	129	0
-	+	91	0
-	+	92	0
-	+	62	19
+	+	64	17
 	+	64	0
-	+	62	19
-	+	64	0
-	+	62	19
-	+	64	0
-	+	11	0
-	+	17	29
-	+	18	0
-	+	62	19
-	+	63	0
-	+	137	8
-	+	138	1
-	+	138	0
-	+	139	0
-	+	18	41
-	+	139	50
-	+	139	30
-	+	139	3
-	+	139	0
-	+	139	8
-	+	139	0
-	+	139	20
-	+	139	24
-	+	139	25
-	+	139	32
-	+	139	17
-	+	140	17
-	+	92	5
+	+	83	32
+	+	89	21
+	+	106	0
+	+	127	0
+	+	122	21
+	+	125	73
+	+	15	0
+	+	89	12
 	+	93	0
-	+	139	0
-	+	108	0
-	+	106	5
-	+	95	11
-	+	103	12
-	+	104	11
-	+	105	12
-	+	139	33
-	+	139	56
-	+	140	18
-	+	146	74
-	+	146	0
-	+	146	57
-	+	146	66
-	+	146	8
-	+	18	37
-	+	146	0
-	+	146	58
-	+	146	74
-	+	146	0
-	+	141	0
-	+	142	0
-	+	143	0
-	+	38	0
-	+	80	0
-	+	20	24
-	+	54	0
-	+	98	28
-	+	95	0
-	+	98	25
-	+	95	0
-	+	95	27
-	+	95	0
-	+	96	29
+	+	99	18
+	+	94	0
 	+	95	0
 	+	96	0
-	+	98	53
-	+	99	0
-	+	100	1
-	+	117	0
-	+	117	5
-	+	24	0
-	+	22	5
-	+	117	0
-	+	158	34
-	+	23	26
-	+	28	18
-	+	31	23
-	+	28	31
-
-> ~/.xinitrc
-	*	1767208579	0
-	"	5	21
-	^	5	22
-	.	5	21
-	+	4	0
-	+	12	7
-	+	7	7
-	+	11	0
-	+	7	4
-	+	13	12
-	+	15	0
-	+	12	13
-	+	14	3
-	+	13	4
-	+	5	11
-	+	5	18
-	+	10	54
-	+	7	10
-	+	7	0
-	+	5	21
-
-> ~/projects/QuarkOS/bootsector.s
-	*	1767207383	0
-	"	1	0
-	^	12	6
-	.	12	5
-	+	1	14
-	+	2	34
-	+	3	0
-	+	3	5
-	+	14	0
-	+	6	14
-	+	14	17
-	+	15	11
-	+	7	7
-	+	9	15
-	+	12	5
-
-> ~/.var/app/org.vinegarhq.Sober/config/sober/config.json
-	*	1767202609	0
-	"	18	45
-	^	18	46
-	.	18	45
-	+	23	21
-	+	18	45
-
-> ~/sober
-	*	1767201983	0
-	"	3	30
-	^	3	31
-	.	3	30
-	+	3	30
-
-> ~/projects/QuarkOS/bootsector.asm
-	*	1767200518	0
-	"	1	0
-	^	1	0
-	.	1	0
-	+	1	0
-
-> ~/projects/Zynta/src/zynta.c
-	*	1767199673	0
-	"	77	0
-	^	76	11
-	.	76	10
-	+	17	14
-	+	2	7
-	+	77	0
-	+	82	0
-	+	76	10
-
-> ~/projects/Zynta/src/zynta.h
-	*	1767199650	0
-	"	2	7
-	^	2	8
-	.	2	7
-	+	2	7
-
-> ~/projects/Zynta/src/main.c
-	*	1767199476	0
-	"	20	14
-	^	20	15
-	.	20	14
-	+	20	14
-
-> ~/projects/Zynta/Makefile
-	*	1767199452	0
-	"	56	52
-	^	56	53
-	.	56	52
-	+	51	16
-	+	56	52
-
-> ~/projects/Zynta/README.md
-	*	1767199414	0
-	"	20	42
-	^	20	43
-	.	20	42
-	+	1	6
-	+	21	7
-	+	30	6
-	+	21	3
-	+	20	42
-
-> ~/projects/VulcanoOS/LICENSE
-	*	1767199205	0
-	"	1	0
-	^	1	0
-	.	1	0
-	+	1	0
-
-> ~/projects/VulcanoOS/Makefile
-	*	1767199174	0
-	"	1	0
-	^	4	0
-	.	1	0
-	+	3	0
-	+	1	0
-
-> ~/projects/Potato/src/parser/parser.c
-	*	1767142758	0
-	"	48	1
-	^	5	19
-	.	5	18
-	+	1	0
-	+	9	0
-	+	8	17
-	+	4	3
-	+	5	0
-	+	7	27
-	+	5	0
-	+	5	18
-
-> ~/projects/Potato/src/potato.c
-	*	1767142046	0
-	"	75	32
-	^	75	33
-	.	76	0
-	+	46	10
-	+	46	15
-	+	46	70
-	+	46	9
-	+	46	13
-	+	46	19
-	+	46	69
-	+	46	40
-	+	46	47
-	+	46	36
-	+	46	9
-	+	46	70
-	+	46	53
-	+	46	9
-	+	46	70
-	+	46	9
-	+	46	65
-	+	46	62
-	+	46	25
-	+	46	47
-	+	46	10
-	+	46	18
-	+	46	9
-	+	46	33
-	+	46	12
-	+	46	9
-	+	46	26
-	+	46	9
-	+	46	90
-	+	46	9
-	+	46	67
-	+	46	19
-	+	46	31
-	+	46	37
-	+	46	9
-	+	46	47
-	+	46	25
-	+	46	23
-	+	46	45
-	+	46	23
-	+	46	10
-	+	46	9
-	+	97	50
 	+	98	0
-	+	97	50
 	+	99	0
-	+	104	24
-	+	104	12
-	+	106	0
-	+	104	5
-	+	103	0
-	+	106	0
-	+	99	12
-	+	101	5
-	+	100	1
-	+	105	22
-	+	46	28
-	+	46	9
-	+	42	21
-	+	43	0
-	+	45	6
-	+	44	1
-	+	17	23
-	+	18	22
-	+	19	25
-	+	21	0
-	+	22	17
-	+	44	0
-	+	23	11
+	+	98	0
+	+	96	0
+	+	95	0
+	+	89	0
+	+	5	0
+	+	4	10
+	+	3	0
+
+> ~/Projects/Quark/kernel/src/entry.S
+	*	1767983550	0
+	"	133	0
+	^	56	32
+	.	56	31
+	+	104	14
+	+	110	10
+	+	102	7
+	+	111	0
+	+	128	0
+	+	112	0
+	+	104	0
+	+	105	0
+	+	104	7
+	+	115	11
+	+	116	17
+	+	118	10
+	+	128	0
+	+	120	10
+	+	126	11
+	+	120	7
+	+	124	13
+	+	128	0
+	+	101	0
+	+	102	0
+	+	138	0
+	+	135	8
+	+	136	18
+	+	95	11
+	+	20	50
+	+	76	12
+	+	78	17
+	+	76	25
+	+	78	0
+	+	20	51
+	+	23	1
+	+	20	60
 	+	24	0
-	+	44	1
+	+	20	51
+	+	34	13
+	+	25	0
+	+	35	9
+	+	60	0
+	+	27	11
+	+	26	17
+	+	30	5
+	+	27	1
+	+	26	12
+	+	27	13
+	+	29	0
+	+	30	0
+	+	79	24
+	+	30	28
+	+	31	26
+	+	78	0
+	+	77	23
+	+	20	70
+	+	36	0
+	+	20	53
+	+	36	12
+	+	20	68
+	+	43	18
 	+	44	0
-	+	25	24
-	+	26	19
-	+	39	14
-	+	33	2
-	+	27	0
-	+	26	23
-	+	29	24
-	+	32	23
-	+	33	9
-	+	33	7
-	+	36	9
-	+	33	9
-	+	34	20
-	+	35	15
-	+	39	14
-	+	40	0
-	+	31	0
-	+	44	14
-	+	46	44
-	+	46	34
-	+	46	21
-	+	46	0
-	+	47	0
-	+	73	0
-	+	75	32
-	+	74	0
-	+	76	0
-
-> ~/projects/Potato/src/parser/node.h
-	*	1767141839	0
-	"	4	2
-	^	4	3
-	.	4	2
-	+	1	3
-	+	4	2
-
-> ~/projects/Potato/src/parser/parser.h
-	*	1767141761	0
-	"	17	33
-	^	17	34
-	.	17	33
-	+	4	3
-	+	19	0
-	+	6	0
-	+	9	0
-	+	15	0
-	+	9	0
-	+	11	0
-	+	16	41
-	+	16	40
-	+	17	0
-	+	16	0
-	+	19	0
-	+	17	0
-	+	19	0
-	+	17	34
-	+	17	0
-	+	18	0
-	+	9	15
-	+	17	33
-
-> ~/projects/Potato/src/lexer/keywords.h
-	*	1767141087	0
-	"	17	1
-	^	16	28
-	.	14	0
-	+	10	0
-	+	6	16
-	+	10	16
-	+	12	0
-	+	14	20
-	+	18	15
-	+	18	17
-	+	19	16
-	+	18	0
-	+	17	0
-	+	15	62
-	+	16	27
-	+	14	0
-
-> ~/projects/Potato/src/lexer/token.h
-	*	1767141007	0
-	"	47	18
-	^	56	26
-	.	56	25
-	+	19	0
-	+	27	0
-	+	24	21
-	+	26	19
-	+	21	0
-	+	20	12
-	+	42	0
-	+	41	13
-	+	39	9
-	+	41	29
-	+	37	0
-	+	31	0
-	+	28	23
-	+	31	0
+	+	43	10
 	+	45	0
-	+	44	21
-	+	34	0
-	+	33	33
-	+	76	0
-	+	77	40
+	+	82	24
+	+	45	25
+	+	46	8
+	+	83	21
+	+	84	2
+	+	82	2
+	+	84	21
+	+	47	16
+	+	50	8
+	+	84	21
+	+	50	22
+	+	59	0
+	+	53	0
+	+	48	4
+	+	58	8
+	+	59	10
+	+	42	14
+	+	48	9
 	+	55	0
-	+	54	29
-	+	53	24
-	+	57	0
-	+	56	25
-	a	35	7
+	+	53	6
+	+	55	0
+	+	53	13
+	+	57	9
+	+	46	5
+	+	20	0
+	+	20	52
+	+	20	51
+	+	21	0
+	+	52	9
+	+	9	16
+	+	27	17
+	+	49	15
+	+	48	10
+	+	38	19
+	+	39	19
+	+	41	0
+	+	44	17
+	+	38	23
+	+	44	22
+	+	56	31
 
-> ~/projects/Potato/src/potato.
-	*	1767138685	0
+> ~/Projects/Quark/kernel/src/graphics.h
+	*	1767983470	0
+	"	24	38
+	^	19	28
+	.	7	0
+	+	11	0
+	+	11	29
+	+	24	38
+	+	6	17
+	+	21	24
+	+	23	0
+	+	10	27
+	+	11	28
+	+	21	0
+	+	21	28
+	+	21	0
+	+	11	29
+	+	21	0
+	+	7	0
+	+	9	27
+	+	20	5
+	+	9	28
+	+	11	29
+	+	14	29
+	+	12	30
+	+	14	27
+	+	17	29
+	+	15	2
+	+	20	0
+	+	15	30
+	+	16	28
+	+	17	29
+	+	19	27
+	+	7	0
+
+> ~/Projects/Quark/kernel/src/graphics.c
+	*	1767983430	0
+	"	36	13
+	.	48	0
+	+	5	19
+	+	47	0
+	+	58	0
+	+	48	52
+	+	55	1
+	+	49	0
+	+	6	0
+	+	7	21
+	+	9	41
+	+	52	28
+	+	57	0
+	+	48	0
+
+> ~/Projects/Quark/kernel/src/graphics.
+	*	1767983408	0
 	"	1	0
 
-> ~/projects/Potato/src/lexer/token.c
-	*	1767138671	0
-	"	134	31
-	^	134	31
-	.	134	30
-	+	101	38
-	+	100	52
-	+	100	47
-	+	100	33
-	+	15	0
-	+	15	32
-	+	16	42
-	+	34	33
-	+	34	46
+> ~/Projects/Quark/kernel/src/kmain.c
+	*	1767983404	0
+	"	25	17
+	^	25	18
+	.	25	17
+	+	13	1
+	+	33	0
 	+	34	0
-	+	18	21
-	+	18	44
-	+	19	23
-	+	20	14
-	+	20	22
-	+	20	47
-	+	21	26
-	+	21	41
-	+	21	25
-	+	34	29
-	+	56	3
-	+	57	0
-	+	34	11
-	+	34	28
-	+	57	1
-	+	57	0
-	+	56	0
-	+	21	0
-	+	20	0
-	+	19	0
-	+	19	22
-	+	18	20
+	+	13	1
+	+	33	0
+	+	30	16
+	+	33	0
 	+	34	0
-	+	22	35
-	+	23	19
-	+	22	32
-	+	23	31
-	+	24	29
-	+	25	31
-	+	26	30
-	+	27	31
-	+	28	34
-	+	29	31
-	+	30	33
-	+	31	36
-	+	32	37
-	+	33	36
-	+	58	0
-	+	55	0
-	+	35	46
-	+	36	38
-	+	37	36
-	+	38	35
-	+	39	38
-	+	40	40
-	+	41	43
-	+	42	19
-	+	43	0
-	+	44	13
-	+	43	29
-	+	43	20
-	+	43	17
-	+	45	10
-	+	44	7
-	+	46	22
-	+	46	20
-	+	48	13
-	+	9	20
-	+	10	18
-	+	48	32
-	+	49	32
-	+	50	32
-	+	51	32
-	+	52	34
-	+	53	29
-	+	53	33
-	+	46	0
-	+	54	30
-	+	100	33
-	+	101	28
-	+	102	26
-	+	43	0
-	+	42	18
-	+	44	6
-	+	45	17
-	+	46	0
-	+	47	8
-	+	42	0
-	+	68	0
-	+	70	0
-	+	16	40
-	+	17	9
-	+	134	30
-
-> ~/projects/Potato/Makefile
-	*	1767134271	0
-	"	48	18
-	^	8	19
-	.	8	18
-	+	30	19
-	+	30	30
-	+	30	39
-	+	30	48
-	+	30	38
-	+	30	17
-	+	62	29
-	+	63	39
-	+	64	59
-	+	10	0
-	+	41	0
-	+	44	8
-	+	44	21
-	+	46	18
-	+	30	31
-	+	31	0
-	+	30	0
-	+	25	0
-	+	30	0
-	+	16	0
-	+	31	0
-	+	16	20
-	+	16	54
-	+	25	20
-	+	26	20
-	+	27	20
+	+	34	35
+	+	34	34
+	+	13	1
+	+	34	31
+	+	13	18
+	+	13	33
+	+	13	1
+	+	5	0
+	+	6	21
+	+	13	1
+	+	34	0
+	+	34	18
 	+	28	0
-	+	28	35
-	+	54	0
-	+	55	8
-	+	56	11
-	+	58	37
-	+	62	27
-	+	36	41
-	+	38	4
-	+	16	28
-	+	15	11
-	+	66	23
-	+	62	48
-	+	58	39
-	+	44	9
-	+	45	21
+	+	34	0
+	+	13	43
+	+	13	39
+	+	13	49
+	+	13	35
+	+	13	1
+	+	13	3
+	+	13	26
+	+	13	9
+	+	13	13
+	+	13	1
+	+	13	22
+	+	13	1
+	+	13	53
+	+	34	0
+	+	34	45
+	+	13	1
+	+	13	65
+	+	13	48
+	+	13	18
+	+	34	33
+	+	13	1
+	+	13	0
+	+	13	15
+	+	13	0
+	+	13	1
+	+	13	12
+	+	13	1
+	+	13	17
+	+	13	20
+	+	13	55
+	+	13	10
+	+	13	0
+	+	34	0
+	+	13	0
+	+	37	0
+	+	31	25
+	+	34	47
+	+	35	36
+	+	34	43
+	+	35	39
+	+	37	23
+	+	37	0
+	+	13	31
+	+	13	0
+	+	13	8
+	+	13	19
+	+	13	32
+	+	13	26
+	+	13	30
+	+	13	11
+	+	13	76
+	+	13	0
+	+	13	15
+	+	13	4
+	+	13	0
+	+	13	1
+	+	28	0
+	+	13	0
+	+	35	32
+	+	34	42
+	+	6	16
+	+	7	0
+	+	8	0
+	+	6	0
+	+	5	0
+	+	36	0
+	+	14	10
+	+	37	0
+	+	14	0
+	+	15	13
+	+	15	0
+	+	6	0
+	+	17	11
+	+	20	0
+	+	16	0
+	+	20	0
+	+	20	17
+	+	25	17
+
+> ~/microkernel/build.sh
+	*	1767983179	0
+	"	23	0
+	^	23	0
+	.	24	0
+	+	747	77
+	+	79	0
+	+	23	80
+	+	23	14
+	+	23	0
+	+	55	14
+	+	23	0
 	+	24	0
-	+	7	29
-	+	44	0
-	+	41	0
-	+	42	18
-	+	45	41
-	+	46	7
-	+	48	42
+
+> ~/oi
+	*	1767982291	0
+	"	20	0
+	^	20	0
+	.	19	54
+	+	21	0
+	+	3	0
+	+	19	54
+
+> ~/Projects/Quark/kernel/src/terminal/terminal.c
+	*	1767981729	0
+	"	126	1
+	^	112	30
+	.	127	0
+	+	22	23
+	+	38	0
+	+	22	18
+	+	38	0
+	+	147	0
+	+	10	15
+	+	145	21
+	+	146	0
+	+	150	0
+	+	147	0
+	+	150	2
+	+	151	0
+	+	146	0
+	+	147	19
+	+	146	37
+	+	147	51
+	+	78	0
+	+	78	1
+	+	79	1
+	+	80	1
+	+	80	37
+	+	80	39
+	+	82	0
+	+	80	37
+	+	80	106
+	+	22	18
+	+	148	92
+	+	148	2
+	+	148	65
+	+	150	0
+	+	17	29
+	+	20	0
+	+	119	19
+	+	133	34
+	+	137	0
+	+	132	43
+	+	131	43
+	+	76	22
+	+	131	0
+	+	108	2
+	+	147	50
+	+	22	0
+	+	147	36
+	+	23	0
+	+	77	9
+	+	82	0
+	+	78	1
+	+	79	1
+	+	80	1
+	+	119	1
+	+	38	62
+	+	57	44
+	+	60	44
+	+	60	48
+	+	61	44
+	+	62	19
+	+	60	45
+	+	61	44
+	+	62	20
+	+	64	1
+	+	65	0
+	+	64	1
+	+	64	0
+	+	62	36
+	+	63	97
+	+	61	0
+	+	140	28
+	+	127	28
+	+	26	30
+	+	27	30
+	+	30	77
+	+	59	0
+	+	27	29
+	+	26	29
+	+	59	21
+	+	66	0
+	+	65	1
+	+	64	2
+	+	63	3
+	+	62	3
+	+	61	2
+	+	60	1
+	+	69	0
+	+	67	24
+	+	24	22
+	+	67	31
+	+	30	0
+	+	12	0
+	+	67	32
+	+	26	29
+	+	131	44
+	+	132	44
+	+	133	34
+	+	136	0
+	+	62	31
+	+	81	84
+	+	82	0
+	+	113	0
+	+	112	29
+	+	127	0
+
+> ~/Projects/Quark/kernel/src/panic.c
+	*	1767981662	0
+	"	76	51
+	^	76	52
+	.	76	52
+	+	7	0
+	+	5	19
+	+	6	21
+	+	77	1
+	+	77	28
+	+	77	0
+	+	36	0
+	+	7	16
+	+	36	9
+	+	36	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	7	14
+	+	77	0
+	+	74	23
+	+	48	19
+	+	70	23
+	+	51	24
+	+	48	24
+	+	53	0
+	+	49	0
+	+	56	19
+	+	70	23
+	+	59	24
+	+	63	19
+	+	70	19
+	+	70	23
+	+	67	0
+	+	66	24
+	+	71	0
+	+	68	0
+	+	39	0
+	+	77	0
+	+	78	0
+	+	39	27
+	+	76	55
+	+	78	0
+	+	79	24
+	+	39	0
+	+	76	52
+
+> ~/Projects/Quark/kernel/Makefile
+	*	1767980801	0
+	"	76	14
+	^	20	57
+	.	20	57
+	+	27	4
+	+	27	11
+	+	26	12
+	+	25	2
+	+	34	35
+	+	43	56
+	+	44	109
+	+	39	8
+	+	42	51
+	+	40	0
+	+	42	0
+	+	43	0
+	+	44	53
+	+	47	0
+	+	43	8
+	+	44	51
+	+	44	53
+	+	40	50
+	+	42	50
+	+	44	50
+	+	46	50
+	+	36	29
+	+	37	26
+	+	49	0
+	+	48	17
+	+	76	0
+	+	18	23
+	+	55	17
+	+	44	53
+	+	44	54
+	+	45	53
 	+	46	0
-	+	45	48
-	+	48	49
-	+	36	55
-	+	38	18
-	+	36	34
-	+	59	17
-	+	62	15
-	+	7	20
+	+	45	0
+	+	40	53
+	+	40	54
+	+	41	53
+	+	42	0
+	+	41	0
+	+	60	27
+	+	61	9
+	+	62	1
+	+	61	40
+	+	63	39
+	+	18	68
+	+	20	55
+	+	19	18
+	+	21	42
+	+	18	61
+	+	21	50
+	+	29	0
+	+	27	17
+	+	33	0
+	+	18	26
+	+	27	0
+	+	18	10
+	+	51	31
+	+	55	1
+	+	57	1
+	+	58	1
+	+	60	1
+	+	55	27
+	+	56	38
+	+	58	20
+	+	56	42
+	+	58	31
+	+	66	1
+	+	68	1
+	+	71	1
+	+	72	1
+	+	66	49
+	+	67	28
+	+	71	52
+	+	72	0
+	+	73	0
+	+	56	20
+	+	58	20
+	+	67	21
+	+	72	11
+	+	55	0
+	+	66	0
+	+	71	1
+	+	67	19
+	+	72	20
+	+	56	19
+	+	58	19
+	+	51	19
+	+	56	19
+	+	58	19
+	+	56	19
+	+	51	19
+	+	29	40
+	+	29	12
+	+	29	29
+	+	30	22
+	+	30	20
+	+	30	21
+	+	31	0
+	+	20	77
+	+	32	10
+	+	20	57
+
+> ~/Projects/Quark/kernel/src/M
+	*	1767980761	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/panic.
+	*	1767980518	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/panic.h
+	*	1767980480	0
+	"	14	0
+	^	14	0
+	.	15	0
+	+	15	34
+	+	6	0
+	+	6	16
+	+	8	21
+	+	13	9
+	+	6	17
+	+	15	0
+
+> ~/Projects/Quark/kernel/src/kdefs.h
+	*	1767980439	0
+	"	21	0
+	.	22	0
+	+	8	33
+	+	19	49
+	+	15	0
+	+	19	23
+	+	15	46
+	+	19	38
+	+	15	25
+	+	10	27
+	+	18	29
+	+	19	25
+	+	15	38
+	+	11	0
+	+	20	0
+	+	13	42
+	+	14	0
+	+	17	0
+	+	15	35
+	+	16	23
+	+	10	36
+	+	16	29
+	+	20	24
+	+	22	8
+	+	6	0
+	+	22	0
+
+> ~/Projects/Quark/kernel/src/terminal/char.h
+	*	1767977705	0
+	"	14	0
+	^	15	20
+	.	14	0
+	+	10	18
+	+	9	19
+	+	18	50
+	+	6	20
+	+	10	0
+	+	7	0
+	+	10	9
+	+	16	5
+	+	10	22
+	+	13	22
+	+	15	19
+	+	14	0
+
+> ~/Projects/Quark/kernel/src/kkm
+	*	1767977050	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/terminal/terminal.h
+	*	1767976412	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/terminal.h
+	*	1767976409	0
+	"	34	0
+	^	33	37
+	.	33	36
+	+	7	26
+	+	5	12
+	+	6	0
+	+	36	46
+	+	37	29
+	+	38	25
+	+	42	34
+	+	40	49
+	+	40	47
+	+	38	27
+	+	6	0
+	+	6	17
+	+	38	32
+	+	35	37
+	+	9	27
+	+	26	0
+	+	7	24
+	+	7	23
+	+	9	20
+	+	10	19
+	+	11	20
+	+	12	19
+	+	13	18
+	+	14	22
+	+	15	20
+	+	16	24
+	+	15	21
+	+	7	25
+	+	18	23
+	+	19	24
+	+	20	24
+	+	21	24
+	+	22	23
+	+	23	26
+	+	24	21
+	+	25	20
+	+	39	23
+	+	29	16
+	+	26	0
+	+	30	0
+	+	33	22
+	+	7	0
+	+	9	0
+	+	7	17
+	+	29	8
+	+	30	19
+	+	31	19
+	+	29	6
+	+	30	6
+	+	31	6
+	+	30	0
+	+	31	25
+	+	40	48
+	+	33	38
+	+	33	36
+
+> ~/Projects/Quark/logo.h
+	*	1767974701	0
+	"	245	0
+
+> ~/Projects/Quark/logo.
+	*	1767974685	0
+	"	1	0
+
+> ~/Downloads/quark.h
+	*	1767930171	0
+	"	321	1
+
+> ~/Projects/Quark/kernel/src/quark.h
+	*	1767929878	0
+	"	806	0
+	.	2	0
+	+	2	0
+
+> ~/Projects/Quark/kernel/src/terminal.c
+	*	1767928999	0
+	"	1	0
+	^	1	0
+	.	102	0
+	+	1	18
+	+	106	0
+	+	1	3
+	+	5	19
+	+	8	18
+	+	6	0
+	+	5	18
+	+	23	0
+	+	24	0
+	+	34	41
+	+	35	32
+	+	23	47
+	+	39	42
+	+	18	0
+	+	19	0
+	+	9	19
+	+	59	75
+	+	64	75
+	+	98	0
+	+	97	27
+	+	98	21
+	+	103	0
+	+	89	32
+	+	90	0
+	+	92	24
+	+	42	0
+	+	44	33
+	+	101	23
+	+	101	27
+	+	102	0
+
+> ~/Projects/Quark/kernel/src/imagem.h
+	*	1767928495	0
+	"	17	22
+
+> ~/Projects/Quark/README.h
+	*	1767928377	0
+	"	2	0
+
+> ~/converter/imagem.h
+	*	1767927129	0
+	"	12	41
+
+> ~/converter/main.py
+	*	1767926786	0
+	"	33	24
+	^	33	25
+	.	33	24
+	+	1	0
+	+	7	0
+	+	33	24
+
+> ~/Projects/Quark/Makefile
+	*	1767926565	0
+	"	57	44
+	^	57	45
+	.	57	44
+	+	59	39
+	+	19	25
+	+	19	33
+	+	19	23
+	+	19	0
+	+	21	0
+	+	37	0
+	+	38	0
+	+	63	36
+	+	52	15
+	+	53	1
+	+	59	39
+	+	55	0
+	+	61	80
+	+	57	34
+	+	57	33
+	+	55	33
+	+	57	34
+	+	57	6
+	+	19	22
+	+	19	0
+	+	57	6
+	+	6	15
+	+	43	39
+	+	49	11
+	+	43	45
+	+	45	28
+	+	46	29
+	+	47	55
+	+	48	10
+	+	49	12
+	+	45	6
+	+	46	6
+	+	47	6
+	+	48	6
+	+	49	0
+	+	48	0
+	+	47	0
+	+	46	0
+	+	45	0
+	+	47	62
+	+	48	0
+	+	50	0
+	+	43	101
+	+	45	46
+	+	46	47
+	+	47	73
+	+	48	29
+	+	49	30
+	+	43	65
+	+	39	30
+	+	20	8
+	+	20	28
+	+	20	12
+	+	20	8
+	+	20	0
+	+	21	0
+	+	24	1
+	+	28	1
+	+	24	29
+	+	25	11
+	+	24	19
+	+	25	34
+	+	26	25
+	+	27	0
+	+	31	1
+	+	32	1
+	+	35	1
+	+	31	35
+	+	35	37
+	+	36	0
+	+	35	39
+	+	39	30
+	+	43	1
+	+	45	1
+	+	46	1
+	+	47	1
+	+	48	1
+	+	49	1
+	+	50	1
+	+	43	27
+	+	53	1
+	+	55	1
+	+	53	24
+	+	57	1
+	+	56	1
+	+	56	0
+	+	59	39
+	+	61	0
+	+	59	1
+	+	61	1
+	+	56	30
+	+	58	53
+	+	60	21
+	+	58	50
+	+	61	112
+	+	58	20
+	+	35	19
+	+	47	37
+	+	57	44
+
+> ~/Projects/Quark/kernel/src/terminal/char.c
+	*	1767926094	0
+	"	20	52
+	^	20	53
+	.	20	51
+	+	4	3
+	+	9	16
+	+	6	0
+	+	5	20
+	+	6	20
+	+	10	38
+	+	6	22
+	+	12	11
+	+	7	22
+	+	12	0
+	+	9	0
+	+	15	32
+	+	8	15
+	+	16	6
+	+	13	0
+	+	15	33
+	+	13	0
+	+	13	1
+	+	13	25
+	+	13	0
+	+	10	0
+	+	19	7
+	+	17	20
+	+	20	33
+	+	22	33
+	+	19	21
+	+	6	0
+	+	16	17
+	+	20	27
+	+	22	19
+	+	20	19
+	+	18	34
+	+	16	34
+	+	17	18
+	+	19	24
+	+	14	14
+	+	15	36
+	+	13	24
+	+	16	31
+	+	20	14
+	+	22	14
+	+	20	17
+	+	22	17
+	+	13	0
+	+	14	0
+	+	20	17
+	+	22	24
+	+	20	28
+	+	22	51
+	+	20	51
+
+> ~/Projects/Quark/kernel/src/terminal/char.
+	*	1767917593	0
+	"	1	0
+
+> ~/Projects/Quark-dev/Makefile
+	*	1767909586	0
+	"	61	117
+	^	61	118
+	.	61	117
+	+	61	117
+
+> ~/Projects/Quark/bootloader/Makefile
+	*	1767909023	0
+	"	39	16
+	^	39	17
+	.	39	16
+	+	32	0
+	+	32	18
+	+	40	0
+	+	38	27
+	+	40	0
+	+	38	26
+	+	40	9
+	+	14	9
+	+	14	25
+	+	40	30
+	+	38	0
+	+	40	9
+	+	14	25
+	+	14	8
+	+	38	31
+	+	20	0
+	+	21	0
+	+	22	7
+	+	21	9
+	+	22	0
+	+	21	0
+	+	22	0
+	+	31	62
+	+	47	10
+	+	47	22
+	+	32	14
+	+	47	22
+	+	47	0
+	+	22	29
+	+	31	0
+	+	5	23
+	+	32	0
+	+	22	0
+	+	14	8
+	+	15	0
+	+	17	15
+	+	6	0
+	+	6	12
+	+	17	34
+	+	38	17
+	+	45	16
+	+	32	11
+	+	17	63
+	+	45	25
+	+	17	36
+	+	18	42
+	+	17	35
+	+	45	21
+	+	28	31
+	+	32	21
+	+	36	1
+	+	38	0
+	+	40	1
+	+	36	27
+	+	37	25
+	+	39	23
+	+	43	1
+	+	45	1
+	+	43	30
+	+	43	0
+	+	43	38
+	+	44	27
+	+	45	0
+	+	44	11
+	+	43	0
+	+	36	0
+	+	39	16
+
+> ~/Projects/Quark/kernel/link.ld
+	*	1767908983	0
+	"	14	3
+	^	14	4
+	.	14	4
+	+	11	10
+	+	12	0
+	+	14	0
+	+	13	9
+	+	17	8
+	+	18	0
+	+	19	1
+	+	21	0
+	+	22	0
+	+	21	7
+	+	15	0
+	+	2	0
+	+	8	0
+	+	11	7
+	+	16	8
+	+	20	5
+	+	16	6
+	+	11	6
+	+	11	8
+	+	16	9
+	+	21	0
+	+	9	7
+	+	14	3
+	+	18	6
+	+	14	0
+	+	3	7
+	+	5	22
+	+	14	8
+	+	18	8
+	+	22	4
+	+	18	4
+	+	14	4
+
+> ~/Projects/Quark/README.md
+	*	1767900262	0
+	"	10	0
+	.	11	0
+	+	8	15
 	+	10	7
 	+	11	0
-	+	16	0
-	+	17	21
-	+	18	23
-	+	19	4
-	+	20	26
-	+	21	0
-	+	45	22
-	+	48	20
-	+	18	0
-	+	20	0
-	+	17	5
-	+	62	9
-	+	36	0
-	+	37	27
-	+	38	27
-	+	32	7
-	+	36	34
-	+	32	13
-	+	32	18
-	+	36	0
-	+	32	8
-	+	32	18
-	+	32	20
-	+	36	0
-	+	32	20
-	+	33	12
-	+	36	0
-	+	33	12
-	+	35	0
-	+	34	0
-	+	46	0
-	+	7	10
-	+	37	0
-	+	7	9
-	+	9	0
-	+	7	10
-	+	51	0
-	+	50	23
-	+	8	18
 
-> ~/projects/tomato/src/parser.y
-	*	1767133691	0
-	"	28	4
-	^	11	17
-	.	11	16
-	+	22	18
-	+	15	27
-	+	22	25
-	+	21	6
-	+	22	0
-	+	10	13
-	+	11	0
-	+	14	29
-	+	15	67
-	+	17	13
-	+	11	16
+> ~/Projects/kernel_project/Makefile
+	*	1767899396	0
+	"	4	0
 
-> ~/projects/tomato/src/lexer.l
-	*	1767132883	0
-	"	17	32
-	^	21	33
-	.	21	33
-	+	19	26
-	+	3	0
-	+	2	0
-	+	17	34
-	+	14	31
-	+	13	18
-	+	14	72
-	+	16	14
-	+	13	16
-	+	14	17
-	+	13	17
-	+	17	17
-	+	18	17
-	+	19	8
-	+	20	17
-	+	21	17
-	+	22	17
-	+	16	37
-	+	14	28
-	+	27	28
-	+	30	10
-	+	26	30
-	+	30	10
-	+	14	37
-	+	27	34
-	+	28	0
-	+	7	34
-	+	7	32
-	+	14	68
-	+	29	1
-	+	3	15
-	+	42	0
-	+	29	0
-	+	30	8
-	+	29	0
-	+	32	0
-	+	34	29
-	+	26	32
-	+	35	28
-	+	27	30
-	+	31	0
-	+	30	16
-	+	31	11
-	+	39	11
-	+	15	62
-	+	14	61
-	+	7	30
-	+	35	29
-	+	8	29
-	+	8	27
-	+	16	81
-	+	18	40
-	+	19	23
-	+	20	32
-	+	21	33
-
-> ~/projects/Potato/src/lexer/lexer.c
-	*	1767129799	0
-	"	320	0
-	^	330	2
-	.	319	0
-	+	306	40
-	+	306	10
-	+	307	0
-	+	258	0
-	+	259	13
-	+	258	47
-	+	261	50
-	+	263	13
-	+	265	14
-	+	266	13
-	+	267	50
-	+	270	52
-	+	271	14
-	+	271	13
-	+	233	35
-	+	229	2
-	+	40	43
-	+	45	38
-	+	229	0
-	+	45	39
-	+	229	33
-	+	230	11
-	+	233	47
-	+	234	3
-	+	235	2
-	+	234	2
-	+	233	3
-	+	232	0
-	+	231	23
-	+	233	0
-	+	236	13
-	+	237	37
-	+	239	27
-	+	241	55
-	+	246	14
-	+	247	13
-	+	248	0
-	+	257	14
-	+	248	35
-	+	250	27
-	+	251	14
-	+	257	0
-	+	252	58
-	+	241	53
-	+	280	13
-	+	275	55
-	+	281	13
-	+	282	0
-	+	283	0
-	+	282	55
-	+	284	13
-	+	288	8
-	+	290	13
-	+	288	21
-	+	290	7
-	+	285	37
-	+	286	0
-	+	289	0
-	+	287	25
-	+	283	3
-	+	282	9
-	+	282	0
-	+	283	0
-	+	279	0
-	+	275	33
-	+	276	46
-	+	286	43
-	+	278	15
-	+	280	4
-	+	277	27
-	+	241	40
-	+	242	0
-	+	242	9
-	+	242	3
-	+	244	0
-	+	243	23
-	+	252	40
-	+	253	0
-	+	255	4
-	+	254	23
-	+	12	20
-	+	330	2
-	+	322	39
-	+	323	43
-	+	324	30
-	+	8	19
-	+	12	21
-	+	325	68
-	+	326	0
-	+	321	17
-	+	322	12
-	+	324	14
-	+	325	54
-	+	326	36
-	+	323	13
-	+	331	0
-	+	315	0
-	+	320	0
-	+	331	0
-	+	319	0
-
-> ~/projects/Potato/example.ptt
-	*	1767129629	0
-	"	12	6
-	^	12	7
-	.	12	6
-	+	1	14
-	+	1	23
-	+	1	36
-	+	13	18
-	+	1	37
-	+	13	5
-	+	1	18
-	+	13	0
-	+	1	24
-	+	1	14
-	+	1	28
-	+	1	26
-	+	13	0
-	+	1	14
-	+	13	0
-	+	1	14
-	+	13	0
-	+	2	6
+> ~/Projects/kernel_project/kernel.c
+	*	1767899272	0
+	"	195	0
+	.	46	0
 	+	1	0
-	+	6	7
+	+	46	0
+
+> ~/Downloads/Granny.v1.3/granny
+	*	1767896259	0
+	"	3	0
+	^	3	20
+	.	3	0
+	+	3	0
+
+> ~/Projects/Quark/bootloader/src/bootsector.S
+	*	1767891902	0
+	"	1	0
+	^	15	21
+	.	15	20
+	+	86	7
+	+	86	37
+	+	47	9
+	+	40	21
+	+	33	14
+	+	33	0
+	+	40	22
+	+	43	0
+	+	42	0
+	+	60	0
+	+	59	8
+	+	61	6
+	+	64	0
+	+	47	9
+	+	48	0
+	+	46	1
+	+	42	16
+	+	38	2
+	+	58	8
+	+	57	5
+	+	57	22
+	+	57	26
+	+	81	9
+	+	82	14
+	+	85	11
+	+	58	26
+	+	43	0
+	+	48	13
+	+	11	24
+	+	44	9
+	+	57	5
+	+	58	0
+	+	78	27
+	+	48	1
+	+	54	0
+	+	50	18
+	+	50	9
+	+	50	10
+	+	53	0
+	+	48	0
+	+	129	15
+	+	132	9
+	+	129	11
+	+	132	11
+	+	5	17
+	+	5	0
+	+	129	5
+	+	132	8
+	+	129	8
+	+	88	4
+	+	120	7
+	+	82	0
+	+	81	0
+	+	85	0
+	+	86	29
+	+	78	27
+	+	88	0
+	+	76	1
+	+	78	27
+	+	83	0
+	+	82	29
+	+	86	15
+	+	81	12
+	+	85	14
+	+	82	7
+	+	86	7
+	+	86	29
+	+	86	28
+	+	76	0
+	+	87	0
+	+	78	27
+	+	95	3
+	+	50	15
+	+	51	15
+	+	117	26
+	+	16	0
+	+	13	0
+	+	11	25
+	+	13	24
+	+	11	25
+	+	9	22
+	+	12	5
+	+	13	0
+	+	9	0
+	+	14	2
+	+	33	0
+	+	58	0
+	+	33	15
+	+	130	78
+	+	131	41
+	+	14	17
+	+	16	5
+	+	14	0
+	+	76	6
+	+	78	27
+	+	76	0
+	+	79	0
+	+	76	10
+	+	92	9
+	+	15	20
+
+> ~/Projects/Quark/kernel/src/ports.h
+	*	1767891197	0
+	"	16	20
+	^	16	21
+	.	16	21
+	+	20	1
+	+	5	11
+	+	9	13
+	+	6	18
+	+	17	1
+	+	13	24
+	+	14	15
+	+	15	7
+	+	17	11
+	+	16	21
+
+> ~/Projects/TinyCar/src/main.c
+	*	1767889875	0
+	"	8	22
+	^	8	23
+	.	8	22
+	+	8	25
+	+	9	9
+	+	8	22
+
+> ~/Projects/TinyCar/LICENSE
+	*	1767889746	0
+	"	21	8
+	^	21	9
+	.	21	8
+	+	21	8
+
+> ~/Projects/TinyCar/.gitignore
+	*	1767889677	0
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/Projects/TinyCar/Makefile
+	*	1767889638	0
+	"	17	40
+	^	43	25
+	.	43	24
+	+	2	34
+	+	17	41
+	+	18	7
+	+	17	7
+	+	20	6
+	+	5	23
+	+	9	28
+	+	12	26
+	+	25	52
+	+	23	38
+	+	24	0
+	+	26	2
+	+	27	0
+	+	28	5
+	+	14	27
+	+	45	8
+	+	42	16
+	+	47	52
+	+	46	38
+	+	48	0
+	+	32	0
+	+	31	18
+	+	50	13
+	+	7	0
+	+	7	19
+	+	7	20
+	+	8	0
+	+	33	8
+	+	34	9
+	+	33	16
+	+	36	21
+	+	35	22
+	+	36	20
+	+	42	0
+	+	38	9
+	+	39	20
+	+	49	34
+	+	18	40
+	+	43	24
+
+> ~/Projects/Quark/kernel/src/k
+	*	1767843804	0
+	"	1	0
+
+> ~/Projects/Quark/.gdbinit
+	*	1767843476	0
+	"	1	0
+	^	1	38
+	.	1	0
+	+	1	28
+	+	4	0
+	+	1	26
+	+	4	0
+	+	5	53
+	+	1	0
+
+> ~/Projects/Quark/kernel/src/interrupts.S
+	*	1767842029	0
+	"	78	16
+	^	44	14
+	.	44	13
+	+	84	11
+	+	84	0
+	+	84	32
+	+	84	4
+	+	84	21
+	+	84	0
+	+	84	5
+	+	84	0
+	+	83	0
+	+	83	1
+	+	83	0
+	+	83	20
+	+	84	24
+	+	84	13
+	+	84	24
+	+	84	15
+	+	84	16
+	+	84	0
+	+	84	17
+	+	84	3
+	+	84	16
+	+	84	19
+	+	84	15
+	+	84	17
+	+	84	19
+	+	84	18
+	+	84	17
+	+	84	0
+	+	84	18
+	+	84	21
+	+	84	22
+	+	84	24
+	+	84	23
+	+	84	24
+	+	84	0
+	+	84	10
+	+	84	2
+	+	11	27
+	+	16	0
+	+	18	0
+	+	50	0
+	+	58	0
+	+	12	1
+	+	15	24
+	+	13	17
+	+	15	26
+	+	12	25
+	+	13	14
+	+	18	26
+	+	23	6
+	+	83	0
+	+	84	0
+	+	13	15
+	+	50	0
+	+	58	0
+	+	15	7
+	+	21	21
+	+	15	21
+	+	24	16
+	+	39	5
+	+	27	22
+	+	16	4
+	+	15	4
+	+	16	0
+	+	48	3
+	+	27	7
+	+	48	0
+	+	39	6
+	+	27	6
+	+	39	5
+	+	21	8
+	+	47	13
+	+	20	12
+	+	21	16
+	+	14	16
+	+	15	4
+	+	16	0
+	+	15	21
+	+	22	21
+	+	48	1
+	+	27	5
+	+	39	4
+	+	27	10
+	+	39	13
+	+	25	6
+	+	40	5
+	+	25	11
+	+	26	0
+	+	40	0
+	+	39	4
+	+	21	9
+	+	14	9
+	+	9	16
+	+	40	0
+	+	27	1
+	+	36	0
+	+	45	0
+	+	44	13
+
+> ~/saida
+	*	1767841428	0
+	"	1	0
+
+> ~/make_int.sh
+	*	1767840865	0
+	"	9	5
+	^	9	6
+	.	9	6
+	+	5	10
+	+	3	89
+	+	3	7
+	+	6	31
+	+	5	4
+	+	6	38
+	+	5	16
+	+	6	58
+	+	6	41
+	+	6	40
+	+	7	4
+	+	21	1
+	+	11	0
+	+	10	4
+	+	11	4
+	+	12	4
+	+	18	4
+	+	19	4
+	+	20	4
+	+	21	5
+	+	10	0
+	+	21	4
+	+	20	4
+	+	19	4
+	+	18	4
+	+	12	4
+	+	11	4
+	+	10	6
+	+	11	6
+	+	12	7
 	+	12	6
+	+	18	7
+	+	19	7
+	+	20	7
+	+	21	6
+	+	12	0
+	+	13	20
+	+	14	68
+	+	15	0
+	+	18	7
+	+	19	7
+	+	20	28
+	+	14	8
+	+	9	6
+
+> ~/dotfiles/suckless/dwm/config.def.h
+	*	1767834393	0
+	"	30	0
+	^	41	0
+	.	41	0
+	+	41	0
+
+> ~/dotfiles/home/.dwm
+	*	1767832374	0
+	"	9	0
+	^	9	0
+	.	8	55
+	+	2	0
+	+	8	55
+
+> ~/dotfiles/home/.xinitrc
+	*	1767832370	0
+	"	3	0
+	^	6	0
+	.	7	0
+	+	6	0
+	+	5	18
+	+	6	0
+	+	7	0
+
+> ~/dotfiles/install.sh
+	*	1767831780	0
+	"	265	59
+	^	265	60
+	.	265	59
+	+	297	22
+	+	298	0
+	+	266	0
+	+	299	5
+	+	307	10
+	+	1	0
+	+	1	20
+	+	1	15
+	+	1	19
+	+	1	18
+	+	1	27
+	+	1	0
+	+	1	33
+	+	1	0
+	+	1	35
+	+	1	67
+	+	1	13
+	+	1	51
+	+	1	0
+	+	1	163
+	+	1	71
+	+	1	162
+	+	1	11
+	+	265	59
+
+> ~/Projects/Quark/kernel/src/terminal.xc
+	*	1767824305	0
+	"	1	0
+
+> ~/back
+	*	1767823977	0
+	"	1	0
+	.	2	0
+	+	2	0
+
+> ~/Projects/Quark/kernel/src/terminal.
+	*	1767823787	0
+	"	1	0
+
+> ~/Projects/Quark/.gitignore
+	*	1767822973	0
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	6
+
+> ~/Projects/Quark/quarkfs/src/util.c
+	*	1767822085	0
+	"	196	0
+	^	196	0
+	.	128	39
+	+	146	0
+	+	127	0
+	+	164	0
+	+	165	28
+	+	163	26
+	+	145	0
+	+	144	26
+	+	188	0
+	+	188	1
+	+	187	26
+	+	188	0
+	+	251	33
+	+	251	0
+	+	251	26
+	+	251	0
+	+	251	22
+	+	297	0
+	+	251	0
+	+	184	9
+	+	102	58
+	+	251	1
+	+	251	45
+	+	251	23
+	+	251	0
+	+	251	19
+	+	251	16
+	+	251	2
+	+	251	99
+	+	251	6
+	+	251	17
+	+	251	78
+	+	251	11
+	+	251	18
+	+	251	0
+	+	251	60
+	+	251	26
+	+	251	11
+	+	251	40
+	+	251	0
+	+	251	12
+	+	251	8
+	+	251	31
+	+	102	53
+	+	104	44
+	+	105	1
+	+	109	0
+	+	106	44
+	+	105	0
+	+	251	70
+	+	255	8
+	+	255	10
+	+	255	0
+	+	255	17
+	+	255	30
+	+	251	16
+	+	251	0
+	+	251	40
+	+	251	2
+	+	251	1
+	+	251	2
+	+	251	3
+	+	251	2
+	+	251	12
+	+	251	11
+	+	251	0
+	+	251	59
+	+	251	46
+	+	251	11
+	+	251	23
+	+	251	0
+	+	251	10
+	+	251	18
+	+	251	0
+	+	255	8
+	+	296	0
+	+	294	0
+	+	292	27
+	+	292	32
+	+	286	11
+	+	285	16
+	+	282	0
+	+	293	1
+	+	192	16
+	+	192	17
+	+	192	2
+	+	192	0
+	+	196	0
+	+	192	2
+	+	146	39
+	+	192	0
+	+	128	39
+
+> ~/Projects/Quark/quarkfs/src/mkfs.quark.c
+	*	1767821926	0
+	"	106	47
+	^	106	48
+	.	106	47
+	+	103	51
+	+	85	75
+	+	83	21
+	+	76	22
+	+	77	0
+	+	78	48
+	+	80	0
+	+	81	0
+	+	102	0
+	+	109	70
+	+	109	69
+	+	108	0
+	+	109	69
+	+	103	0
+	+	103	52
+	+	104	0
+	+	107	0
+	+	106	46
+	+	109	69
+	+	110	0
+	+	106	47
+
+> ~/Projects/Quark/quarkfs/src/quarkfs.h
+	*	1767821751	0
+	"	40	20
+	^	40	21
+	.	40	20
+	+	24	0
+	+	34	0
+	+	47	0
+	+	48	13
+	+	49	1
+	+	44	19
+	+	45	19
+	+	44	15
+	+	46	0
+	+	50	12
+	+	45	0
+	+	27	22
+	+	27	31
+	+	33	0
+	+	25	17
+	+	27	11
+	+	26	27
+	+	32	26
+	+	48	13
+	+	49	26
+	+	20	62
+	+	60	20
+	+	61	39
+	+	49	20
+	+	39	20
+	+	23	23
+	+	18	22
+	+	40	20
+
+> ~/Projects/Quark/quarkfs/src/ls.quark.c
+	*	1767819750	0
+	"	60	25
+	^	84	12
+	.	84	11
+	+	74	0
+	+	49	0
+	+	50	0
+	+	60	36
+	+	63	12
+	+	60	12
+	+	75	21
+	+	76	50
+	+	77	0
+	+	14	45
+	+	76	4
+	+	77	38
+	+	85	0
+	+	77	34
+	+	75	34
+	+	77	39
+	+	76	33
+	+	77	68
+	+	78	5
+	+	76	45
+	+	78	41
+	+	79	42
+	+	80	41
+	+	81	41
+	+	84	0
+	+	81	5
+	+	82	5
+	+	83	5
+	+	81	0
+	+	84	1
+	+	84	11
+
+> ~/Projects/Quark/kernel/src/terminal.g
+	*	1767814607	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/string.c
+	*	1767814295	0
+	"	7	17
+	^	7	18
+	.	7	18
+	+	5	19
+	+	23	43
+	+	6	18
+	+	23	0
+	+	21	1
+	+	7	18
+
+> ~/Projects/Quark/kernel/src/string.h
+	*	1767814266	0
+	"	8	43
+	^	8	44
+	.	8	44
+	+	8	44
+	+	6	17
+	+	9	0
+	+	8	44
+
+> ~/Projects/Quark/kernel/src/stddef.h
+	*	1767809212	0
+	"	9	0
+	^	9	0
+	.	8	0
+	+	6	0
+	+	7	24
+	+	8	0
+
+> ~/M
+	*	1767808386	0
+	"	1	0
+
+> ~/Projects/Quark/kernel/src/stdint.h
+	*	1767804007	0
+	"	15	28
+	^	15	29
+	.	15	28
+	+	15	28
+
+> ~/ola
+	*	1767802785	0
+	"	1	0
+
+> ~/plymouth-preview.sh
+	*	1767801838	0
+	"	12	0
+	^	12	0
+	.	11	20
+	+	11	20
+
+> ~/Projects/Quark/saida
+	*	1767738646	0
+	"	81	0
+
+> ~/Projects/Quark/build.txt
+	*	1767738360	0
+	"	28	64
+
+> ~/Projects/Zynta/Makefile
+	*	1767736221	0
+	"	57	11
+	^	5	15
+	.	5	14
+	+	34	8
+	+	5	14
+
+> ~/Projects/Quark/kernel/src/entry
+	*	1767734281	0
+	"	2	1
+	^	2	2
+	.	2	1
+	+	2	1
+
+> ~/kernel_project/Makefile
+	*	1767731074	0
+	"	24	53
+	^	24	54
+	.	24	53
+	+	4	0
+	+	8	0
+	+	10	0
+	+	13	0
+	+	16	0
+	+	19	0
+	+	22	0
+	+	25	0
+	+	24	53
+
+> ~/kernel_project/kernel.c
+	*	1767727240	0
+	"	315	0
+	^	325	16
+	.	325	15
+	+	1	19
+	+	382	1
+	+	67	0
+	+	265	0
+	+	265	23
+	+	59	0
+	+	15	16
+	+	19	0
+	+	197	65
+	+	209	0
+	+	162	65
+	+	163	0
+	+	196	0
+	+	197	0
+	+	163	0
+	+	211	38
+	+	244	0
+	+	245	0
+	+	161	0
+	+	162	0
+	+	222	0
+	+	198	49
+	+	208	0
+	+	209	0
+	+	384	0
+	+	383	17
+	+	265	0
+	+	246	38
+	+	258	0
+	+	20	0
+	+	19	0
+	+	196	0
+	+	195	0
+	+	174	0
+	+	265	8
+	+	260	0
+	+	265	12
+	+	272	17
+	+	273	0
+	+	272	5
+	+	265	0
+	+	264	0
+	+	271	0
+	+	272	0
+	+	279	0
+	+	278	0
+	+	279	16
+	+	279	14
+	+	272	14
+	+	265	23
+	+	272	0
+	+	279	0
+	+	272	0
+	+	265	0
+	+	279	2
+	+	280	1
+	+	281	1
+	+	280	12
+	+	273	24
+	+	273	13
+	+	266	14
+	+	267	0
+	+	266	2
+	+	274	0
+	+	273	8
+	+	280	8
+	+	325	15
 
 > /usr/share/vim/vim91/doc/help.txt
-	*	1767128166	0
+	*	1767726951	0
 	"	1	0
 
-> ~/projects/Potato/ls
-	*	1767124857	0
-	"	4	0
-	^	4	0
-	.	3	2
-	+	3	2
-
-> ~/projects/Potato/NetrwTreeListing
-	*	1767122006	0
-	"	10	0
-	.	1	0
-	+	1	0
-
-> ~/projects/Potato/src/lexer/lexer.
-	*	1767121281	0
+> ~/kernel_project/vim
+	*	1767726620	0
 	"	1	0
+
+> ~/kernel_project/texto
+	*	1767725951	0
+	"	1	0
+
+> ~/kernel_project/linker.ld
+	*	1767725609	0
+	"	28	0
+	^	28	1
+	.	28	0
+	+	1	13
+	+	28	0
+
+> ~/kernel_project/boot.S
+	*	1767725350	0
+	"	30	23
+	^	30	24
+	.	30	23
+	+	1	65
+	+	30	23
+
+> ~/Projects/Quark/bootloader/src/stage2.S
+	*	1767724587	0
+	"	1	2
+	^	9	1
+	.	9	0
+	+	6	14
+	+	9	1
+	+	32	12
+	+	12	47
+	+	13	27
+	+	14	26
+	+	15	32
+	+	17	26
+	+	17	49
+	+	18	29
+	+	9	0
+	+	13	15
+	+	14	10
+	+	15	11
+	+	17	47
+	+	18	14
+	+	32	10
+	+	20	16
+	+	21	8
+	+	20	26
+	+	22	13
+	+	21	14
+	+	23	17
+	+	20	18
+	+	21	18
+	+	22	18
+	+	23	29
+	+	24	14
+	+	23	16
+	+	24	30
+	+	25	28
+	+	37	0
+	+	32	15
+	+	31	29
+	+	37	10
+	+	26	28
+	+	28	28
+	+	32	15
+	+	12	23
+	+	32	67
+	+	25	0
+	+	32	83
+	+	37	0
+	+	33	95
+	+	33	0
+	+	32	0
+	+	31	0
+	+	33	91
+	+	34	0
+	+	33	43
+	+	34	94
+	+	35	82
+	+	34	67
+	+	35	56
+	+	9	0
+
+> ~/.gdbinit
+	*	1767721004	0
+	"	2	0
+	^	2	0
+	.	1	30
+	+	1	30
 
 > ~/.bashrc
-	*	1767120638	0
-	"	6	125
-	^	6	126
-	.	6	125
+	*	1767720869	0
+	"	10	0
+	^	7	13
+	.	10	0
 	+	9	0
 	+	6	0
 	+	5	0
 	+	6	125
-
-> ~/projects/Potato/src/main.c
-	*	1767119309	0
-	"	78	0
-	^	103	25
-	.	8	0
-	+	106	54
-	+	100	51
-	+	114	0
-	+	106	64
-	+	106	66
-	+	106	39
-	+	106	85
-	+	106	43
-	+	106	20
-	+	106	91
-	+	106	88
-	+	106	93
-	+	106	46
-	+	106	44
-	+	106	55
-	+	106	51
-	+	106	78
-	+	106	47
-	+	106	44
-	+	106	52
-	+	106	89
-	+	106	56
-	+	114	29
-	+	113	25
-	+	114	34
-	+	115	21
-	+	115	111
-	+	115	27
-	+	106	36
-	+	115	59
-	+	115	25
-	+	115	51
-	+	47	0
-	+	48	39
-	+	49	57
-	+	50	94
-	+	51	90
-	+	52	31
-	+	115	0
-	+	55	15
-	+	49	29
-	+	48	25
-	+	50	20
-	+	51	55
-	+	57	0
-	+	59	0
-	+	59	43
-	+	67	0
-	+	59	0
-	+	58	30
-	+	59	27
-	+	49	31
-	+	59	40
-	+	61	39
-	+	60	37
-	+	106	93
-	+	112	0
-	+	106	69
-	+	107	0
-	+	106	28
-	+	107	34
-	+	107	35
-	+	108	56
-	+	109	32
-	+	121	0
-	+	115	23
-	+	111	57
-	+	115	69
-	+	116	1
-	+	119	23
-	+	116	23
-	+	117	27
-	+	118	27
-	+	117	60
-	+	119	25
-	+	120	61
-	+	121	29
-	+	45	0
-	+	44	55
-	+	8	19
-	+	10	19
-	+	11	0
-	+	37	0
-	+	38	35
-	+	39	19
-	+	40	0
-	+	44	75
-	+	90	5
-	+	92	81
-	+	101	72
-	+	101	96
-	+	101	83
-	+	103	0
-	+	102	0
-	+	103	12
-	+	105	0
-	+	103	12
-	+	105	12
-	+	103	24
-	+	8	0
-
-> ~/dotfiles/src/lexer/lexer.c
-	*	1767109597	0
-	"	1	0
-
-> ~/projects/Potato/README.md
-	*	1767108891	0
-	"	4	0
-	^	14	11
-	.	14	10
-	+	1	8
-	+	3	49
-	+	5	10
-	+	6	32
-	+	38	10
-	+	40	0
-	+	38	10
-	+	7	0
-	+	8	21
-	+	9	36
-	+	39	2
+	+	7	12
 	+	10	0
-	+	16	1
-	+	5	1
-	+	16	1
-	+	38	1
-	+	16	8
-	+	18	7
-	+	19	7
-	+	20	0
-	+	39	3
-	+	38	3
-	+	39	0
-	+	20	48
-	+	21	9
-	+	22	12
-	+	23	0
-	+	24	0
-	+	27	6
-	+	29	7
-	+	30	7
-	+	22	22
-	+	24	0
-	+	25	56
-	+	30	22
-	+	31	3
-	+	31	6
-	+	32	0
-	+	7	0
-	+	6	20
-	+	32	0
-	+	37	0
-	+	30	17
-	+	33	9
-	+	34	63
-	+	35	50
-	+	35	45
-	+	36	39
-	+	11	3
-	+	27	5
-	+	14	10
 
-> ~/main.c
-	*	1767107939	0
-	"	1	0
-	.	1	0
-	+	1	18
-	+	1	0
-
-> ~/maic.c
-	*	1767107208	0
-	"	1	0
-
-> ~/projects/Potato/.gitignore
-	*	1767051733	0
-	"	4	0
-	^	4	0
-	.	4	0
-	+	1	7
-	+	2	5
-	+	3	5
-	+	4	0
-
-> ~/projects/Potato/src/potato.h
-	*	1767046087	0
-	"	7	0
-	^	7	0
-	.	6	0
-	+	1	3
-	+	2	11
-	+	3	35
-	+	4	3
-	+	5	12
-	+	10	0
-	+	9	34
-	+	6	0
-	+	8	0
-	+	6	0
-
-> ~/dotfiles/home/.xinitrc
-	*	1767032948	0
-	"	6	0
-	^	6	0
-	.	5	18
-	+	7	0
-	+	5	18
-
-> ~/dotfiles/st/config.h
-	*	1767029381	0
-	"	222	0
-	^	8	39
-	.	144	0
-	+	8	38
-	+	144	0
-
-> ~/projects/VulcanoLang/src/parser/ast.c
-	*	1766968073	0
-	"	274	1
-	^	192	59
-	.	192	58
-	+	73	0
-	+	209	13
-	+	209	17
-	+	209	38
-	+	209	24
-	+	209	43
-	+	209	23
-	+	249	0
-	+	265	0
-	+	265	13
-	+	267	27
-	+	266	38
-	+	268	26
-	+	269	27
-	+	268	33
-	+	269	26
-	+	209	0
-	+	209	5
-	+	209	0
-	+	209	19
-	+	210	0
-	+	116	9
-	+	117	0
-	+	182	28
-	+	177	70
-	+	181	73
-	+	182	0
-	+	112	29
-	+	111	72
-	+	117	18
-	+	118	22
-	+	122	43
-	+	123	29
-	+	126	48
-	+	128	24
-	+	131	29
-	+	136	28
-	+	253	18
-	+	254	43
-	+	255	32
-	+	257	32
-	+	258	31
-	+	256	24
-	+	60	46
-	+	238	49
-	+	73	1
-	+	83	38
-	+	81	59
-	+	82	90
-	+	247	38
-	+	246	51
-	+	275	30
-	+	276	76
-	+	277	75
-	+	278	36
-	+	183	30
-	+	184	0
-	+	193	36
-	+	184	41
-	+	186	26
-	+	187	29
-	+	188	59
-	+	190	26
-	+	191	29
-	+	192	58
-
-> ~/projects/VulcanoLang/src/eval/eval.c
-	*	1766968065	0
-	"	561	0
-	^	875	61
-	.	875	60
-	+	203	0
-	+	361	8
-	+	362	0
-	+	362	81
-	+	363	4
-	+	363	20
-	+	363	19
-	+	363	84
-	+	366	31
-	+	367	7
-	+	364	4
-	+	365	20
-	+	369	5
-	+	371	33
-	+	367	70
-	+	368	0
-	+	367	11
-	+	368	61
-	+	364	0
-	+	368	79
-	+	296	67
-	+	297	28
-	+	298	76
-	+	299	28
-	+	301	0
-	+	304	74
-	+	308	2
-	+	310	40
-	+	69	0
-	+	70	0
-	+	72	52
-	+	71	18
-	+	72	55
-	+	73	0
-	+	95	1
-	+	73	16
-	+	74	22
-	+	85	0
-	+	75	0
-	+	76	41
-	+	82	41
-	+	81	33
-	+	94	22
-	+	86	4
-	+	92	41
-	+	86	64
-	+	87	15
-	+	88	80
-	+	89	28
-	+	91	73
-	+	92	41
-	+	94	0
-	+	93	0
-	+	95	14
-	+	97	24
-	+	94	26
-	+	11	19
-	+	53	0
-	+	106	0
-	+	237	30
-	+	238	0
-	+	239	36
-	+	238	54
-	+	150	71
-	+	151	0
-	+	150	21
-	+	857	0
-	+	858	15
-	+	858	16
-	+	859	79
-	+	860	76
-	+	865	0
-	+	860	135
-	+	864	0
-	+	865	15
-	+	860	94
-	+	865	36
-	+	870	8
-	+	860	80
-	+	862	0
-	+	861	52
-	+	865	38
-	+	866	61
-	+	865	38
-	+	866	104
-	+	867	11
-	+	866	0
-	+	866	95
-	+	867	54
-	+	871	4
-	+	876	0
-	+	875	24
-	+	871	37
-	+	873	74
-	+	879	4
-	+	880	104
-	+	881	24
-	+	879	0
-	+	868	60
-	+	875	60
-	t	422	4
-
-> ~/projects/VulcanoLang/src/parser/ast.h
-	*	1766968021	0
-	"	105	37
-	^	105	38
-	.	105	37
-	+	26	12
-	+	21	1
-	+	38	22
-	+	38	10
-	+	84	17
-	+	189	0
-	+	189	12
-	+	189	0
-	+	189	6
-	+	30	14
-	+	30	27
-	+	35	0
-	+	33	8
-	+	33	9
-	+	34	0
-	+	38	10
-	+	35	3
-	+	30	15
-	+	26	1
-	+	38	11
-	+	130	35
-	+	131	24
-	+	132	15
-	+	190	0
-	+	151	0
-	+	144	0
-	+	182	0
-	+	173	8
-	+	175	15
-	+	174	38
-	+	30	11
-	+	30	25
-	+	136	19
-	+	134	25
-	+	30	29
-	+	33	10
-	+	150	11
-	+	144	17
-	+	77	28
-	+	97	0
-	+	90	24
-	+	89	27
-	+	22	0
-	+	21	24
-	+	33	0
-	+	30	12
-	+	31	4
-	+	39	19
-	+	175	10
-	+	177	29
-	+	178	16
-	+	181	22
-	+	179	35
-	+	180	34
-	+	23	0
-	+	22	24
-	+	90	19
-	+	92	31
-	+	93	16
-	+	96	24
-	+	95	28
-	+	94	32
-	+	95	37
-	+	95	65
-	+	95	55
-	+	95	144
-	+	95	61
-	+	96	0
-	+	95	32
-	+	25	4
-	+	25	0
-	+	23	26
-	+	24	26
-	+	25	0
-	+	98	8
-	+	107	0
-	+	98	32
-	+	99	16
-	+	101	26
-	+	103	33
-	+	104	16
-	+	106	26
-	+	100	37
-	+	105	37
-
-> ~/projects/VulcanoLang/src/lexer/lexer.c
-	*	1766967406	0
-	"	41	38
-	^	41	39
-	.	41	38
-	+	36	13
-	+	39	4
-	+	42	0
-	+	39	35
-	+	40	37
-	+	41	38
-	a	36	13
-
-> ~/projects/VulcanoLang/src/lexer/token.h
-	*	1766967288	0
-	"	79	24
-	^	79	25
-	.	79	24
-	+	74	22
-	+	75	22
-	+	77	24
-	+	78	25
-	+	79	24
-
-> ~/projects/VulcanoLang/src/lexer/lexer.h
-	*	1766967205	0
-	"	15	22
-	^	15	22
-	.	7	0
-	+	7	0
-
-> ~/projects/VulcanoLang/example.vul
-	*	1766966669	0
-	"	13	59
-	^	13	60
-	.	13	59
-	+	5	0
-	+	5	14
-	+	5	21
-	+	5	14
-	+	1	14
-	+	5	14
-	+	5	24
-	+	5	18
-	+	5	17
-	+	5	32
-	+	5	21
-	+	2	16
-	+	2	20
-	+	5	25
-	+	5	49
-	+	5	31
-	+	2	7
-	+	2	8
-	+	2	0
-	+	17	0
-	+	5	0
-	+	8	3
-	+	5	0
-	+	2	13
-	+	2	30
-	+	2	14
-	+	2	130
-	+	2	34
-	+	2	57
-	+	2	65
-	+	2	94
-	+	2	85
-	+	2	111
-	+	2	129
-	+	5	9
-	+	2	22
-	+	2	28
-	+	4	0
-	+	2	0
-	+	5	0
-	+	8	0
-	+	6	21
-	+	3	13
-	+	3	30
-	+	3	4
-	+	3	8
-	+	3	22
-	+	3	10
-	+	3	14
-	+	3	18
-	+	3	3
-	+	3	7
-	+	3	12
-	+	4	0
-	+	6	4
-	+	8	0
-	+	6	34
-	+	8	14
-	+	8	15
-	+	8	32
-	+	8	21
-	+	8	28
-	+	8	40
-	+	8	12
-	+	8	27
-	+	8	31
-	+	8	0
-	+	8	18
-	+	8	37
-	+	8	14
-	+	8	4
-	+	8	18
-	+	8	32
-	+	8	14
-	+	8	27
-	+	8	31
-	+	8	14
-	+	8	25
-	+	8	0
-	+	8	37
-	+	8	14
-	+	8	0
-	+	8	15
-	+	8	18
-	+	8	15
-	+	8	18
-	+	8	0
-	+	8	16
-	+	15	0
-	+	8	16
-	+	11	9
-	+	8	22
-	+	11	21
-	+	12	0
-	+	9	3
-	+	6	37
-	+	11	26
-	+	12	29
-	+	9	0
-	+	13	59
-
-> ~/projects/VulcanoLang/src/parser/parser.c
-	*	1766965147	0
-	"	519	0
-	^	506	28
-	.	506	28
-	+	978	23
-	+	981	13
-	+	985	19
-	+	987	12
-	+	988	16
-	+	987	29
-	+	997	11
-	+	998	11
-	+	999	11
-	+	990	4
-	+	991	0
-	+	993	58
-	+	1012	37
-	+	1007	14
-	+	991	68
-	+	941	34
-	+	947	0
-	+	941	20
-	+	946	12
-	+	947	0
-	+	950	50
-	+	950	64
-	+	1018	22
-	+	941	37
-	+	1158	29
-	+	1160	42
-	+	1174	0
-	+	1168	106
-	+	1168	19
-	+	1173	51
-	+	1175	11
-	+	1129	74
-	+	1094	76
-	+	1051	74
-	+	1044	89
-	+	1032	73
-	+	1004	70
-	+	994	74
-	+	950	98
-	+	898	73
-	+	866	64
-	+	474	75
-	+	448	69
-	+	387	0
-	+	386	75
-	+	346	72
-	+	315	83
-	+	287	72
-	+	311	9
-	+	312	0
-	+	950	66
-	+	951	0
-	+	948	45
-	+	1169	0
-	+	1168	13
-	+	1166	45
-	+	1045	0
-	+	1042	38
-	+	1210	0
-	+	1210	38
-	+	1210	37
-	+	1210	0
-	+	1209	0
-	+	1202	0
-	+	1239	37
-	+	1242	0
-	+	1241	0
-	+	1240	32
-	+	1068	30
-	+	1070	30
-	+	1078	0
-	+	1070	23
-	+	1070	15
-	+	1072	0
-	+	1071	0
-	+	1085	46
-	+	1075	50
-	+	1077	0
-	+	493	0
-	+	494	31
-	+	495	23
-	+	511	0
-	+	496	12
-	+	497	46
-	+	498	37
-	+	499	50
-	+	500	120
-	+	501	27
-	+	502	13
-	+	504	63
-	+	505	35
-	+	506	85
-	+	507	44
-	+	508	50
-	+	509	52
-	+	510	0
-	+	511	23
-	+	496	0
-	+	430	32
-	+	506	28
-
-> ~/projects/VulcanoLang/README.md
-	*	1766961543	0
-	"	60	0
-	^	19	2
-	.	19	2
-	+	16	41
-	+	24	50
-	+	25	2
-	+	22	3
-	+	23	3
-	+	24	3
-	+	25	3
-	+	99	8
-	+	18	74
-	+	62	17
-	+	69	0
-	+	68	3
-	+	66	3
-	+	65	3
-	+	63	3
-	+	82	7
-	+	86	17
-	+	94	0
-	+	93	3
-	+	92	7
-	+	91	3
-	+	90	7
-	+	89	3
-	+	87	3
-	+	54	0
-	+	27	0
-	+	89	7
-	+	100	0
-	+	89	22
-	+	19	41
-	+	18	50
-	+	20	0
-	+	19	2
-
-> ~/projects/VulcanoLang/src/main.c
-	*	1766960439	0
-	"	122	11
-	^	122	12
-	.	122	11
-	+	29	1
-	+	21	22
-	+	23	5
-	+	125	0
-	+	124	5
-	+	121	0
-	+	122	11
-
-> ~/projects/VulcanoLang/src/eval/value.h
-	*	1766947360	0
-	"	43	18
-	^	43	19
-	.	43	18
-	+	50	25
-	+	51	32
-	+	63	46
-	+	30	12
-	+	30	78
-	+	30	63
-	+	30	59
-	+	30	102
-	+	30	94
-	+	30	95
-	+	30	106
-	+	30	103
-	+	30	59
-	+	30	100
-	+	30	145
-	+	30	151
-	+	30	59
-	+	30	17
-	+	30	60
-	+	30	12
-	+	31	0
-	+	70	0
-	+	22	4
-	+	47	8
-	+	43	28
-	+	44	25
-	+	45	17
-	+	44	23
-	+	45	27
-	+	64	0
-	+	63	43
-	+	43	18
-
-> ~/projects/VulcanoLang/src/eval/value.c
-	*	1766946714	0
-	"	129	34
-	^	129	35
-	.	129	34
-	+	135	46
-	+	138	27
-	+	139	39
-	+	228	1
-	+	197	37
-	+	215	23
-	+	217	23
-	+	126	0
-	+	133	0
-	+	131	12
-	+	129	34
-
-> ~/projects/VulcanoLang/src/lexer/token.c
-	*	1766937212	0
-	"	158	21
-	^	158	22
-	.	158	19
-	+	148	14
-	+	160	0
-	+	158	19
-
-> ~/projects/VulcanoLang/src/eval/environment.c
-	*	1766935214	0
-	"	95	3
-	^	95	4
-	.	95	4
-	+	23	17
-	+	27	0
-	+	26	0
-	+	25	40
-	+	30	38
-	+	98	43
-	+	99	0
-	+	105	4
-	+	104	4
-	+	103	4
-	+	102	4
-	+	99	47
-	+	99	16
-	+	99	47
-	+	100	0
-	+	105	8
-	+	106	46
-	+	97	0
-	+	95	4
-
-> ~/projects/VulcanoLang/src/eval/environment.h
-	*	1766934693	0
-	"	1	0
-	^	22	23
-	.	22	22
-	+	22	22
-
-> ~/dotfiles/dwmblocks/blocks.h
-	*	1766934279	0
-	"	13	24
-	^	13	25
-	.	13	24
-	+	13	24
-	+	11	0
-	+	3	0
-	+	13	24
-
-> ~/projects/VulcanoLang/algo.pot
-	*	1766878706	0
-	"	2	14
-	^	2	15
-	.	2	14
-	+	2	14
-
-> ~/dotfiles/dwmblocks/dwmblocks.c
-	*	1766875882	0
-	"	1	0
-
-> ~/dotfiles/home/.config/fastfetch/config.jsonc
-	*	1766875436	0
-	"	3	46
-	^	3	47
-	.	3	46
-	+	59	24
-	+	59	26
-	+	61	25
-	+	3	46
-
-> ~/.config/fastfetch/config.jsonc
-	*	1766875379	0
-	"	3	46
-	^	3	47
-	.	3	46
-	+	1	0
-	+	1	25
-	+	1	0
-	+	2	0
-	+	4	42
-	+	29	26
-	+	35	26
-	+	40	26
-	+	45	26
-	+	50	26
-	+	56	26
-	+	61	26
-	+	66	26
-	+	72	26
-	+	15	0
-	+	16	0
-	+	76	0
-	+	12	22
-	+	3	46
-
-> ~/dotfiles/home/.config/dwmblocks/wifi.sh
-	*	1766874562	0
-	"	2	0
-	^	2	0
-	.	3	0
-	+	1	13
-	+	1	0
-	+	1	7
-	+	1	0
-	+	1	5
-	+	1	4
-	+	1	6
-	+	1	0
-	+	1	11
-	+	1	7
-	+	1	13
-	+	1	12
-	+	1	0
-	+	1	31
-	+	1	0
-	+	1	17
-	+	1	14
-	+	1	0
-	+	1	11
-	+	8	0
-	+	6	66
-	+	1	11
-	+	5	0
-	+	2	0
-	+	3	0
-
-> ~/dotfiles/home/.config/dwmblocks/date.sh
-	*	1766874454	0
-	"	3	10
-	^	3	11
-	.	3	11
-	+	1	0
-	+	2	0
-	+	3	11
-
-> ~/dotfiles/home/.config/dwmblocks/disk.sh
-	*	1766874276	0
-	"	4	0
-	^	4	0
-	.	3	9
-	+	1	0
-	+	2	0
-	+	5	0
-	+	6	0
-	+	7	22
-	+	3	14
-	+	3	9
-
-> ~/dotfiles/home/.config/dwmblocks/ram.sh
-	*	1766874176	0
-	"	7	5
-	^	7	6
-	.	7	6
-	+	1	0
-	+	2	0
-	+	3	12
-	+	3	0
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	6
-
-> ~/dotfiles/home/.config/dwmblocks/cpu.sh
-	*	1766874104	0
-	"	3	6
-	^	3	9
-	.	3	9
-	+	1	0
-	+	2	0
-	+	3	12
-	+	5	0
-	+	5	92
-	+	6	0
-	+	7	21
-	+	3	6
-	+	3	7
-	+	3	9
-
-> ~/dotfiles/home/.config/dwmblocks/battery.sh
-	*	1766873743	0
-	"	22	20
-	^	22	21
-	.	22	21
-	+	1	0
-	+	2	0
-	+	21	0
-	+	22	21
-
-> ~/.dwmbar.sh
-	*	1766872714	0
-	"	277	0
-	.	106	0
-	+	1	0
-	+	2	0
-	+	278	0
-	+	102	0
-	+	102	44
-	+	102	12
-	+	278	0
-	+	102	0
-	+	44	0
-	+	278	0
-	+	102	0
-	+	106	0
-
-> ~/dotfiles/.gitignore
-	*	1766871959	0
-	"	4	0
-	^	4	0
-	.	4	0
-	+	4	0
-
-> ~/dotfiles/dwm/fibonacci.c
-	*	1766871873	0
-	"	59	0
-	^	59	1
-	.	59	0
-	+	1	0
-	+	1	11
-	+	1	0
-	+	60	0
-	+	59	2
-	+	53	43
-	+	2	0
-	+	59	0
-
-> ~/dotfiles/NERD_tree_win_1
-	*	1766871244	0
-	"	1	1
-	.	1	0
-	+	1	0
-
-> ~/smatrix/src/main.rs
-	*	1766870875	0
-	"	30	0
-
-> ~/.config/picom/picom.conf
-	*	1766870598	0
-	"	10	0
-	^	10	0
-	.	9	18
-	+	1	0
-	+	1	24
-	+	1	0
-	+	1	24
-	+	1	34
-	+	1	16
-	+	1	0
-	+	1	21
-	+	1	0
-	+	2	0
-	+	33	0
-	+	9	18
-	+	10	0
-	+	9	18
-	+	9	48
-	+	9	18
-	+	9	71
-	+	9	51
-	+	10	0
-	+	9	19
-	+	10	0
-	+	9	19
-	+	10	0
-	+	9	19
-	+	10	0
-	+	9	18
-
-> ~/dotfiles/dwm/config.def.h
-	*	1766868811	0
-	"	118	0
-
-> ~/dotfiles/dwm/util.c
-	*	1766868783	0
+> ~/lista-de-comandos
+	*	1767647820	0
 	"	3	0
+	^	3	0
+	.	2	47
+	+	1	29
+	+	2	47
 
-> ~/dotfiles/dwm/drw.c
-	*	1766868759	0
-	"	410	0
-
-> ~/browser
-	*	1766867573	0
-	"	3	16
-	^	3	17
-	.	3	16
-	+	1	9
-	+	2	0
-	+	3	16
-
-> ~/NERD_tree_win_1
-	*	1766866872	0
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.ssh/id_ed25519
-	*	1766866328	0
+> ~/Projects/Quark/bootloaderM
+	*	1767646384	0
 	"	1	0
 
-> ~/dotfiles/commit
-	*	1766864842	0
+> ~/Downloads/Granny.v1.3/HOW TO RUN GAME!!.txt
+	*	1767642083	0
 	"	1	0
 
-> ~/dotfiles/st/graphics.c
-	*	1766864795	0
-	"	42	0
+> ~/Projects/Quark/bootloader.s
+	*	1767641768	0
+	"	33	0
 
-> ~/dotfiles/st/graphics.
-	*	1766864791	0
-	"	1	0
-
-> ~/dotfiles/st/st.c
-	*	1766864649	0
-	"	372	0
-
-> ~/leme-dotfiles/README.md
-	*	1766852323	0
-	"	9	4
-	^	9	5
-	.	9	4
-	+	4	9
-	+	6	2
-	+	3	2
-	+	6	29
-	+	6	23
-	+	7	16
-	+	8	19
-	+	6	22
-	+	7	6
-	+	6	22
-	+	8	0
-	+	6	23
+> ~/Projects/Quark/quarkfs/Makefile
+	*	1767640637	0
+	"	14	0
+	^	13	0
+	.	14	0
+	+	5	0
 	+	7	0
-	+	9	0
-	+	8	6
+	+	5	0
+	+	15	0
+	+	17	0
+	+	23	20
+	+	14	13
+	+	23	20
+	+	18	0
 	+	16	0
-	+	15	6
-	+	10	0
-	+	9	4
+	+	17	0
+	+	18	0
+	+	16	47
+	+	17	51
+	+	18	52
+	+	19	0
+	+	18	0
+	+	20	9
+	+	23	20
+	+	30	0
+	+	26	41
+	+	30	22
+	+	31	9
+	+	27	13
+	+	12	0
+	+	27	25
+	+	31	16
+	+	30	43
+	+	35	42
+	+	39	28
+	+	41	0
+	+	35	0
+	+	27	17
+	+	28	26
+	+	31	31
+	+	32	46
+	+	31	25
+	+	32	52
+	+	39	33
+	+	40	52
+	+	39	30
+	+	31	30
+	+	25	3
+	+	34	5
+	+	30	30
+	+	37	30
+	+	31	57
+	+	38	58
+	+	12	69
+	+	14	15
+	+	12	0
+	+	14	0
+	+	13	0
+	+	14	0
 
-> ~/st/config.def.h.rej
-	*	1766851568	0
+> ~/Projects/Quark/erros
+	*	1767640496	0
+	"	17	13
+
+> ~/dotfiles/suckless/st/config.h
+	*	1767640242	0
+	"	177	0
+	^	177	0
+	.	178	0
+	+	176	2
+	+	177	0
+	+	178	0
+
+> ~/dotfiles/suckless/st/config.def.h
+	*	1767640227	0
+	"	169	0
+	^	171	1
+	.	171	0
+	+	117	2
+	+	97	0
+	+	96	56
+	+	200	0
+	+	171	63
+	+	172	61
+	+	171	0
+	+	172	0
+	+	171	0
+
+> ~/Projects/Zynta/src/parser/ast_node.h
+	*	1767637847	0
+	"	25	15
+	^	25	16
+	.	25	15
+	+	2	6
+	+	3	0
+	+	9	26
+	+	19	26
+	+	19	16
+	+	21	15
+	+	46	11
+	+	17	0
+	+	18	0
+	+	12	0
+	+	11	0
+	+	10	13
+	+	19	1
+	+	19	9
+	+	19	18
+	+	19	0
+	+	19	2
+	+	19	0
+	+	45	0
+	+	44	0
+	+	45	0
+	+	18	29
+	+	18	27
+	+	45	8
+	+	21	0
+	+	42	7
+	+	42	5
+	+	43	0
+	+	21	0
+	+	22	1
+	+	23	1
+	+	24	2
+	+	26	1
+	+	28	1
+	+	29	1
+	+	31	1
+	+	32	1
+	+	34	1
+	+	35	1
+	+	36	2
+	+	37	2
+	+	38	1
+	+	40	1
+	+	41	1
+	+	42	0
+	+	45	0
+	+	46	34
+	+	47	0
+	+	46	66
+	+	24	9
+	+	18	0
+	+	19	0
+	+	24	12
+	+	19	23
+	+	25	15
+
+> ~/Projects/Zynta/src/parser/ast_node.c
+	*	1767637028	0
+	"	18	19
+	^	18	20
+	.	18	19
+	+	7	21
+	+	7	0
+	+	7	21
+	+	22	0
+	+	22	9
+	+	7	21
+	+	22	8
+	+	22	0
+	+	14	36
+	+	13	18
+	+	14	70
+	+	15	1
+	+	9	20
+	+	10	0
+	+	9	22
+	+	10	43
+	+	8	0
+	+	5	19
+	+	15	0
+	+	10	63
+	+	11	13
+	+	11	25
+	+	20	0
+	+	16	0
+	+	20	12
+	+	19	0
+	+	17	27
+	+	18	19
+
+> ~/Projects/Zynta/src/parser/parser.c
+	*	1767636606	0
+	"	71	0
+	^	71	1
+	.	71	0
+	+	83	0
+	+	83	1
+	+	83	0
+	+	2	0
+	+	33	0
+	+	10	0
+	+	11	0
+	+	56	0
+	+	11	0
+	+	43	41
+	+	30	40
+	+	33	42
+	+	52	36
+	+	33	11
+	+	21	16
+	+	11	16
+	+	52	17
+	+	67	19
+	+	77	12
+	+	37	25
+	+	47	8
+	+	42	0
+	+	72	0
+	+	71	0
+	+	71	1
+	+	82	1
+	+	71	0
+
+> ~/Projects/Zynta/src/lexer/token.c
+	*	1767629970	0
+	"	161	1
+	^	34	14
+	.	161	0
+	+	165	0
+	+	2	0
+	+	16	0
+	+	15	0
+	+	90	0
+	+	97	0
+	+	91	0
+	+	161	0
+	+	151	0
+	+	89	0
+	+	142	17
+	+	125	16
+	+	134	16
+	+	103	17
+	+	90	27
+	+	16	22
+	+	161	0
+
+> ~/Projects/Zynta/src/lexer/token.h
+	*	1767629606	0
+	"	74	12
+	^	74	13
+	.	74	12
+	+	89	23
+	+	89	0
+	+	2	0
+	+	66	20
+	+	77	26
+	+	78	7
+	+	85	0
+	+	88	0
+	+	84	0
+	+	83	0
+	+	88	11
+	+	84	0
+	+	87	17
+	+	86	16
+	+	85	17
+	+	83	22
+	+	84	27
+	+	88	0
+	+	74	0
+	+	75	0
+	+	61	24
+	+	62	0
+	+	64	1
+	+	61	3
+	+	64	13
+	+	61	12
+	+	63	16
+	+	74	15
+	+	73	0
+	+	74	12
+
+> ~/Projects/Zynta/src/lexer/lexer.c
+	*	1767629453	0
+	"	256	1
+	^	167	62
+	.	80	0
+	+	354	0
+	+	354	15
+	+	354	0
+	+	2	0
+	+	25	0
+	+	32	0
+	+	83	0
+	+	110	29
+	+	171	0
+	+	350	8
+	+	50	0
+	+	92	23
+	+	151	0
+	+	126	21
+	+	101	9
+	+	345	11
+	+	18	0
+	+	184	20
+	+	202	0
+	+	196	75
+	+	71	39
+	+	81	15
+	+	73	15
+	+	74	0
+	+	81	10
+	+	196	58
+	+	194	17
+	+	194	16
+	+	188	18
+	+	194	25
+	+	196	62
+	+	195	0
+	+	205	0
+	+	204	24
+	+	206	64
+	+	220	65
+	+	228	0
+	+	323	50
+	+	238	0
+	+	167	61
+	+	80	0
+
+> ~/Projects/Zynta/src/lexer/lexer.
+	*	1767628226	0
 	"	1	0
 
-> ~/st/config.def.h
-	*	1766851516	0
-	"	105	0
+> ~/Projects/Zynta/src/zynta.c
+	*	1767584163	0
+	"	54	4
+	^	77	8
+	.	77	7
+	+	66	0
+	+	71	0
+	+	67	0
+	+	73	0
+	+	66	24
+	+	67	31
+	+	71	20
+	+	73	26
+	+	76	1
+	+	77	7
 
-> ~/st/st.c
-	*	1766851329	0
-	"	1670	54
-	^	1670	55
-	.	1671	0
-	+	1670	55
-	+	1671	0
-
-> ~/dwm/config.h
-	*	1766850363	0
-	"	20	36
-	^	75	37
-	.	75	36
-	+	62	39
-	+	45	48
-	+	106	32
-	+	4	38
-	+	36	0
-	+	75	36
-
-> ~/leme-dotfiles/install.sh
-	*	1766787594	0
-	"	6	24
-	^	6	25
-	.	6	24
-	+	1	34
-	+	8	0
-	+	1	9
-	+	9	22
-	+	4	0
-	+	5	42
-	+	6	24
-
-> ~/leme-dotfiles/dwm/config.h
-	*	1766787170	0
-	"	44	44
-	^	44	45
-	.	44	44
-	+	44	44
-
-> ~/dotfiles/README
-	*	1766786144	0
-	"	1	3
-	.	1	0
-	+	1	0
-
-> ~/.config/i3blocks/scripts/vol.sh
-	*	1766786072	0
-	"	21	0
-	^	33	17
-	.	33	17
-	+	27	17
-	+	29	17
-	+	31	17
-	+	33	17
-
-> ~/dotfiles/Makefile
-	*	1766785691	0
-	"	45	0
+> ~/Projects/Zynta/src/zynta.
+	*	1767584095	0
+	"	1	0
