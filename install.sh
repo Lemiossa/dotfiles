@@ -78,17 +78,6 @@ void)
 	SYS_PKGS=(dbus NetworkManager elogind polkit lightdm lightdm-gtk-greeter)
 	INIT_SYS="runit"
 	;;
-gentoo)
-	PKG_MANAGER="sudo emerge"
-	INSTALL_CMD="--ask=n"
-	UPDATE_CMD="--sync"
-	XORG_PKGS=(x11-base/xorg-server x11-apps/xinit media-libs/mesa)
-	DEV_PKGS=(sys-devel/gcc sys-devel/make dev-util/pkgconf dev-vcs/git net-misc/curl sys-devel/clang)
-	LIB_PKGS=(x11-libs/libX11 x11-libs/libXinerama x11-libs/libXft media-libs/fontconfig media-libs/imlib2)
-	APP_PKGS=(app-editors/vim media-sound/cava app-shells/bash media-sound/pavucontrol x11-misc/xclip net-libs/nodejs media-gfx/feh www-client/firefox app-arch/unzip)
-	SYS_PKGS=(sys-apps/dbus net-misc/networkmanager sys-auth/polkit sys-auth/elogind x11-misc/lightdm x11-misc/lightdm-gtk-greeter)
-	INIT_SYS="openrc"
-	;;
 *)
 	log_error "Distribuição não suportada."
 	exit 1
@@ -111,25 +100,17 @@ if [[ -d "home" ]]; then
 	find "${HOME}/.config/dwmblocks" -name "*.sh" -exec chmod +x {} +
 fi
 
-# --- 4. Serviços e Prevenção de Quebras ---
+# --- 4. Serviços ---
 log_step "Configurando serviços ($INIT_SYS)..."
 case $INIT_SYS in
 systemd)
 	for svc in dbus NetworkManager lightdm; do
 		sudo systemctl enable $svc || true
 	done
-
-	log_info "Limpando conflitos de rede..."
 	sudo systemctl disable --now dhcpcd 2>/dev/null || true
-
 	if [[ "$DISTRO" != "debian" && "$DISTRO" != "ubuntu" ]]; then
 		sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
 	fi
-	;;
-openrc)
-	for svc in dbus elogind NetworkManager lightdm; do
-		sudo rc-update add $svc default || true
-	done
 	;;
 runit)
 	for svc in dbus elogind udevd NetworkManager polkitd lightdm; do
@@ -140,24 +121,16 @@ esac
 
 # --- 5. Componentes Globais ---
 log_step "Instalando componentes adicionais..."
-# Colorscripts
-if [[ ! -d "/opt/shell-color-scripts" ]]; then
-	sudo git clone https://github.com/charitarthchugh/shell-color-scripts.git /opt/shell-color-scripts
-	sudo ln -sf /opt/shell-color-scripts/colorscript.sh /usr/local/bin/colorscript
-	sudo chmod +x /usr/local/bin/colorscript
-fi
-# Pipes
-if [[ ! -d "/opt/pipes.sh" ]]; then
-	sudo git clone https://github.com/pipeseroni/pipes.sh /opt/pipes.sh
-	sudo ln -sf /opt/pipes.sh/pipes.sh /usr/local/bin/pipes
-	sudo chmod +x /usr/local/bin/pipes
-fi
-# pfetch
-if [[ ! -d "/opt/pfetch" ]]; then
-	sudo git clone https://github.com/dylanaraps/pfetch.git /opt/pfetch
-	sudo ln -sf /opt/pfetch/pfetch /usr/local/bin/pfetch
-	sudo chmod +x /usr/local/bin/pfetch
-fi
+for tool in "shell-color-scripts:https://github.com/charitarthchugh/shell-color-scripts.git:colorscript.sh:colorscript" \
+	"pipes.sh:https://github.com/pipeseroni/pipes.sh:pipes.sh:pipes" \
+	"pfetch:https://github.com/dylanaraps/pfetch.git:pfetch:pfetch"; do
+	IFS=":" read -r name repo script bin <<<"$tool"
+	if [[ ! -d "/opt/$name" ]]; then
+		sudo git clone "$repo" "/opt/$name"
+		sudo ln -sf "/opt/$name/$script" "/usr/local/bin/$bin"
+		sudo chmod +x "/usr/local/bin/$bin"
+	fi
+done
 
 # --- 6. Fontes ---
 log_step "Instalando FiraCode Nerd Font..."
@@ -192,8 +165,8 @@ if [[ -d "suckless" ]]; then
 	done
 fi
 
-# --- 9. Login Manager (LightDM Custom OneDark) ---
-log_step "Customizando LightDM (Estilo Antergos-Dark)..."
+# --- 9. Login Manager (LightDM GTK OneDark) ---
+log_step "Customizando LightDM com GTK Greeter OneDark..."
 
 # Criar entrada XSession para o dwm
 sudo mkdir -p /usr/share/xsessions
@@ -205,44 +178,21 @@ Exec=dwm
 Type=Application
 EOF'
 
-# Criar CSS customizado OneDark
-sudo mkdir -p /etc/lightdm/
+# Criar CSS OneDark
+sudo mkdir -p /etc/lightdm
 sudo bash -c 'cat > /etc/lightdm/greeter.css <<EOF
-/* Fundo OneDark */
-window {
-    background-color: #282c34;
-    background-image: none;
-}
-
-/* Caixa de Login Estilo Webkit/Antergos */
-#login_window {
-    background-color: #21252b;
-    border: 1px solid #61afef;
-    border-radius: 10px;
-    padding: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-/* Inputs e Botões */
-entry {
-    background-color: #282c34;
-    color: #abb2bf;
-    border: 1px solid #3e4452;
-    border-radius: 4px;
-    caret-color: #61afef;
-    margin: 5px 0;
-}
-
-label {
-    color: #abb2bf;
-}
-
-#shutdown_button, #restart_button {
-    color: #e06c75;
-}
+window { background-color: #282c34; color: #abb2bf; font-family: "FiraCode Nerd Font", "Sans"; }
+#login_window { background-color: #21252b; border: 2px solid #61afef; border-radius: 12px; padding: 40px; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5); }
+entry { background-color: #282c34; color: #abb2bf; border: 1px solid #3e4452; border-radius: 6px; padding: 10px; margin-bottom: 10px; caret-color: #61afef; }
+entry:focus { border-color: #61afef; box-shadow: 0 0 5px #61afef; }
+button { background-color: #3e4452; color: #abb2bf; border-radius: 6px; padding: 8px 16px; border: none; }
+button:hover { background-color: #61afef; color: #21252b; }
+label { color: #abb2bf; font-weight: bold; }
+#panel { background-color: transparent; color: #abb2bf; }
+#message_label { color: #e06c75; }
 EOF'
 
-# Aplicar configuração no LightDM GTK Greeter
+# Configurar o Greeter
 sudo bash -c 'cat > /etc/lightdm/lightdm-gtk-greeter.conf <<EOF
 [greeter]
 background = #282c34
@@ -250,16 +200,20 @@ theme-name = Adwaita-dark
 icon-theme-name = Adwaita
 font-name = FiraCode Nerd Font 11
 user-background = false
-hide-user-image = false
-default-user-image = #61afef
+hide-user-image = true
 indicators = ~time;~spacer;~power
 pos = 50%, center
 user-css-file = /etc/lightdm/greeter.css
 EOF'
 
-# Definir dwm como sessão padrão
-sudo sed -i 's/^#user-session=.*/user-session=dwm/' /etc/lightdm/lightdm.conf ||
-	echo "[Seat:*]
-user-session=dwm" | sudo tee -a /etc/lightdm/lightdm.conf
+# Definir como padrão
+sudo sed -i 's/^#greeter-session=.*/greeter-session=lightdm-gtk-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/^greeter-session=.*/greeter-session=lightdm-gtk-greeter/' /etc/lightdm/lightdm.conf
 
-log_step "CONCLUÍDO! Reinicie para entrar no seu novo dwm."
+if grep -q "^user-session=" /etc/lightdm/lightdm.conf; then
+	sudo sed -i 's/^user-session=.*/user-session=dwm/' /etc/lightdm/lightdm.conf
+else
+	echo -e "\n[Seat:*]\nuser-session=dwm" | sudo tee -a /etc/lightdm/lightdm.conf
+fi
+
+log_step "CONCLUÍDO! O LightDM agora usa o GTK Greeter com tema OneDark customizado."

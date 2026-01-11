@@ -2,8 +2,7 @@
 
 setxkbmap br
 
-WALLPAPER=od_gargantua
+WALLPAPER=od_
 dwmblocks &
 
 feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png
-
