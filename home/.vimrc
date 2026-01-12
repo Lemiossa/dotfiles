@@ -19,7 +19,7 @@ set re=0
 call plug#begin('~/.vim/plugged')
 
 " Temas e UI
-Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
@@ -45,11 +45,10 @@ call plug#end()
 
 set background=dark
 set termguicolors
-let g:onedark_terminal_italics = 1
-colorscheme onedark
+colorscheme gruvbox
 
 " Configuração Lightline
-let g:lightline = { 'colorscheme': 'onedark' }
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 set number relativenumber
 set signcolumn=yes

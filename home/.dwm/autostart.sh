@@ -2,7 +2,7 @@
 
 setxkbmap br
 
-WALLPAPER=od_
+WALLPAPER=pacman_ghosts
 dwmblocks &
 
 feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png

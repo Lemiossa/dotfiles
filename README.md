@@ -13,7 +13,6 @@ distros disponíveis:
 - ubuntu
 - arch
 - fedora
-- gentoo
 - void_linux
 
 Wallpapers disponíveis em https://github.com/Narmis-E/onedark-wallpapers e https://wallhaven.cc/
