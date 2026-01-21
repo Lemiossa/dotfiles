@@ -3,6 +3,11 @@ augroup filetype_detection
     autocmd BufNewFile,BufRead *.s,*.S set filetype=gas
 augroup END
 
+augroup filetype_detection
+    autocmd!
+    autocmd BufNewFile,BufRead *.asm set filetype=nasm
+augroup END
+
 set nocompatible
 filetype plugin indent on
 syntax on
@@ -14,7 +19,6 @@ set synmaxcol=200
 set laststatus=2
 set updatetime=250
 set re=0
-
 
 call plug#begin('~/.vim/plugged')
 
@@ -50,7 +54,7 @@ colorscheme gruvbox
 " Configuração Lightline
 let g:lightline = { 'colorscheme': 'gruvbox' }
 
-set number relativenumber
+set number
 set signcolumn=yes
 set mouse=a
 set scrolloff=8
@@ -68,7 +72,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <C-s> :w<CR>
 inoremap <C-s> <Esc>:w<CR>a
 
-" Melhor navegação de janelas (Alt + h/j/k/l)
+" Melhor navegação de janelas
 nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
@@ -109,7 +113,6 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> K <plug>(lsp-hover)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
-    " Formatação automática ao salvar
     autocmd BufWritePre <buffer> LspDocumentFormatSync
 endfunction
 
