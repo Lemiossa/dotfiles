@@ -23,7 +23,7 @@ set re=0
 call plug#begin('~/.vim/plugged')
 
 " Temas e UI
-Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
@@ -48,11 +48,10 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 set background=dark
-set termguicolors
-colorscheme gruvbox
+colorscheme solarized
 
 " Configuração Lightline
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:lightline = { 'colorscheme': 'solarized' }
 
 set number
 set signcolumn=yes
@@ -62,7 +61,7 @@ set splitbelow splitright
 
 " Invisíveis
 set list
-set listchars=tab:▸\ ,trail:·
+set listchars=tab:>\ ,trail:·
 
 let mapleader = ","
 
@@ -113,7 +112,6 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> K <plug>(lsp-hover)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
-    autocmd BufWritePre <buffer> LspDocumentFormatSync
 endfunction
 
 augroup lsp_install
@@ -135,3 +133,8 @@ autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "norm
 " Desativa indentLine em arquivos grandes para não travar o scroll
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'fzf']
+
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+

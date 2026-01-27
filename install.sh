@@ -102,6 +102,8 @@ if [[ -d "home" ]]; then
 	fi
 fi
 
+cp -r suckless ~/
+
 # --- 5. Serviços ---
 log_step "Configurando serviços ($INIT_SYS)..."
 case $INIT_SYS in
@@ -193,7 +195,8 @@ fi
 log_step "Configurações finais..."
 # Garante que .xinitrc existe
 if [[ ! -f "${HOME}/.xinitrc" ]]; then
-	echo "exec dwm" > "${HOME}/.xinitrc"
+	echo "#!/bin/sh" > "${HOME}/.xinitrc"
+	echo "exec dwm" >> "${HOME}/.xinitrc"
 	chmod +x "${HOME}/.xinitrc"
 fi
 

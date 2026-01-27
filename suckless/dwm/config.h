@@ -7,12 +7,12 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 1;            /* 0 means bottom bar */
 static const char *fonts[] = {"FiraCode Nerd Font:size=10"};
 static const char dmenufont[] = "FiraCode Nerd Font:size=10";
-static const char col_bg[] = "#282828";
-static const char col_bg_dark[] = "#1d2021";
-static const char col_gray_dark[] = "#3c3836";
-static const char col_fg[] = "#ebdbb2";
-static const char col_fg_sel[] = "#fbf1c7";
-static const char col_blue[] = "#83a598";
+static const char col_bg[]        = "#002b36";
+static const char col_bg_dark[]   = "#073642";
+static const char col_gray_dark[] = "#586e75";
+static const char col_fg[]        = "#839496";
+static const char col_fg_sel[]    = "#eee8d5";
+static const char col_blue[]      = "#268bd2";
 
 static const char *colors[][3] = {
     /*               fg           bg            border     */
