@@ -144,6 +144,22 @@ for name in "${!TOOLS[@]}"; do
 done
 
 # --- 7. Fontes ---
+log_step "Instalando BigBlueTerminal Nerd Font..."
+if [[ -f "BigBlueTerminal.zip" ]]; then
+	TEMP_DIR=$(mktemp -d)
+	unzip -q "BigBlueTerminal.zip" -d "$TEMP_DIR" 2>/dev/null || {
+		log_warn "Falha ao extrair fonte. Continuando..."
+	}
+	if [[ -n "$(ls -A "$TEMP_DIR"/*.ttf 2>/dev/null)" ]]; then
+		sudo mkdir -p /usr/share/fonts/truetype/BigBlueTerminalNerd
+		sudo cp "$TEMP_DIR"/*.ttf /usr/share/fonts/truetype/BigBlueTerminalNerd/ 2>/dev/null || true
+		sudo fc-cache -f
+	fi
+	rm -rf "$TEMP_DIR"
+else
+	log_warn "BigBlueTerminal.zip não encontrado. Pulando instalação de fonte."
+fi
+
 log_step "Instalando FiraCode Nerd Font..."
 if [[ -f "FiraCodeNerd.zip" ]]; then
 	TEMP_DIR=$(mktemp -d)
@@ -158,16 +174,6 @@ if [[ -f "FiraCodeNerd.zip" ]]; then
 	rm -rf "$TEMP_DIR"
 else
 	log_warn "FiraCodeNerd.zip não encontrado. Pulando instalação de fonte."
-fi
-
-# --- 8. Vim Plug ---
-log_step "Configurando Vim-Plug..."
-if [[ ! -f "${HOME}/.vim/autoload/plug.vim" ]]; then
-	curl -fLo "${HOME}/.vim/autoload/plug.vim" --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	if [[ -f "${HOME}/.vimrc" ]]; then
-		vim +PlugInstall +qall 2>/dev/null || log_warn "Instalação de plugins do Vim pode precisar ser feita manualmente"
-	fi
 fi
 
 # --- 9. Suckless ---
