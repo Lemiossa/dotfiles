@@ -34,12 +34,23 @@ log_info "Detectado: $NAME"
 
 # --- Configuração de Pacotes por Distro ---
 case $DISTRO in
+alpine)
+	PKG_MANAGER="sudo apk"
+	INSTALL_CMD="add"
+	UPDATE_CMD="update"
+	XORG_PKGS=(xorg-server xinit xrandr xsetroot xprop xev mesa-dri-gallium)
+	DEV_PKGS=(build-base pkgconf git curl clang clang-extra-tools zig cargo npm)
+	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev)
+	APP_PKGS=(vim cava bash pavucontrol xclip nodejs feh firefox unzip)
+	SYS_PKGS=(dbus networkmanager polkit-elf)
+	INIT_SYS="openrc"
+	;;
 fedora)
 	PKG_MANAGER="sudo dnf"
 	INSTALL_CMD="install -y"
 	UPDATE_CMD="upgrade -y"
 	XORG_PKGS=(xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-apps mesa-dri-drivers)
-	DEV_PKGS=(@development-tools pkgconfig git curl clang clang-tools-extra zig)
+	DEV_PKGS=(@development-tools pkgconfig git curl clang clang-tools-extra zig cargo npm)
 	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel)
 	APP_PKGS=(vim-X11 cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus NetworkManager polkit)
@@ -50,7 +61,7 @@ arch)
 	INSTALL_CMD="-S --noconfirm --needed"
 	UPDATE_CMD="-Syu --noconfirm"
 	XORG_PKGS=(xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xprop xorg-xev mesa)
-	DEV_PKGS=(base-devel pkgconf git curl clang zig)
+	DEV_PKGS=(base-devel pkgconf git curl clang zig cargo npm)
 	LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam)
 	APP_PKGS=(gvim cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus networkmanager polkit)
@@ -61,7 +72,7 @@ debian | ubuntu)
 	INSTALL_CMD="install -y"
 	UPDATE_CMD="update && sudo apt-get upgrade -y"
 	XORG_PKGS=(xorg xinit x11-xserver-utils mesa-utils)
-	DEV_PKGS=(build-essential pkg-config git curl clang clangd)
+	DEV_PKGS=(build-essential pkg-config git curl clang clangd cargo npm)
 	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev)
 	APP_PKGS=(vim-gtk3 cava bash pavucontrol alsa-utils xclip nodejs feh firefox-esr unzip wpa_supplicant)
 	SYS_PKGS=(dbus network-manager)
@@ -72,7 +83,7 @@ void)
 	INSTALL_CMD="-y"
 	UPDATE_CMD="-Syu"
 	XORG_PKGS=(xorg xinit xrandr xsetroot xprop xev mesa)
-	DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra zig)
+	DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra zig cargo npm)
 	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel)
 	APP_PKGS=(vim-x11 cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus NetworkManager elogind polkit)
@@ -120,6 +131,12 @@ systemd)
 runit)
 	for svc in dbus elogind udevd NetworkManager polkitd; do
 		[ -d "/etc/sv/$svc" ] && sudo ln -sf "/etc/sv/$svc" /var/service/ 2>/dev/null || true
+	done
+	;;
+openrc)
+	for svc in dbus networkmanager; do
+		sudo rc-update add "$svc" default 2>/dev/null || true
+		sudo rc-service "$svc" start 2>/dev/null || true
 	done
 	;;
 esac
@@ -207,4 +224,4 @@ if [[ ! -f "${HOME}/.xinitrc" ]]; then
 fi
 
 echo ""
-log_step "CONCLUÍDO!"
+log_step "CONCLUIDO!"
