@@ -1,0 +1,39 @@
+! ST Config
+st.font: BigBlueTerm437 Nerd Font:pixelsize=12:antialias=true:autohint=true
+st.color0: #073642
+st.color1: #dc322f
+st.color2: #859900
+st.color3: #b58900
+st.color4: #268bd2
+st.color5: #d33682
+st.color6: #2aa198
+st.color7: #eee8d5
+st.color8: #002b36
+st.color9: #cb4b16
+st.color10: #586e75
+st.color11: #657b83
+st.color12: #839496
+st.color13: #6c71c4
+st.color14: #93a1a1
+st.color15: #fdf6e3
+st.background: #002b36
+st.foreground: #839496
+st.cursorColor: #93a1a1
+st.borderpx: 2
+
+! DWM Config
+dwm.font: FiraCode Nerd Font:size=10
+dwm.dmenufont: FiraCode Nerd Font:size=10
+dwm.normfgcolor: #839496
+dwm.normbgcolor: #073642
+dwm.normbordercolor: #073642
+dwm.selfgcolor: #eee8d5
+dwm.selbgcolor: #586e75
+dwm.selbordercolor: #268bd2
+dwm.borderpx: 2
+dwm.snap: 32
+dwm.showbar: 1
+dwm.topbar: 1
+dwm.nmaster: 1
+dwm.resizehints: 0
+dwm.mfact: 0.55
