@@ -23,7 +23,7 @@ set re=0
 call plug#begin('~/.vim/plugged')
 
 " Temas e UI
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
@@ -48,10 +48,10 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
 
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " Configuração Lightline
-let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'gruvbox' }
 
 set number
 set signcolumn=yes
