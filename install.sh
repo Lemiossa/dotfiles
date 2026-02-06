@@ -39,7 +39,7 @@ alpine)
 	INSTALL_CMD="add"
 	UPDATE_CMD="update"
 	XORG_PKGS=(xorg-server xinit xrandr xsetroot xprop xev mesa-dri-gallium)
-	DEV_PKGS=(build-base pkgconf git curl clang17 npm)
+	DEV_PKGS=(build-base pkgconf git curl clang21 clang21-extra-tools npm)
 	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev)
 	APP_PKGS=(vim bash pavucontrol xclip nodejs feh firefox-esr unzip)
 	SYS_PKGS=(dbus networkmanager polkit-elogind)
