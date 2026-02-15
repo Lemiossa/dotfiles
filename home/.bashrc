@@ -51,10 +51,6 @@ set_prompt() {
 
 PROMPT_COMMAND=set_prompt
 
-export PATH="/opt/cross/bin:$PATH"
-
-colorscript -r
-
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi

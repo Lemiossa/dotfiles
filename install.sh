@@ -141,26 +141,7 @@ openrc)
 	;;
 esac
 
-# --- 6. Componentes Globais ---
-log_step "Instalando componentes adicionais..."
-declare -A TOOLS=(
-	["shell-color-scripts"]="https://github.com/charitarthchugh/shell-color-scripts.git:colorscript.sh:colorscript"
-	["pipes.sh"]="https://github.com/pipeseroni/pipes.sh:pipes.sh:pipes"
-	["pfetch"]="https://github.com/dylanaraps/pfetch.git:pfetch:pfetch"
-)
-
-for name in "${!TOOLS[@]}"; do
-	IFS=":" read -r repo script bin <<<"${TOOLS[$name]}"
-	if [[ ! -d "/opt/$name" ]]; then
-		sudo git clone "$repo" "/opt/$name" 2>/dev/null || continue
-		if [[ -f "/opt/$name/$script" ]]; then
-			sudo ln -sf "/opt/$name/$script" "/usr/local/bin/$bin"
-			sudo chmod +x "/usr/local/bin/$bin"
-		fi
-	fi
-done
-
-# --- 7. Fontes ---
+# --- 6. Fontes ---
 log_step "Instalando BigBlueTerminal Nerd Font..."
 if [[ -f "BigBlueTerminal.zip" ]]; then
 	TEMP_DIR=$(mktemp -d)
@@ -193,7 +174,7 @@ else
 	log_warn "FiraCodeNerd.zip não encontrado. Pulando instalação de fonte."
 fi
 
-# --- 9. Suckless ---
+# --- 7. Suckless ---
 log_step "Compilando Suckless..."
 if [[ -d "suckless" ]]; then
 	PROGS=(dwm st dmenu dwmblocks)
@@ -214,7 +195,7 @@ else
 	log_warn "Diretório 'suckless' não encontrado. Pulando compilação."
 fi
 
-# --- 10. Configuração final ---
+# --- 8. Configuração final ---
 log_step "Configurações finais..."
 # Garante que .xinitrc existe
 if [[ ! -f "${HOME}/.xinitrc" ]]; then
