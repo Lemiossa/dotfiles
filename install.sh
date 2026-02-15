@@ -40,7 +40,7 @@ alpine)
 	UPDATE_CMD="update"
 	XORG_PKGS=(xorg-server xinit xrandr xsetroot xprop xev mesa-dri-gallium)
 	DEV_PKGS=(build-base pkgconf git curl clang21 clang21-extra-tools npm)
-	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev)
+	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev harfbuzz harfbuzz-dev)
 	APP_PKGS=(vim bash pavucontrol xclip nodejs feh firefox-esr unzip)
 	SYS_PKGS=(dbus networkmanager polkit-elogind)
 	INIT_SYS="openrc"
@@ -51,7 +51,7 @@ fedora)
 	UPDATE_CMD="upgrade -y"
 	XORG_PKGS=(xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-apps mesa-dri-drivers)
 	DEV_PKGS=(@development-tools pkgconfig git curl clang clang-tools-extra zig cargo npm)
-	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel)
+	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 	APP_PKGS=(vim-X11 cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus NetworkManager polkit)
 	INIT_SYS="systemd"
@@ -62,7 +62,7 @@ arch)
 	UPDATE_CMD="-Syu --noconfirm"
 	XORG_PKGS=(xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xprop xorg-xev mesa)
 	DEV_PKGS=(base-devel pkgconf git curl clang zig cargo npm)
-	LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam)
+	LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam harfbuzz)
 	APP_PKGS=(gvim cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus networkmanager polkit)
 	INIT_SYS="systemd"
@@ -73,7 +73,7 @@ debian | ubuntu)
 	UPDATE_CMD="update && sudo apt-get upgrade -y"
 	XORG_PKGS=(xorg xinit x11-xserver-utils mesa-utils)
 	DEV_PKGS=(build-essential pkg-config git curl clang clangd cargo npm)
-	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev)
+	LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev libharfbuzz-dev)
 	APP_PKGS=(vim-gtk3 cava bash pavucontrol alsa-utils xclip nodejs feh firefox-esr unzip wpa_supplicant)
 	SYS_PKGS=(dbus network-manager)
 	INIT_SYS="systemd"
@@ -83,8 +83,8 @@ void)
 	INSTALL_CMD="-y"
 	UPDATE_CMD="-Syu"
 	XORG_PKGS=(xorg xinit xrandr xsetroot xprop xev mesa)
-	DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra zig cargo npm)
-	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel)
+	DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra cargo)
+	LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 	APP_PKGS=(vim-x11 cava bash pavucontrol xclip nodejs feh firefox unzip)
 	SYS_PKGS=(dbus NetworkManager elogind polkit)
 	INIT_SYS="runit"
