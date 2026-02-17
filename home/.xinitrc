@@ -1,4 +1,11 @@
 #/bin/sh
 
+setxkbmap br
+
+WALLPAPER=paisagem
+dwmblocks &
+
+feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png
+
 xrdb -merge ~/.Xresources
-exec dwm
+exec i3

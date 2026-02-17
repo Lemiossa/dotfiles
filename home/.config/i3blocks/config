@@ -1,0 +1,34 @@
+# i3blocks config
+
+command=/bin/bash -c
+separator=true
+separator_block_width=15
+markup=pango
+
+[disk]
+command=~/.config/i3blocks/Scripts/disk.sh
+interval=60
+
+[cpu]
+command=~/.config/i3blocks/Scripts/cpu.sh
+interval=5
+
+[ram]
+command=~/.config/i3blocks/Scripts/ram.sh
+interval=5
+
+[wifi]
+command=~/.config/i3blocks/Scripts/wifi.sh
+interval=10
+
+[volume]
+command=~/.config/i3blocks/Scripts/vol.sh
+interval=1
+
+[battery]
+command=~/.config/i3blocks/Scripts/battery.sh
+interval=30
+
+[date]
+command=~/.config/i3blocks/Scripts/date.sh
+interval=1

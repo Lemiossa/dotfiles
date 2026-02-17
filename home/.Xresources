@@ -1,39 +1,40 @@
-! ST Config
-st.font: FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true
-st.color0: #282828
-st.color1: #cc241d
-st.color2: #98971a
-st.color3: #d79921
-st.color4: #458588
-st.color5: #b16286
-st.color6: #689d6a
-st.color7: #a89984
-st.color8: #928374
-st.color9: #fb4934
-st.color10: #b8bb26
-st.color11: #fabd2f
-st.color12: #83a598
-st.color13: #d3869b
-st.color14: #8ec07c
-st.color15: #ebdbb2
-st.background: #282828
-st.foreground: #ebdbb2
-st.cursorColor: #fe8019
-st.borderpx: 2
+! xterm
 
-! DWM Config
-dwm.font: FiraCode Nerd Font:size=10
-dwm.dmenufont: FiraCode Nerd Font:size=10
-dwm.normfgcolor: #ebdbb2
-dwm.normbgcolor: #282828
-dwm.normbordercolor: #458588
-dwm.selfgcolor: #282828
-dwm.selbgcolor: #ebdbb2
-dwm.selbordercolor: #458588
-dwm.borderpx: 2
-dwm.snap: 32
-dwm.showbar: 1
-dwm.topbar: 1
-dwm.nmaster: 1
-dwm.resizehints: 0
-dwm.mfact: 0.55
+xterm*faceName: FiraCode Nerd Font
+xterm*faceSize: 11
+xterm*renderFont: true
+
+xterm*background: #1d2021
+xterm*foreground: #ebdbb2
+xterm*cursorColor: #fe8019
+
+xterm*saveLines: 10000
+
+! Normal colors
+xterm*color0:  #282828
+xterm*color1:  #cc241d
+xterm*color2:  #98971a
+xterm*color3:  #d79921
+xterm*color4:  #458588
+xterm*color5:  #b16286
+xterm*color6:  #689d6a
+xterm*color7:  #a89984
+
+! Bright colors
+xterm*color8:  #928374
+xterm*color9:  #fb4934
+xterm*color10: #b8bb26
+xterm*color11: #fabd2f
+xterm*color12: #83a598
+xterm*color13: #d3869b
+xterm*color14: #8ec07c
+xterm*color15: #ebdbb2
+
+! I3
+i3.font: FiraCode Nerd Font 10
+i3.term: xterm
+
+i3.background: #282828
+i3.foreground: #ebdbb2
+i3.accent:     #458588
+i3.urgent:     #cc241d
