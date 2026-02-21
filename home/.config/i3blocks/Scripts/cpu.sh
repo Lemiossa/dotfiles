@@ -10,4 +10,12 @@ CPU_PERC=$(echo "$CPU_USAGE" | awk '{u[NR]=$1; t[NR]=$2} END {printf "%d", (u[2]
 
 CPU=${CPU_PERC}
 
-echo "$ICON $CPU%"
+TEMP_RAW=$(cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null)
+
+if [ -n "$TEMP_RAW" ]; then
+	TEMP=$(echo "$TEMP_RAW" | awk '{printf "%.0f", $1/1000}')
+else
+	TEMP="N/A"
+fi
+
+echo "$ICON $CPU% $TEMP°C"

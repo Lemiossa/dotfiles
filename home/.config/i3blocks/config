@@ -25,6 +25,10 @@ interval=10
 command=~/.config/i3blocks/Scripts/vol.sh
 interval=1
 
+[bright]
+command=~/.config/i3blocks/Scripts/bright.sh
+interval=1
+
 [battery]
 command=~/.config/i3blocks/Scripts/battery.sh
 interval=30
