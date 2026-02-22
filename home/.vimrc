@@ -24,7 +24,8 @@ call plug#begin('~/.vim/plugged')
 
 " Temas e UI
 Plug 'morhetz/gruvbox'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 
 " Navegação e Busca
@@ -50,8 +51,7 @@ call plug#end()
 set background=dark
 colorscheme gruvbox
 
-" Configuração Lightline
-let g:lightline = { 'colorscheme': 'gruvbox' }
+let g:airline_theme = 'gruvbox'
 
 set number
 set signcolumn=yes
@@ -76,6 +76,9 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+
+" Autopairs
+au FileType c,cpp let b:AutoPairs = AutoPairsDefine({'/*' : '*/'})
 
 " FZF
 nnoremap <C-p> :Files<CR>
