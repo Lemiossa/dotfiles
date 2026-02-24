@@ -7,6 +7,7 @@ set_from_resource $bg i3.background
 set_from_resource $fg i3.foreground
 set_from_resource $accent i3.accent
 set_from_resource $urgent i3.urgent
+set_from_resource $launcher i3.launcher
 gaps inner 10
 smart_gaps on
 
@@ -41,7 +42,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+p exec --no-startup-id $launcher
 
 # change focus
 bindsym $mod+j focus left
