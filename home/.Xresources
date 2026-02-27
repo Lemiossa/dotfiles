@@ -1,6 +1,6 @@
 ! xterm
 
-xterm*faceName: FiraCode Nerd Font
+xterm*faceName: Terminus
 xterm*faceSize: 10
 xterm*renderFont: true
 
