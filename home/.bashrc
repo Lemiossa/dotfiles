@@ -54,3 +54,7 @@ PROMPT_COMMAND=set_prompt
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
+
+if [ -f /usr/bash-completion/bash_completion ]; then
+	. /usr/bash-completion/bash_completion
+fi
