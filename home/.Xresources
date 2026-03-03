@@ -1,41 +1,40 @@
 ! xterm
-
-xterm*faceName: Terminus
+xterm*faceName: FiraCode Nerd Font 10
 xterm*faceSize: 10
 xterm*renderFont: true
 
-xterm*background: #1d2021
-xterm*foreground: #ebdbb2
+xterm*background: #002b36
+xterm*foreground: #839496
 xterm*cursorColor: #fe8019
 
 xterm*saveLines: 10000
 
-! Normal colors
-xterm*color0:  #282828
-xterm*color1:  #cc241d
-xterm*color2:  #98971a
-xterm*color3:  #d79921
-xterm*color4:  #458588
-xterm*color5:  #b16286
-xterm*color6:  #689d6a
-xterm*color7:  #a89984
+! Normal
+xterm*color0:  #073642
+xterm*color1:  #dc322f
+xterm*color2:  #859900
+xterm*color3:  #b58900
+xterm*color4:  #268bd2
+xterm*color5:  #d33682
+xterm*color6:  #2aa198
+xterm*color7:  #eee8d5
 
-! Bright colors
-xterm*color8:  #928374
+! Bright
+xterm*color8:  #657b83
 xterm*color9:  #fb4934
 xterm*color10: #b8bb26
 xterm*color11: #fabd2f
 xterm*color12: #83a598
 xterm*color13: #d3869b
 xterm*color14: #8ec07c
-xterm*color15: #ebdbb2
+xterm*color15: #fdf6e3
 
-! I3
+! i3
 i3.font: FiraCode Nerd Font 10
 i3.term: xterm
 i3.launcher: rofi -show drun -show-icons
 
-i3.background: #282828
-i3.foreground: #ebdbb2
-i3.accent:     #458588
-i3.urgent:     #cc241d
+i3.background: #073642
+i3.foreground: #657b83
+i3.accent:     #268bd2
+i3.urgent:     #dc322f
