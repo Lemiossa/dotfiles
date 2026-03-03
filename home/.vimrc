@@ -24,6 +24,7 @@ set updatetime=250
 set re=0                      " novo motor de regex (mais rápido)
 set timeoutlen=500            " tempo de espera para mapeamentos
 set ttimeoutlen=10            " tempo de espera para sequências de teclas
+set notermguicolors
 
 call plug#begin('~/.vim/plugged')
 
@@ -71,10 +72,9 @@ Plug 'romainl/vim-cool'              " desativa highlight de busca ao mover
 call plug#end()
 
 set background=dark
-let g:gruvbox_background = 'medium'   " soft | medium | hard
-let g:gruvbox_better_performance = 1
-let g:gruvbox_enable_italic = 1
-let g:gruvbox_enable_bold = 1
+let g:gruvbox_contrast_dark = 'soft'
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 0
 colorscheme gruvbox
 
 " Fundo transparente (descomente se usar terminal transparente)
