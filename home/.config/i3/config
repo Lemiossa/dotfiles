@@ -165,4 +165,3 @@ bar {
 	}
 }
 
-exec_always picom
