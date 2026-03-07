@@ -8,4 +8,4 @@ dwmblocks &
 feh --bg-scale $HOME/Pictures/Wallpapers/$WALLPAPER.png
 
 xrdb -merge ~/.Xresources
-exec i3
+exec dbus-run-session i3
