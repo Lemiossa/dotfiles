@@ -89,6 +89,17 @@ void)
 	SYS_PKGS=(dbus NetworkManager elogind polkit)
 	INIT_SYS="runit"
 	;;
+gentoo)
+	PKG_MANAGER="sudo emerge"
+	INSTALL_CMD="-q --autounmask-write --deep --newuse"
+	UPDATE_CMD="--sync && sudo emerge -uDN @world"
+	XORG_PKGS=("x11-base/xorg-server" "x11-apps/xinit" "x11-apps/xrandr" "x11-apps/xsetroot" "x11-apps/xprop" "x11-apps/xev" "media-libs/mesa")
+	DEV_PKGS=("sys-devel/gcc" "sys-devel/make" "dev-vcs/git" "sys-devel/pkgconf" "net-misc/curl" "sys-devel/clang" "dev-lang/nodejs" "dev-lang/zig" "dev-lang/rust")
+	LIB_PKGS=("x11-libs/libX11" "x11-libs/libXinerama" "x11-libs/libXft" "media-libs/fontconfig" "media-libs/imlib2" "sys-libs/pam" "media-libs/harfbuzz")
+	APP_PKGS=("app-editors/vim" "media-sound/cava" "sys-apps/bash" "app-shells/bash-completion" "media-sound/pavucontrol" "media-sound/alsa-utils" "x11-misc/xclip" "dev-lang/nodejs" "media-gfx/feh" "www-client/chromium" "app-arch/unzip" "x11-wm/i3" "x11-wm/i3status" "x11-themes/papirus-icon-theme" "x11-misc/rofi" "media-fonts/terminus-font")
+	SYS_PKGS=("sys-apps/dbus" "net-misc/networkmanager" "sys-auth/polkit")
+	INIT_SYS="openrc"
+	;;
 *)
 	log_error "Distribuição não suportada."
 	exit 1
@@ -97,12 +108,29 @@ esac
 
 # --- 1. Atualização ---
 log_step "Atualizando repositórios..."
-eval "$PKG_MANAGER $UPDATE_CMD"
+# Para Gentoo, --sync é executado antes do emerge -uDN @world
+if [ "$DISTRO" = "gentoo" ]; then
+    log_info "Sincronizando a árvore Portage..."
+    sudo emerge --sync
+    log_info "Atualizando o sistema Gentoo..."
+    sudo emerge -uDN @world
+else
+    eval "$PKG_MANAGER $UPDATE_CMD"
+fi
 
 # --- 2. Instalação ---
 log_step "Instalando todos os pacotes..."
 ALL_PKGS=("${XORG_PKGS[@]}" "${DEV_PKGS[@]}" "${LIB_PKGS[@]}" "${APP_PKGS[@]}" "${SYS_PKGS[@]}")
-eval "$PKG_MANAGER $INSTALL_CMD ${ALL_PKGS[*]}"
+
+if [ "$DISTRO" = "gentoo" ]; then
+    # Para Gentoo, emerge pode precisar de --autounmask-write e depois um dispatch-conf
+    log_info "Instalando pacotes no Gentoo. Isso pode gerar prompts para USE flags ou unmasking."
+    log_info "Se solicitado, aceite as alterações de USE flags e execute 'etc-update' ou 'dispatch-conf' após a instalação."
+    sudo emerge -q --autounmask-write --deep --newuse "${ALL_PKGS[@]}"
+    log_info "Verifique se há atualizações de configuração com 'etc-update' ou 'dispatch-conf'."
+else
+    eval "$PKG_MANAGER $INSTALL_CMD ${ALL_PKGS[*]}"
+fi
 
 # --- 3. Dotfiles ---
 log_step "Copiando arquivos de configuração ..."
@@ -115,28 +143,31 @@ fi
 
 # --- 5. Serviços ---
 log_step "Configurando serviços ($INIT_SYS)..."
-case $INIT_SYS in
-systemd)
-	for svc in dbus NetworkManager; do
-		sudo systemctl enable "$svc" 2>/dev/null || true
-	done
-	# Desabilita serviços conflitantes
-	sudo systemctl disable --now dhcpcd 2>/dev/null || true
-	if [[ "$DISTRO" != "debian" && "$DISTRO" != "ubuntu" ]]; then
-		sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
-	fi
-	;;
-runit)
-	for svc in dbus elogind udevd NetworkManager polkitd; do
-		[ -d "/etc/sv/$svc" ] && sudo ln -sf "/etc/sv/$svc" /var/service/ 2>/dev/null || true
-	done
-	;;
-openrc)
-	for svc in dbus networkmanager; do
-		sudo rc-update add "$svc" default 2>/dev/null || true
-		sudo rc-service "$svc" start 2>/dev/null || true
-	done
-	;;
+case $INIT_SYS in	systemd)
+		for svc in dbus NetworkManager; do
+			sudo systemctl enable "$svc" 2>/dev/null || true
+		done
+		# Desabilita serviços conflitantes
+		sudo systemctl disable --now dhcpcd 2>/dev/null || true
+		if [[ "$DISTRO" != "debian" && "$DISTRO" != "ubuntu" ]]; then
+			sudo systemctl disable --now wpa_supplicant 2>/dev/null || true
+		fi
+		;;
+	runit)
+		for svc in dbus elogind udevd NetworkManager polkitd; do
+			[ -d "/etc/sv/$svc" ] && sudo ln -sf "/etc/sv/$svc" /var/service/ 2>/dev/null || true
+		done
+		;;
+	openrc)
+		for svc in dbus networkmanager polkitd; do # Adicionado polkitd para Gentoo OpenRC
+			sudo rc-update add "$svc" default 2>/dev/null || true
+			sudo rc-service "$svc" start 2>/dev/null || true
+		done
+		# Desabilitar serviços conflitantes no OpenRC (ex: dhcpcd, wpa_supplicant)
+		# A lógica exata pode variar, mas geralmente envolve remover do runlevel default
+		sudo rc-update del dhcpcd default 2>/dev/null || true
+		sudo rc-update del wpa_supplicant default 2>/dev/null || true
+		;;
 esac
 
 # --- 6. Fontes ---
