@@ -1,39 +1,40 @@
-! ST Config
-st.font: FiraCode Nerd Font:pixelsize=14:antialias=true:autohint=true
-st.color0: #282828
-st.color1: #cc241d
-st.color2: #98971a
-st.color3: #d79921
-st.color4: #458588
-st.color5: #b16286
-st.color6: #689d6a
-st.color7: #a89984
-st.color8: #928374
-st.color9: #fb4934
-st.color10: #b8bb26
-st.color11: #fabd2f
-st.color12: #83a598
-st.color13: #d3869b
-st.color14: #8ec07c
-st.color15: #ebdbb2
-st.background: #282828
-st.foreground: #ebdbb2
-st.cursorColor: #fe8019
-st.borderpx: 2
+! xterm
+xterm*faceName: FiraCode Nerd Font 10
+xterm*faceSize: 10
+xterm*renderFont: true
+xterm*saveLines: 10000
 
-! DWM Config
-dwm.font: FiraCode Nerd Font:size=10
-dwm.dmenufont: FiraCode Nerd Font:size=10
-dwm.normfgcolor: #ebdbb2
-dwm.normbgcolor: #282828
-dwm.normbordercolor: #458588
-dwm.selfgcolor: #282828
-dwm.selbgcolor: #ebdbb2
-dwm.selbordercolor: #458588
-dwm.borderpx: 2
-dwm.snap: 32
-dwm.showbar: 1
-dwm.topbar: 1
-dwm.nmaster: 1
-dwm.resizehints: 0
-dwm.mfact: 0.55
+! Background / Foreground
+xterm*background: #32302f
+xterm*foreground: #ddc7a1
+xterm*cursorColor: #ddc7a1
+
+! Normal (Soft)
+xterm*color0:  #504945
+xterm*color1:  #c14a4a
+xterm*color2:  #6c782e
+xterm*color3:  #b47109
+xterm*color4:  #45707a
+xterm*color5:  #945e80
+xterm*color6:  #4c7a5d
+xterm*color7:  #ddc7a1
+
+! Bright (menos neon)
+xterm*color8:  #665c54
+xterm*color9:  #ea6962
+xterm*color10: #a9b665
+xterm*color11: #d8a657
+xterm*color12: #7daea3
+xterm*color13: #d3869b
+xterm*color14: #89b482
+xterm*color15: #fbf1c7
+
+! i3
+i3.font: FiraCode Nerd Font 10
+i3.term: kitty
+i3.launcher: rofi -show drun -show-icons
+
+i3.background: #32302f
+i3.foreground: #ddc7a1
+i3.accent:     #45707a
+i3.urgent:     #c14a4a
