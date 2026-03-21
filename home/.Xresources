@@ -1,7 +1,8 @@
 ! xterm
-xterm*faceName: FiraCode Nerd Font 10
 xterm*faceSize: 10
-xterm*renderFont: true
+xterm*renderFont: false
+xterm*font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
+xterm*boldFont: -*-terminus-bold-r-normal-*-14-*-*-*-*-*-iso10646-1
 xterm*saveLines: 10000
 
 ! Background / Foreground
@@ -31,7 +32,7 @@ xterm*color15: #fbf1c7
 
 ! i3
 i3.font: FiraCode Nerd Font 10
-i3.term: kitty
+i3.term: xterm
 i3.launcher: rofi -show drun -show-icons
 
 i3.background: #32302f
