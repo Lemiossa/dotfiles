@@ -173,7 +173,7 @@ case "$DISTRO" in
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev harfbuzz harfbuzz-dev)
 		APP_PKGS=(vim bash bash-completion pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-font
-				  kitty adwaita-icon-theme)
+				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus networkmanager polkit-elogind)
 		INIT_SYS="openrc"
 		NETWORK_SVCS=(dbus networkmanager)
@@ -188,7 +188,7 @@ case "$DISTRO" in
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 		APP_PKGS=(vim-X11 cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-fonts
-				  kitty adwaita-cursor-theme)
+				  xterm adwaita-cursor-theme)
 		SYS_PKGS=(dbus NetworkManager polkit)
 		INIT_SYS="systemd"
 		NETWORK_SVCS=(dbus NetworkManager)
@@ -203,7 +203,7 @@ case "$DISTRO" in
 		LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam harfbuzz)
 		APP_PKGS=(gvim cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-font
-				  kitty adwaita-cursors)
+				  xterm adwaita-cursors)
 		SYS_PKGS=(dbus networkmanager polkit)
 		INIT_SYS="systemd"
 		NETWORK_SVCS=(dbus NetworkManager)
@@ -218,7 +218,7 @@ case "$DISTRO" in
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev libharfbuzz-dev)
 		APP_PKGS=(vim-gtk3 cava bash pavucontrol alsa-utils xclip nodejs feh chromium unzip
 				  i3 i3blocks papirus-icon-theme rofi xfonts-terminus
-				  kitty adwaita-icon-theme)
+				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus network-manager)
 		INIT_SYS="systemd"
 		NETWORK_SVCS=(dbus NetworkManager)
@@ -233,7 +233,7 @@ case "$DISTRO" in
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 		APP_PKGS=(vim-gtk3 cava bash bash-completion pavucontrol alsa-utils xclip nodejs feh chromium unzip
 				  wpa_supplicant i3 i3blocks papirus-icon-theme rofi xfonts-terminus
-				  kitty Adwaita-Cursors)
+				  xterm Adwaita-Cursors)
 		SYS_PKGS=(dbus NetworkManager elogind polkit)
 		INIT_SYS="runit"
 		NETWORK_SVCS=(dbus elogind udevd NetworkManager polkitd)
@@ -254,7 +254,7 @@ case "$DISTRO" in
 				  "dev-lang/nodejs" "media-gfx/feh" "www-client/chromium" "app-arch/unzip"
 				  "x11-wm/i3" "x11-wm/i3status" "x11-themes/papirus-icon-theme"
 				  "x11-misc/rofi" "media-fonts/terminus-font"
-				  "x11-terms/kitty" "x11-themes/adwaita-icon-theme")
+				  "x11-terms/xterm" "x11-themes/adwaita-icon-theme")
 		SYS_PKGS=("sys-apps/dbus" "net-misc/networkmanager" "sys-auth/polkit")
 		INIT_SYS="openrc"
 		NETWORK_SVCS=(dbus networkmanager)
