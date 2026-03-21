@@ -1,6 +1,6 @@
 ! xterm
-xterm*faceName: FiraCode Nerd Font 10
-xterm*faceSize: 10
+xterm*faceName: FiraCode Nerd Font
+xterm*faceSize: 12
 xterm*renderFont: true
 xterm*saveLines: 10000
 
