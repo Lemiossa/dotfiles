@@ -172,7 +172,7 @@ case "$DISTRO" in
 		DEV_PKGS=(build-base pkgconf git curl clang21 clang21-extra-tools npm)
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev harfbuzz harfbuzz-dev)
 		APP_PKGS=(vim bash bash-completion pavucontrol xclip nodejs feh chromium unzip
-				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-font
+				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus networkmanager polkit-elogind)
 		INIT_SYS="openrc"
@@ -187,7 +187,7 @@ case "$DISTRO" in
 		DEV_PKGS=(@development-tools pkgconfig git curl clang clang-tools-extra zig cargo npm)
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 		APP_PKGS=(vim-X11 cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
-				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-fonts
+				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-cursor-theme)
 		SYS_PKGS=(dbus NetworkManager polkit)
 		INIT_SYS="systemd"
@@ -202,7 +202,7 @@ case "$DISTRO" in
 		DEV_PKGS=(base-devel pkgconf git curl clang zig cargo npm)
 		LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam harfbuzz)
 		APP_PKGS=(gvim cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
-				  i3 i3blocks i3-gaps papirus-icon-theme rofi terminus-font
+				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-cursors)
 		SYS_PKGS=(dbus networkmanager polkit)
 		INIT_SYS="systemd"
@@ -217,7 +217,7 @@ case "$DISTRO" in
 		DEV_PKGS=(build-essential pkg-config git curl clang clangd cargo npm)
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev libharfbuzz-dev)
 		APP_PKGS=(vim-gtk3 cava bash pavucontrol alsa-utils xclip nodejs feh chromium unzip
-				  i3 i3blocks papirus-icon-theme rofi xfonts-terminus
+				  i3 i3blocks papirus-icon-theme rofi 
 				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus network-manager)
 		INIT_SYS="systemd"
@@ -232,7 +232,7 @@ case "$DISTRO" in
 		DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra cargo)
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
 		APP_PKGS=(vim-gtk3 cava bash bash-completion pavucontrol alsa-utils xclip nodejs feh chromium unzip
-				  wpa_supplicant i3 i3blocks papirus-icon-theme rofi xfonts-terminus
+				  wpa_supplicant i3 i3blocks papirus-icon-theme rofi 
 				  xterm Adwaita-Cursors)
 		SYS_PKGS=(dbus NetworkManager elogind polkit)
 		INIT_SYS="runit"
@@ -253,7 +253,7 @@ case "$DISTRO" in
 				  "media-sound/pavucontrol" "media-sound/alsa-utils" "x11-misc/xclip"
 				  "dev-lang/nodejs" "media-gfx/feh" "www-client/chromium" "app-arch/unzip"
 				  "x11-wm/i3" "x11-wm/i3status" "x11-themes/papirus-icon-theme"
-				  "x11-misc/rofi" "media-fonts/terminus-font"
+				  "x11-misc/rofi" 
 				  "x11-terms/xterm" "x11-themes/adwaita-icon-theme")
 		SYS_PKGS=("sys-apps/dbus" "net-misc/networkmanager" "sys-auth/polkit")
 		INIT_SYS="openrc"

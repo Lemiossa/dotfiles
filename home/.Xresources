@@ -1,8 +1,7 @@
 ! xterm
+xterm*faceName: FiraCode Nerd Font 10
 xterm*faceSize: 10
-xterm*renderFont: false
-xterm*font: -*-terminus-medium-r-normal-*-14-*-*-*-*-*-iso10646-1
-xterm*boldFont: -*-terminus-bold-r-normal-*-14-*-*-*-*-*-iso10646-1
+xterm*renderFont: true
 xterm*saveLines: 10000
 
 ! Background / Foreground
