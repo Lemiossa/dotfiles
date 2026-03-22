@@ -56,7 +56,7 @@ set_prompt() {
     local STATUS_COLOR=$COLOR_OK
     [[ $EXIT_CODE -ne 0 ]] && STATUS_COLOR=$COLOR_ERR
 
-    PROMPT="${STATUS_COLOR}${EXIT_CODE} ${COLOR_PATH}%~ $(git_prompt) %F{green}> %f"
+    PROMPT="${STATUS_COLOR}[${EXIT_CODE}]${COLOR_PATH}[%~] $(git_prompt) %F{green}$ %f"
 }
 
 precmd_functions+=(set_prompt)
