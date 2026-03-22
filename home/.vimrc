@@ -11,7 +11,7 @@ syntax on
 " Plugins
 call plug#begin() 
 
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'preservim/nerdtree'
@@ -26,7 +26,9 @@ au FileType c,cpp let b:AutoPairs = AutoPairsDefine({'/*':'*/'})
 au FileType vim,html let b:AutoPairs = AutoPairsDefine({'<':'>'})
 
 " Cores
-colorscheme gruvbox
+set termguicolors
+
+colorscheme onedark 
 set background=dark
 
 " Map

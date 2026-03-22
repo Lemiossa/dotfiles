@@ -5,36 +5,38 @@ xterm*renderFont: true
 xterm*saveLines: 10000
 
 ! Background / Foreground
-xterm*background: #32302f
-xterm*foreground: #ddc7a1
-xterm*cursorColor: #ddc7a1
+xterm*background: #282c34
+xterm*foreground: #abb2bf
+xterm*cursorColor: #abb2bf
 
-! Normal (Soft)
-xterm*color0:  #504945
-xterm*color1:  #c14a4a
-xterm*color2:  #6c782e
-xterm*color3:  #b47109
-xterm*color4:  #45707a
-xterm*color5:  #945e80
-xterm*color6:  #4c7a5d
-xterm*color7:  #ddc7a1
+! Normal
+xterm*color0:  #282c34
+xterm*color1:  #e06c75
+xterm*color2:  #98c379
+xterm*color3:  #e5c07b
+xterm*color4:  #61afef
+xterm*color5:  #c678dd
+xterm*color6:  #56b6c2
+xterm*color7:  #abb2bf
 
-! Bright (menos neon)
-xterm*color8:  #665c54
-xterm*color9:  #ea6962
-xterm*color10: #a9b665
-xterm*color11: #d8a657
-xterm*color12: #7daea3
-xterm*color13: #d3869b
-xterm*color14: #89b482
-xterm*color15: #fbf1c7
+! Bright
+xterm*color8:  #5c6370
+xterm*color9:  #e06c75
+xterm*color10: #98c379
+xterm*color11: #e5c07b
+xterm*color12: #61afef
+xterm*color13: #c678dd
+xterm*color14: #56b6c2
+xterm*color15: #ffffff
 
 ! i3
-i3.font: FiraCode Nerd Font 10
+i3.font: FiraCode Nerd Font 12
 i3.term: xterm
 i3.launcher: rofi -show drun -show-icons
 
-i3.background: #32302f
-i3.foreground: #ddc7a1
-i3.accent:     #45707a
-i3.urgent:     #c14a4a
+i3.background:    #282c34
+i3.foreground:    #abb2bf
+i3.accent:        #98c379
+i3.urgent:        #e06c75 
+i3.text_active:   #282c34
+i3.text_inactive: #abb2bf
