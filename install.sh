@@ -162,7 +162,6 @@ log_info "Detectado: ${PRETTY_NAME:-$NAME}"
 # =============================================================================
 #  Configuração de Pacotes por Distro
 # =============================================================================
-
 case "$DISTRO" in
 	alpine)
 		PKG_MANAGER="sudo apk"
@@ -171,7 +170,7 @@ case "$DISTRO" in
 		XORG_PKGS=(xorg-server xinit xrandr xsetroot xprop xev mesa-dri-gallium)
 		DEV_PKGS=(build-base pkgconf git curl clang21 clang21-extra-tools npm)
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev fontconfig-dev imlib2-dev linux-pam-dev harfbuzz harfbuzz-dev)
-		APP_PKGS=(vim bash bash-completion pavucontrol xclip nodejs feh chromium unzip
+		APP_PKGS=(vim bash bash-completion zsh pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus networkmanager polkit-elogind)
@@ -179,6 +178,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus networkmanager)
 		CONFLICT_SVCS=(dhcpcd wpa_supplicant)
 		;;
+
 	fedora)
 		PKG_MANAGER="sudo dnf"
 		INSTALL_CMD="install -y"
@@ -186,7 +186,7 @@ case "$DISTRO" in
 		XORG_PKGS=(xorg-x11-server-Xorg xorg-x11-xinit xorg-x11-apps mesa-dri-drivers)
 		DEV_PKGS=(@development-tools pkgconfig git curl clang clang-tools-extra zig cargo npm)
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
-		APP_PKGS=(vim-X11 cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
+		APP_PKGS=(vim-X11 cava bash bash-completion zsh pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-cursor-theme)
 		SYS_PKGS=(dbus NetworkManager polkit)
@@ -194,6 +194,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus NetworkManager)
 		CONFLICT_SVCS=(dhcpcd wpa_supplicant)
 		;;
+
 	arch)
 		PKG_MANAGER="sudo pacman"
 		INSTALL_CMD="-S --noconfirm --needed"
@@ -201,7 +202,7 @@ case "$DISTRO" in
 		XORG_PKGS=(xorg-server xorg-xinit xorg-xrandr xorg-xsetroot xorg-xprop xorg-xev mesa)
 		DEV_PKGS=(base-devel pkgconf git curl clang zig cargo npm)
 		LIB_PKGS=(libx11 libxinerama libxft fontconfig imlib2 pam harfbuzz)
-		APP_PKGS=(gvim cava bash bash-completion pavucontrol xclip nodejs feh chromium unzip
+		APP_PKGS=(gvim cava bash bash-completion zsh pavucontrol xclip nodejs feh chromium unzip
 				  i3 i3blocks i3-gaps papirus-icon-theme rofi 
 				  xterm adwaita-cursors)
 		SYS_PKGS=(dbus networkmanager polkit)
@@ -209,6 +210,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus NetworkManager)
 		CONFLICT_SVCS=(dhcpcd wpa_supplicant)
 		;;
+
 	debian | ubuntu)
 		PKG_MANAGER="sudo apt-get"
 		INSTALL_CMD="install -y"
@@ -216,7 +218,7 @@ case "$DISTRO" in
 		XORG_PKGS=(xorg xinit x11-xserver-utils mesa-utils)
 		DEV_PKGS=(build-essential pkg-config git curl clang clangd cargo npm)
 		LIB_PKGS=(libx11-dev libxinerama-dev libxft-dev libfontconfig1-dev libimlib2-dev libpam0g-dev libharfbuzz-dev)
-		APP_PKGS=(vim-gtk3 cava bash pavucontrol alsa-utils xclip nodejs feh chromium unzip
+		APP_PKGS=(vim-gtk3 cava bash zsh pavucontrol alsa-utils xclip nodejs feh chromium unzip
 				  i3 i3blocks papirus-icon-theme rofi 
 				  xterm adwaita-icon-theme)
 		SYS_PKGS=(dbus network-manager)
@@ -224,6 +226,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus NetworkManager)
 		CONFLICT_SVCS=(dhcpcd wpa_supplicant)
 		;;
+
 	void)
 		PKG_MANAGER="sudo xbps-install"
 		INSTALL_CMD="-y"
@@ -231,7 +234,7 @@ case "$DISTRO" in
 		XORG_PKGS=(xorg xinit xrandr xsetroot xprop xev mesa)
 		DEV_PKGS=(base-devel pkg-config git curl clang clang-tools-extra cargo)
 		LIB_PKGS=(libX11-devel libXinerama-devel libXft-devel fontconfig-devel imlib2-devel pam-devel harfbuzz harfbuzz-devel)
-		APP_PKGS=(vim-gtk3 cava bash bash-completion pavucontrol alsa-utils xclip nodejs feh chromium unzip
+		APP_PKGS=(vim-gtk3 cava bash bash-completion zsh pavucontrol alsa-utils xclip nodejs feh chromium unzip
 				  wpa_supplicant i3 i3blocks papirus-icon-theme rofi 
 				  xterm Adwaita-Cursors)
 		SYS_PKGS=(dbus NetworkManager elogind polkit)
@@ -239,6 +242,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus elogind udevd NetworkManager polkitd)
 		CONFLICT_SVCS=()
 		;;
+
 	gentoo)
 		PKG_MANAGER="sudo emerge"
 		INSTALL_CMD="-q --autounmask-write --deep --newuse"
@@ -250,6 +254,7 @@ case "$DISTRO" in
 		LIB_PKGS=("x11-libs/libX11" "x11-libs/libXinerama" "x11-libs/libXft"
 				  "media-libs/fontconfig" "media-libs/imlib2" "sys-libs/pam" "media-libs/harfbuzz")
 		APP_PKGS=("app-editors/vim" "media-sound/cava" "sys-apps/bash" "app-shells/bash-completion"
+				  "app-shells/zsh"
 				  "media-sound/pavucontrol" "media-sound/alsa-utils" "x11-misc/xclip"
 				  "dev-lang/nodejs" "media-gfx/feh" "www-client/chromium" "app-arch/unzip"
 				  "x11-wm/i3" "x11-wm/i3status" "x11-themes/papirus-icon-theme"
@@ -260,6 +265,7 @@ case "$DISTRO" in
 		NETWORK_SVCS=(dbus networkmanager)
 		CONFLICT_SVCS=(dhcpcd wpa_supplicant)
 		;;
+
 	*)
 		log_error "Distribuição '$DISTRO' não suportada."
 		exit 1
@@ -333,6 +339,33 @@ if [[ -d "$SCRIPT_DIR/home" ]]; then
 else
 	log_skip "Diretório home/ não encontrado"
 fi
+
+# =============================================================================
+#  3.1. Configurar os plugins do ZSH
+# =============================================================================
+log_step "Instalando plugins do Zsh"
+
+ZSH_PLUGIN_DIR="${HOME}/.zsh/plugins"
+mkdir -p "$ZSH_PLUGIN_DIR"
+
+clone_plugin() {
+	local repo="$1"
+	local dir="$2"
+
+	if [[ ! -d "$dir" ]]; then
+		git clone --depth=1 "$repo" "$dir" >> "$LOG_FILE" 2>&1 && \
+			log_ok "Plugin instalado: $(basename "$dir")" || \
+			log_warn "Falha ao clonar $repo"
+	else
+		log_skip "Plugin já existe: $dir"
+	fi
+}
+
+clone_plugin https://github.com/zsh-users/zsh-autosuggestions \
+	"$ZSH_PLUGIN_DIR/zsh-autosuggestions"
+
+clone_plugin https://github.com/zsh-users/zsh-syntax-highlighting \
+	"$ZSH_PLUGIN_DIR/zsh-syntax-highlighting"
 
 # =============================================================================
 #  4. Configuração do cursor Adwaita
@@ -415,24 +448,7 @@ else
 fi
 
 # =============================================================================
-#  6. Configuração do Kitty
-# =============================================================================
-log_step "Configurando Kitty"
-
-KITTY_CONFIG_DIR="${HOME}/.config/kitty"
-mkdir -p "$KITTY_CONFIG_DIR"
-
-# Cria link simbólico opcional: kitty como x-terminal-emulator (Debian/Ubuntu)
-if [[ "$DISTRO" == "debian" || "$DISTRO" == "ubuntu" ]] && has update-alternatives; then
-	KITTY_BIN="$(command -v kitty 2>/dev/null || true)"
-	if [[ -n "$KITTY_BIN" ]]; then
-		sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator "$KITTY_BIN" 50 >> "$LOG_FILE" 2>&1 || true
-		log_ok "kitty registrado como x-terminal-emulator"
-	fi
-fi
-
-# =============================================================================
-#  7. Serviços
+#  6. Serviços
 # =============================================================================
 log_step "Configurando serviços ($INIT_SYS)"
 
@@ -445,7 +461,7 @@ for svc in "${CONFLICT_SVCS[@]:-}"; do
 done
 
 # =============================================================================
-#  8. Fontes
+#  7. Fontes
 # =============================================================================
 log_step "Instalando fontes"
 
@@ -459,7 +475,7 @@ if has fc-cache; then
 fi
 
 # =============================================================================
-#  9. Configuração do .xinitrc
+#  8. Configuração do .xinitrc
 # =============================================================================
 log_step "Configurando .xinitrc"
 
