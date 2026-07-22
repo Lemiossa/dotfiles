@@ -1,0 +1,88 @@
+{
+    "logo": {
+        "source": "~/.config/fastfetch/logo.png",
+        "type": "kitty-direct",
+        "width": 30,
+        "height": 15,
+        "padding": {
+            "right": 2
+        }
+    },
+
+    "display": {
+        "separator": " : "
+    },
+
+    "modules": [
+        {
+            "type": "title",
+            "color": "magenta"
+        },
+        "break",
+
+        {
+            "type": "os",
+            "key": "OS",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "kernel",
+            "key": "Kernel",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "packages",
+            "key": "Packages",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "Shell",
+            "keyColor": "magenta"
+        },
+
+        "break",
+
+        {
+            "type": "wm",
+            "key": "WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "Terminal",
+            "keyColor": "blue"
+        },
+
+        "break",
+
+        {
+            "type": "cpu",
+            "key": "CPU",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "gpu",
+            "key": "GPU",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "memory",
+            "key": "Memory",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "disk",
+            "key": "Disk",
+            "keyColor": "magenta"
+        },
+
+        "break",
+
+        {
+            "type": "uptime",
+            "key": "Uptime",
+            "keyColor": "magenta"
+        }
+    ]
+}
