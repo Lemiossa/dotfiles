@@ -15,7 +15,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 " Plugins
 call plug#begin() 
 
-Plug 'joshdick/onedark.vim', { 'as': 'onedark', 'branch': 'main' }
+Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -32,11 +32,11 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-silent! colorscheme onedark
+silent! colorscheme gruvbox
 set background=dark
 
 let g:lightline = {
-	\ 'colorscheme': 'onedark',
+	\ 'colorscheme': 'gruvbox',
 	  \ }
 
 " Autopairs

@@ -28,7 +28,6 @@ sudo apt install -y \
     libx11-dev \
     libxft-dev \
     libxinerama-dev \
-    lsd \
     fastfetch \
     make \
     mpd \

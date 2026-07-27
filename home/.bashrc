@@ -9,7 +9,7 @@ shopt -s checkwinsize
 shopt -s cdspell
 shopt -s dirspell
 
-alias ls='lsd'
+alias ls='ls'
 alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -la'

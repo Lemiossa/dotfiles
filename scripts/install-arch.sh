@@ -25,7 +25,6 @@ sudo pacman -S --needed --noconfirm \
     libx11 \
     libxft \
     libxinerama \
-    lsd \
     fastfetch \
     make \
     mpd \

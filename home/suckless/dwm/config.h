@@ -12,13 +12,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_bg0[]         = "#282c34"; /* Background */
-static const char col_bg1[]         = "#3e4451"; /* Dark gray */
-static const char col_bg2[]         = "#5c6370"; /* Gray */
-static const char col_fg0[]         = "#abb2bf"; /* Foreground */
-static const char col_fg1[]         = "#5c6370"; /* Muted */
-static const char col_purple[]      = "#c678dd"; /* Purple (accent) */
-static const char col_blue[]        = "#61afef"; /* Blue */
+static const char col_bg0[]         = "#282828"; /* Background */
+static const char col_bg1[]         = "#3c3836"; /* Dark gray */
+static const char col_bg2[]         = "#504945"; /* Gray */
+static const char col_fg0[]         = "#ebdbb2"; /* Foreground */
+static const char col_fg1[]         = "#a89984"; /* Muted */
+static const char col_purple[]      = "#b16286"; /* Purple (accent) */
+static const char col_blue[]        = "#458588"; /* Blue */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_fg0,  col_bg0, col_bg1 },

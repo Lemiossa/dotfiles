@@ -25,7 +25,6 @@ sudo dnf install -y \
     libX11-devel \
     libXft-devel \
     libXinerama-devel \
-    lsd \
     fastfetch \
     make \
     mpd \
