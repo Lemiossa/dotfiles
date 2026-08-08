@@ -57,6 +57,8 @@ doas rc-service seatd start
 
 doas rc-update del wpa_supplicant boot
 doas rc-update del networking boot
+doas rc-update add dbus
+doas rc-update add bluetooth
 doas rc-service wpa_supplicant stop
 doas rc-update add networkmanager default
 doas rc-service networkmanager start
