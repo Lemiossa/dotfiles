@@ -8,14 +8,15 @@ Use the scripts in "scripts" dir.
 
 ### Wallpapers
 
-10 purple/dark minimalist wallpapers sourced from [Wallhaven](https://wallhaven.cc).
-See `home/Pictures/wallpapers/`.
+10 solarized dark "liquid" wallpapers (macOS-style flowing gradients) generated
+with the Solarized Dark palette (`home/Pictures/wallpapers/`). Pick one with
+`Mod+Shift+t` (set_wallpaper.sh).
 
 ### Vim Plugins
 
 | Plugin | Repository |
 |--------|------------|
-| onedark (colorscheme) | [joshdick/onedark.vim](https://github.com/joshdick/onedark.vim) |
+| solarized8 (colorscheme) | [lifepillar/vim-solarized8](https://github.com/lifepillar/vim-solarized8) |
 | auto-pairs | [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) |
 | lightline.vim | [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) |
 | nerdtree | [preservim/nerdtree](https://github.com/preservim/nerdtree) |

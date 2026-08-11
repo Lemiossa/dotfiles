@@ -15,7 +15,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 " Plugins
 call plug#begin() 
 
-Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -32,11 +32,11 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-silent! colorscheme gruvbox
+silent! colorscheme solarized8_dark
 set background=dark
 
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
+	\ 'colorscheme': 'solarized',
 	  \ }
 
 " Autopairs
