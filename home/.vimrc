@@ -15,7 +15,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 " Plugins
 call plug#begin() 
 
-Plug 'lifepillar/vim-solarized8'
+Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -32,7 +32,7 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-silent! colorscheme solarized8_dark
+silent! colorscheme solarized
 set background=dark
 
 let g:lightline = {
