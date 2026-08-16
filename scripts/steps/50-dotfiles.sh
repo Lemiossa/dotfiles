@@ -15,6 +15,8 @@ log "Installing system files (fonts)..."
 $SUDO cp -af "$REPO_DIR/root/." /
 
 if command -v fc-cache >/dev/null 2>&1; then
-	log "Refreshing the font cache..."
+	log "Refreshing the system font cache..."
 	$SUDO fc-cache -f
+	log "Refreshing the user font cache..."
+	fc-cache -f
 fi
