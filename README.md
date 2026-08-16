@@ -4,7 +4,46 @@ My personal dotfiles.
 
 ## Installation
 
-Use the scripts in "scripts" dir.
+The setup is split into small, reusable scripts:
+
+```
+scripts/
+├── install.sh            # entry point: detects the distro and runs all steps
+├── lib/                  # shared helpers
+│   ├── common.sh         # logging/errors and repository location
+│   └── detect.sh         # detects the distro via /etc/os-release
+├── pkg/                  # per-distro profile (apk/pacman/apt/dnf/xbps)
+│   ├── alpine.sh
+│   ├── arch.sh
+│   ├── debian.sh
+│   ├── fedora.sh
+│   └── void.sh
+└── steps/                # small steps, runnable individually
+    ├── 10-packages.sh    # installs packages (and removes elogind if needed)
+    ├── 20-services.sh    # enables services (seatd, NetworkManager, ...)
+    ├── 30-groups.sh      # adds the user to the required groups
+    ├── 40-shell.sh       # sets the default shell to bash
+    ├── 50-dotfiles.sh    # copies home/ and root/ (fonts) into the system
+    ├── 60-suckless.sh    # builds/installs dmenu, dwm, st and dwmblocks
+    └── 70-vim.sh         # installs the vim plugins
+```
+
+To install everything:
+
+```sh
+./scripts/install.sh
+```
+
+To run a single step (e.g. packages only):
+
+```sh
+./scripts/steps/10-packages.sh
+```
+
+Supported distros: Alpine, Arch, Debian/Ubuntu, Fedora and Void. The distro
+is detected automatically; to add another one, create a profile in
+`scripts/pkg/` defining `SUDO`, `PM_PACKAGES` and the functions `pkg_sync`,
+`pkg_install`, `pkg_remove`, `setup_services` and `setup_groups`.
 
 ### Wallpapers
 

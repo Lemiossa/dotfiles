@@ -1,0 +1,20 @@
+#!/bin/sh
+# steps/50-dotfiles.sh — copies dotfiles to $HOME and system files (fonts).
+
+set -e
+
+REPO_DIR="$(cd "$(dirname "$0")/../.." && pwd)"
+
+. "$REPO_DIR/scripts/lib/common.sh"
+. "$REPO_DIR/scripts/lib/detect.sh"
+
+log "Copying dotfiles to $HOME..."
+cp -af "$REPO_DIR/home/." "$HOME/"
+
+log "Installing system files (fonts)..."
+$SUDO cp -af "$REPO_DIR/root/." /
+
+if command -v fc-cache >/dev/null 2>&1; then
+	log "Refreshing the font cache..."
+	$SUDO fc-cache -f
+fi

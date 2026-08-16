@@ -1,0 +1,71 @@
+#!/bin/sh
+# pkg/fedora.sh — Fedora: dnf + systemd.
+
+DISTRO_NAME="Fedora"
+SUDO=sudo
+
+PM_PACKAGES="
+alsa-utils
+bash
+bash-completion
+brightnessctl
+cmake
+dunst
+eza
+feh
+fontconfig-devel
+freetype-devel
+gcc
+git
+gvim
+harfbuzz-devel
+imlib2-devel
+libX11-devel
+libXft-devel
+libXinerama-devel
+fastfetch
+make
+mpd
+mpd-mpc
+ncurses
+ncurses-devel
+NetworkManager
+NetworkManager-tui
+picom
+pipewire
+pipewire-pulse
+pkg-config
+playerctl
+rmpc
+seatd
+shadow-utils
+thunar
+thunar-archive-plugin
+thunar-volman
+wireplumber
+xinit
+xorg-x11-setxkbmap
+"
+
+REMOVE_ELOGIND=1
+
+pkg_sync() {
+	: # dnf resolves the metadata automatically
+}
+
+pkg_install() {
+	$SUDO dnf install -y "$@"
+}
+
+pkg_remove() {
+	$SUDO dnf remove -y "$@"
+}
+
+setup_services() {
+	$SUDO systemctl enable --now seatd
+	$SUDO systemctl enable --now NetworkManager
+}
+
+setup_groups() {
+	$SUDO usermod -aG video,input "$USER"
+}
