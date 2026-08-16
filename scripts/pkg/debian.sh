@@ -63,5 +63,12 @@ setup_services() {
 }
 
 setup_groups() {
-	$SUDO adduser "$USER" plugdev
+	case " $(id -nG "$USER") " in
+		*\ plugdev\ *)
+			: # already a member
+			;;
+		*)
+			$SUDO adduser "$USER" plugdev
+			;;
+	esac
 }
