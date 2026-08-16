@@ -1,0 +1,26 @@
+alt + Return
+    alacritty
+
+alt + p
+    rofi -show drun
+
+alt + shift + q
+    bspc quit
+
+alt + q
+    bspc node -c
+
+alt + {1,2,3,4,5}
+    bspc desktop -f '^{1,2,3,4,5}'
+
+alt + shift + {1,2,3,4,5}
+    bspc node -d '^{1,2,3,4,5}'
+
+alt + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+alt + shift + {h,j,k,l}
+    bspc node -v {-20 0,0 20,0 -20,20 0}
+
+alt + ctrl + {h,j,k,l}
+    bspc node -z {west -20 0,south 0 20,north 0 -20,east 20 0}

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+bspc monitor -d 1 2 3 4 5
+
+bspc config border_width         2
+bspc config window_gap           12
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config normal_border_color  "#4c566a"
+bspc config focused_border_color "#88c0d0"
+
+sxhkd &
+feh --bg-scale $HOME/.wallpaper &
+setxkbmap br
