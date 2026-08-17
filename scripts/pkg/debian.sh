@@ -34,6 +34,7 @@ picom
 pipewire
 pipewire-pulse
 pkg-config
+perl-utils
 playerctl
 rmpc
 seatd
@@ -43,6 +44,10 @@ thunar-volman
 wireplumber
 x11-xkb-utils
 xinit
+xorg
+bspwm
+sxhkd
+rofi
 "
 
 pkg_sync() {

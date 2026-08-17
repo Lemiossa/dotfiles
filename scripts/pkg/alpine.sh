@@ -33,6 +33,7 @@ picom
 pipewire
 pipewire-pulse
 pkgconf
+perl-utils
 playerctl
 rmpc
 seatd
@@ -46,6 +47,10 @@ imlib2-dev
 shadow
 ncurses
 ncurses-dev
+bspwm
+sxhkd
+rofi
+xorg-server
 "
 
 REMOVE_ELOGIND=1
@@ -65,11 +70,11 @@ pkg_remove() {
 setup_services() {
 	$SUDO rc-update add seatd default
 	$SUDO rc-service seatd start
-	$SUDO rc-update del wpa_supplicant boot
-	$SUDO rc-update del networking boot
+	$SUDO rc-update del wpa_supplicant boot || true
+	$SUDO rc-update del networking boot || true
 	$SUDO rc-update add dbus
 	$SUDO rc-update add bluetooth
-	$SUDO rc-service wpa_supplicant stop
+	$SUDO rc-service wpa_supplicant stop || true
 	$SUDO rc-update add networkmanager default
 	$SUDO rc-service networkmanager start
 }

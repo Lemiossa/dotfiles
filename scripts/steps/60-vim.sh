@@ -1,5 +1,5 @@
 #!/bin/sh
-# steps/70-vim.sh — installs the vim plugins.
+# steps/60-vim.sh — installs the vim plugins.
 
 set -e
 

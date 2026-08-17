@@ -35,6 +35,7 @@ picom
 pipewire
 pipewire-pulse
 pkg-config
+perl-utils
 playerctl
 rmpc
 seatd
@@ -45,6 +46,13 @@ thunar-volman
 wireplumber
 xinit
 xorg-x11-setxkbmap
+xorg-x11-server-Xorg
+xorg-x11-fonts-misc
+xorg-x11-fonts-100dpi
+xorg-x11-fonts-75dpi
+bspwm
+sxhkd
+rofi
 "
 
 REMOVE_ELOGIND=1

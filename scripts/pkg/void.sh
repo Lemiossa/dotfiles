@@ -34,6 +34,7 @@ picom
 pipewire
 pipewire-pulse
 pkg-config
+perl-utils
 playerctl
 rmpc
 seatd
@@ -44,6 +45,10 @@ thunar-volman
 wireplumber
 xinit
 xorg-setxkbmap
+xorg
+bspwm
+sxhkd
+rofi
 "
 
 REMOVE_ELOGIND=1
