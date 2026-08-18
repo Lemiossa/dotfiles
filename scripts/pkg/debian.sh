@@ -48,6 +48,7 @@ xorg
 bspwm
 sxhkd
 rofi
+polybar
 "
 
 pkg_sync() {

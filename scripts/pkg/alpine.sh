@@ -50,6 +50,7 @@ ncurses-dev
 bspwm
 sxhkd
 rofi
+polybar
 xorg-server
 "
 

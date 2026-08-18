@@ -53,6 +53,7 @@ xorg-x11-fonts-75dpi
 bspwm
 sxhkd
 rofi
+polybar
 "
 
 REMOVE_ELOGIND=1

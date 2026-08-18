@@ -19,5 +19,5 @@ dunst &
 pipewire &
 pipewire-pulse &
 wireplumber &
+polybar &
 
-$HOME/.config/lemonbar/execute.sh

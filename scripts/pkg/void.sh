@@ -49,6 +49,7 @@ xorg
 bspwm
 sxhkd
 rofi
+polybar
 "
 
 REMOVE_ELOGIND=1
