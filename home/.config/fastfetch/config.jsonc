@@ -46,12 +46,12 @@
         {
             "type": "wm",
             "key": "WM",
-            "keyColor": "blue"
+            "keyColor": "cyan"
         },
         {
             "type": "terminal",
             "key": "Terminal",
-            "keyColor": "blue"
+            "keyColor": "cyan"
         },
 
         "break",

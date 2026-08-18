@@ -69,17 +69,17 @@ __git_prompt() {
 				[ "$ahead" -gt 0 ] && status="${status}↑"
 				[ "$behind" -gt 0 ] && status="${status}↓"
 			fi
-			echo -e " \033[38;2;211;54;130m($branch$status)\033[0m"
+			echo -e " \033[38;2;180;142;173m($branch$status)\033[0m"
 		fi
 	fi
 }
 
 set_prompt() {
 	local EXIT_CODE="$?"
-	local MAGENTA="\[\033[38;2;211;54;130m\]"
-	local GRAY="\[\033[38;2;88;110;117m\]"
-	local GREEN="\[\033[38;2;133;153;0m\]"
-	local RED="\[\033[38;2;220;50;47m\]"
+	local MAGENTA="\[\033[38;2;180;142;173m\]"
+	local GRAY="\[\033[38;2;76;86;106m\]"
+	local GREEN="\[\033[38;2;163;190;140m\]"
+	local RED="\[\033[38;2;191;97;106m\]"
 	local RESET="\[\033[0m\]"
 
 	PS1="${GRAY}\w\$(__git_prompt) $([ $EXIT_CODE -eq 0 ] && echo "${GREEN}" || echo "${RED}")\$ ${RESET}"
