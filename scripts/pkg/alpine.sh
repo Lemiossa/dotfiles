@@ -5,6 +5,8 @@ DISTRO_NAME="Alpine Linux"
 SUDO=doas
 
 PM_PACKAGES="
+alacritty
+blueman
 alsa-utils
 bash
 bash-completion

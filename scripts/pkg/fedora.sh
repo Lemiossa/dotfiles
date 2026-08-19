@@ -5,6 +5,8 @@ DISTRO_NAME="Fedora"
 SUDO=sudo
 
 PM_PACKAGES="
+alacritty
+blueman
 alsa-utils
 bash
 bash-completion

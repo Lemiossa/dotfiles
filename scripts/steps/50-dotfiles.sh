@@ -22,4 +22,5 @@ if command -v fc-cache >/dev/null 2>&1; then
 fi
 
 log "Setting default wallpaper"
+rm -f "$HOME/.wallpaper"
 ln -s "$HOME/Pictures/wallpapers/nord_wallpaper_01.png" "$HOME/.wallpaper"
