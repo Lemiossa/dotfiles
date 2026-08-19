@@ -44,6 +44,10 @@ is detected automatically; to add another one, create a profile in
 `scripts/pkg/` defining `SUDO`, `PM_PACKAGES` and the functions `pkg_sync`,
 `pkg_install`, `pkg_remove`, `setup_services` and `setup_groups`.
 
+### Cursors
+
+- Krypton(https://www.gnome-look.org/p/2367491)
+
 ### Wallpapers
 
 10 Nord-themed wallpapers sourced from
