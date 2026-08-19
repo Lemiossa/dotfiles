@@ -20,3 +20,6 @@ if command -v fc-cache >/dev/null 2>&1; then
 	log "Refreshing the user font cache..."
 	fc-cache -f
 fi
+
+log "Setting default wallpaper"
+ln -s "$HOME/Pictures/wallpapers/nord_wallpaper_01.png" "$HOME/.wallpaper"
