@@ -50,15 +50,15 @@ is detected automatically; to add another one, create a profile in
 
 ### Wallpapers
 
-10 Nord-themed wallpapers sourced from
-[nordic-wallpapers](https://github.com/linuxdotexe/nordic-wallpapers/)
+10 Gruvbox-themed wallpapers sourced from
+[vctrblck/gruvbox-wallpapers](https://github.com/vctrblck/gruvbox-wallpapers)
 (`home/Pictures/wallpapers/`). Pick one with `Mod+Shift+t` (set_wallpaper.sh).
 
 ### Vim Plugins
 
 | Plugin | Repository |
 |--------|------------|
-| nord-vim (colorscheme) | [arcticicestudio/nord-vim](https://github.com/arcticicestudio/nord-vim) |
+| gruvbox-nvim (colorscheme) | [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) |
 | auto-pairs | [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) |
 | lightline.vim | [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) |
 | nerdtree | [preservim/nerdtree](https://github.com/preservim/nerdtree) |

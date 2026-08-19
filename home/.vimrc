@@ -15,7 +15,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 " Plugins
 call plug#begin() 
 
-Plug 'arcticicestudio/nord-vim'
+Plug 'ellisonleao/gruvbox.nvim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -32,11 +32,11 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-silent! colorscheme nord
+silent! colorscheme gruvbox
 set background=dark
 
 let g:lightline = {
-	\ 'colorscheme': 'nord',
+	\ 'colorscheme': 'gruvbox',
 	  \ }
 
 " Autopairs
