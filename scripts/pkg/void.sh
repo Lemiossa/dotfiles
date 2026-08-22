@@ -34,19 +34,17 @@ ncurses-devel
 NetworkManager
 picom
 pipewire
-pipewire-pulse
 pkg-config
-perl-utils
+perl
 playerctl
 rmpc
 seatd
 shadow
-thunar
+Thunar
 thunar-archive-plugin
 thunar-volman
 wireplumber
 xinit
-xorg-setxkbmap
 xorg
 bspwm
 sxhkd
@@ -69,8 +67,8 @@ pkg_remove() {
 }
 
 setup_services() {
-	$SUDO ln -sf /etc/sv/seatd /var/run/service/
-	$SUDO ln -sf /etc/sv/NetworkManager /var/run/service/
+	$SUDO ln -sf /etc/sv/seatd /var/service/
+	$SUDO ln -sf /etc/sv/NetworkManager /var/service/
 }
 
 setup_groups() {
