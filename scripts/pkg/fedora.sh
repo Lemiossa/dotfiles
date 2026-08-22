@@ -12,6 +12,7 @@ bash
 bash-completion
 brightnessctl
 cmake
+curl
 dunst
 eza
 feh
@@ -19,9 +20,11 @@ fontconfig-devel
 freetype-devel
 gcc
 git
+gh
 gvim
 harfbuzz-devel
 imlib2-devel
+jq
 libX11-devel
 libXft-devel
 libXinerama-devel
@@ -45,6 +48,7 @@ shadow-utils
 thunar
 thunar-archive-plugin
 thunar-volman
+wget
 wireplumber
 xinit
 xorg-x11-setxkbmap

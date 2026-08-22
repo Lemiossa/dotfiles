@@ -13,12 +13,15 @@ bash-completion
 build-essential
 brightnessctl
 cmake
+curl
 dunst
 eza
 feh
 git
+gh
 gvim
 imlib2-dev
+jq
 libfontconfig1-dev
 libfreetype6-dev
 libharfbuzz-dev
@@ -32,6 +35,8 @@ mpd
 mpc
 network-manager
 network-manager-gnome
+nodejs
+npm
 picom
 pipewire
 pipewire-pulse
@@ -43,6 +48,7 @@ seatd
 thunar
 thunar-archive-plugin
 thunar-volman
+wget
 wireplumber
 x11-xkb-utils
 xinit

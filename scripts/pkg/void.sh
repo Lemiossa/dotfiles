@@ -13,15 +13,18 @@ bash-completion
 base-devel
 brightnessctl
 cmake
+curl
 dunst
 eza
 feh
 fontconfig-devel
 freetype-devel
 git
+GitHub-cli
 gvim
 harfbuzz-devel
 imlib2-devel
+jq
 libX11-devel
 libXft-devel
 libXinerama-devel
@@ -32,6 +35,8 @@ mpc
 ncurses
 ncurses-devel
 NetworkManager
+nodejs
+npm
 picom
 pipewire
 pkg-config
@@ -43,6 +48,7 @@ shadow
 Thunar
 thunar-archive-plugin
 thunar-volman
+wget
 wireplumber
 xinit
 xorg

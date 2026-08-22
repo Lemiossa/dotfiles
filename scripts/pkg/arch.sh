@@ -13,15 +13,18 @@ bash-completion
 base-devel
 brightnessctl
 cmake
+curl
 dunst
 eza
 feh
 fontconfig
 freetype2
 git
+github-cli
 gvim
 harfbuzz
 imlib2
+jq
 libx11
 libxft
 libxinerama
@@ -32,6 +35,8 @@ mpc
 ncurses
 networkmanager
 nm-connection-editor
+nodejs
+npm
 picom
 pipewire
 pipewire-pulse
@@ -44,6 +49,7 @@ shadow
 thunar
 thunar-archive-plugin
 thunar-volman
+wget
 wireplumber
 xorg-setxkbmap
 xorg-xinit
