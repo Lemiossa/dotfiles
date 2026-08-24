@@ -5,7 +5,7 @@ DISTRO_NAME="Alpine Linux"
 SUDO=doas
 
 PM_PACKAGES="
-alacritty
+kitty
 blueman
 alsa-utils
 bash

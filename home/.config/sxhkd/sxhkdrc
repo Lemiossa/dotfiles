@@ -1,5 +1,5 @@
 alt + Return
-    alacritty
+    kitty
 
 alt + p
     rofi -show drun

@@ -5,7 +5,7 @@ DISTRO_NAME="Debian / Ubuntu"
 SUDO=sudo
 
 PM_PACKAGES="
-alacritty
+kitty
 blueman
 alsa-utils
 bash
