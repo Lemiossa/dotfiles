@@ -5,7 +5,7 @@ DISTRO_NAME="Fedora"
 SUDO=sudo
 
 PM_PACKAGES="
-kitty
+rxvt-unicode
 blueman
 alsa-utils
 bash

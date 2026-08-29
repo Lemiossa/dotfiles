@@ -5,7 +5,7 @@ DISTRO_NAME="Alpine Linux"
 SUDO=doas
 
 PM_PACKAGES="
-kitty
+rxvt-unicode
 blueman
 alsa-utils
 bash

@@ -16,7 +16,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 call plug#begin() 
 
 Plug 'github/copilot.vim'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/everforest'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -33,11 +33,12 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-silent! colorscheme gruvbox
+let g:everforest_background = 'soft'
+silent! colorscheme everforest
 set background=dark
 
 let g:lightline = {
-	\ 'colorscheme': 'gruvbox',
+	\ 'colorscheme': 'everforest',
 	  \ }
 
 " Autopairs

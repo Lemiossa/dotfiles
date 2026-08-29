@@ -5,7 +5,7 @@ DISTRO_NAME="Void Linux"
 SUDO=sudo
 
 PM_PACKAGES="
-kitty
+rxvt-unicode
 blueman
 alsa-utils
 bash

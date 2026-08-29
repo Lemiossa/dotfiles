@@ -50,15 +50,22 @@ is detected automatically; to add another one, create a profile in
 
 ### Wallpapers
 
-10 Gruvbox-themed wallpapers sourced from
-[vctrblck/gruvbox-wallpapers](https://github.com/vctrblck/gruvbox-wallpapers)
+10 Everforest-themed wallpapers sourced from
+[rejyr/everforest-walls](https://github.com/rejyr/everforest-walls)
 (`home/Pictures/wallpapers/`). Pick one with `Mod+Shift+t` (set_wallpaper.sh).
+
+### Fastfetch logo
+
+The ASCII cat logo (`home/.config/fastfetch/cat.txt`) is a classic, widely
+circulated public ASCII cat (original author unknown, e.g. seen in the
+[asciiart.eu cats archive](http://www.asciiart.eu/animals/cats)), recolored to
+the everforest palette. Public ASCII art; no attribution required.
 
 ### Vim Plugins
 
 | Plugin | Repository |
 |--------|------------|
-| gruvbox-nvim (colorscheme) | [ellisonleao/gruvbox.nvim](https://github.com/ellisonleao/gruvbox.nvim) |
+| everforest (colorscheme) | [sainnhe/everforest](https://github.com/sainnhe/everforest) |
 | auto-pairs | [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) |
 | lightline.vim | [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) |
 | nerdtree | [preservim/nerdtree](https://github.com/preservim/nerdtree) |

@@ -15,8 +15,10 @@ bspc rule -a Nm-connection-editor state=floating
 bspc rule -a feh state=floating
 bspc rule -a Qemu-system-i386 state=floating
 
-bspc config normal_border_color  "#3c3836"
-bspc config focused_border_color "#458588"
+bspc config normal_border_color  "#4b565c"
+bspc config focused_border_color "#a7c080"
+
+xrdb ~/.Xresources
 
 sxhkd &
 feh --bg-scale $HOME/.wallpaper &
@@ -27,5 +29,4 @@ pipewire &
 pipewire-pulse &
 wireplumber &
 polybar &
-picom &
-
+# picom &
