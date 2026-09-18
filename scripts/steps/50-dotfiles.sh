@@ -23,4 +23,4 @@ fi
 
 log "Setting default wallpaper"
 rm -f "$HOME/.wallpaper"
-ln -s "$HOME/Pictures/wallpapers/everforest_wallpaper_01.png" "$HOME/.wallpaper"
+ln -s "$HOME/Pictures/wallpapers/solarized_dark_01.png" "$HOME/.wallpaper"

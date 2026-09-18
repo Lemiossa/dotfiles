@@ -48,24 +48,47 @@ is detected automatically; to add another one, create a profile in
 
 - Krypton(https://www.gnome-look.org/p/2367491)
 
+### Theme
+
+Everything ships in **Solarized Dark** and can be switched to Solarized Light
+with a shortcut:
+
+| Key | Action |
+|-----|--------|
+| `Alt+T` | theme picker (rofi menu) |
+| `Alt+Shift+T` | toggle dark/light directly |
+
+The `solarized` script (`~/.local/bin/solarized`, invoked as `solarized`) flips
+the urxvt palette (`.Xresources`), bspwm borders, polybar colors, the GTK dark
+preference and the wallpaper, then triggers vim to `:source ~/.vimrc` on the
+next window focus. Subcommands: `dark`, `light`, `toggle`, `rofi`, `current`.
+
 ### Wallpapers
 
-10 Everforest-themed wallpapers sourced from
-[rejyr/everforest-walls](https://github.com/rejyr/everforest-walls)
-(`home/Pictures/wallpapers/`). Pick one with `Mod+Shift+t` (set_wallpaper.sh).
+6 Solarized wallpapers (`home/Pictures/wallpapers/`):
+
+- `solarized_dark_01..05.png` — Solarized Dark walls, sourced from
+  [fr0st-xyz/wallz](https://github.com/fr0st-xyz/wallz) (the dark default is
+  `solarized_dark_01.png`, symlinked to `~/.wallpaper`).
+- `solarized_light_01.png` — the classic Solarized-stripes design in Light
+  (base3 background), derived from the 4K artwork of
+  [NicksLameCode/solarized-light-gnome50-rice](https://github.com/NicksLameCode/solarized-light-gnome50-rice)
+  and resized to 1920x1080.
+
+The theme shortcut swaps the wallpaper automatically.
 
 ### Fastfetch logo
 
 The ASCII cat logo (`home/.config/fastfetch/cat.txt`) is a classic, widely
 circulated public ASCII cat (original author unknown, e.g. seen in the
-[asciiart.eu cats archive](http://www.asciiart.eu/animals/cats)), recolored to
-the everforest palette. Public ASCII art; no attribution required.
+[asciiart.eu cats archive](http://www.asciiart.eu/animals/cats)) with colors
+from the solarized palette. Public ASCII art; no attribution required.
 
 ### Vim Plugins
 
 | Plugin | Repository |
 |--------|------------|
-| everforest (colorscheme) | [sainnhe/everforest](https://github.com/sainnhe/everforest) |
+| vim-colors-solarized (colorscheme) | [altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized) |
 | auto-pairs | [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) |
 | lightline.vim | [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim) |
 | nerdtree | [preservim/nerdtree](https://github.com/preservim/nerdtree) |

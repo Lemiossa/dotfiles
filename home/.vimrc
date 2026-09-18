@@ -16,7 +16,7 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 call plug#begin() 
 
 Plug 'github/copilot.vim'
-Plug 'sainnhe/everforest'
+Plug 'altercation/vim-colors-solarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
@@ -33,13 +33,24 @@ call plug#end()
 
 " Colors and themes
 set termguicolors
-let g:everforest_background = 'soft'
-silent! colorscheme everforest
-set background=dark
 
-let g:lightline = {
-	\ 'colorscheme': 'everforest',
-	  \ }
+" The `solarized` script stores the active theme (dark|light) in
+" ~/.cache/solarized so vim can stay in sync with the desktop.
+let s:theme = 'dark'
+if filereadable(expand('~/.cache/solarized'))
+    let s:theme_lines = readfile(expand('~/.cache/solarized'))
+    if len(s:theme_lines) > 0 && s:theme_lines[0] ==# 'light'
+        let s:theme = 'light'
+    endif
+endif
+if s:theme ==# 'light'
+    set background=light
+else
+    set background=dark
+endif
+silent! colorscheme solarized
+
+let g:lightline = {'colorscheme': 'solarized'}
 
 " Autopairs
 au FileType c,cpp,javascript let b:AutoPairs = AutoPairsDefine({'/*':'*/'})

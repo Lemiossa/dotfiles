@@ -4,6 +4,12 @@ alt + Return
 alt + p
     rofi -show drun
 
+alt + t
+    solarized rofi
+
+alt + shift + t
+    solarized toggle
+
 alt + shift + q
     bspc quit
 
