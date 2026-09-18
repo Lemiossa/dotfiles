@@ -51,6 +51,7 @@ thunar-volman
 wget
 wireplumber
 x11-xkb-utils
+x11-xserver-utils
 xinit
 xorg
 bspwm

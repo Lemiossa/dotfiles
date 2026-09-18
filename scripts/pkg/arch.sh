@@ -54,6 +54,7 @@ wireplumber
 xorg-setxkbmap
 xorg-xinit
 xorg
+xorg-xsetroot
 bspwm
 sxhkd
 rofi

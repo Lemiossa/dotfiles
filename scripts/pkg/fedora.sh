@@ -54,6 +54,7 @@ xinit
 xorg-x11-setxkbmap
 xorg-x11-server-Xorg
 xorg-x11-fonts-misc
+xsetroot
 xorg-x11-fonts-100dpi
 xorg-x11-fonts-75dpi
 bspwm

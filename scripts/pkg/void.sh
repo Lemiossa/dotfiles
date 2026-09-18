@@ -52,6 +52,7 @@ wget
 wireplumber
 xinit
 xorg
+xsetroot
 bspwm
 sxhkd
 rofi

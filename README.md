@@ -44,9 +44,34 @@ is detected automatically; to add another one, create a profile in
 `scripts/pkg/` defining `SUDO`, `PM_PACKAGES` and the functions `pkg_sync`,
 `pkg_install`, `pkg_remove`, `setup_services` and `setup_groups`.
 
+### Appearance
+
+Every appearance element is centralized in `home/.config/appearance/`, a
+modular module with one easily editable source per setting:
+
+| File            | What it configures                                    |
+|-----------------|-------------------------------------------------------|
+| `settings.conf` | cursor theme/size, terminal + icon fonts, wallpapers, bspwm border width & gap |
+| `dark.conf`     | Solarized Dark palette, polybar/bspwm colors, GTK dark preference |
+| `light.conf`    | Solarized Light palette, polybar/bspwm colors, GTK dark preference |
+| `apply.sh`      | renders `.Xresources`, polybar colors, GTK settings, cursor fallback and the wallpaper, then applies them live |
+
+Edit `settings.conf` / the palettes and run `~/.config/appearance/apply.sh`
+(or toggle the theme) — the generated files are re-rendered from these sources.
+A full guide lives in `home/.config/appearance/README.md`.
+
+The module needs `xsetroot`, which is added to the package list of every
+distro (on Debian/Ubuntu it ships in `x11-xserver-utils`, on Arch it is
+`xorg-xsetroot`, elsewhere the distro package is `xsetroot`).
+
 ### Cursors
 
 - Krypton(https://www.gnome-look.org/p/2367491)
+
+The cursor theme and size are set once in
+`home/.config/appearance/settings.conf` and propagated to `.Xresources`,
+GTK and the cursor fallback. At login the root window cursor is forced to the
+left pointer (`xsetroot -cursor_name left_ptr &` in `bspwmrc`).
 
 ### Theme
 
@@ -58,10 +83,11 @@ with a shortcut:
 | `Alt+T` | theme picker (rofi menu) |
 | `Alt+Shift+T` | toggle dark/light directly |
 
-The `solarized` script (`~/.local/bin/solarized`, invoked as `solarized`) flips
-the urxvt palette (`.Xresources`), bspwm borders, polybar colors, the GTK dark
-preference and the wallpaper, then triggers vim to `:source ~/.vimrc` on the
-next window focus. Subcommands: `dark`, `light`, `toggle`, `rofi`, `current`.
+The `solarized` script (`~/.local/bin/solarized`, invoked as `solarized`) asks
+the appearance module to apply the whole theme: urxvt palette (`.Xresources`),
+bspwm borders, polybar colors, the GTK dark preference and the wallpaper, then
+triggers vim to `:source ~/.vimrc` on the next window focus. Subcommands:
+`dark`, `light`, `toggle`, `rofi`, `current`.
 
 ### Wallpapers
 

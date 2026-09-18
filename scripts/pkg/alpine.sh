@@ -60,6 +60,7 @@ sxhkd
 rofi
 polybar
 xorg-server
+xsetroot
 "
 
 REMOVE_ELOGIND=1
