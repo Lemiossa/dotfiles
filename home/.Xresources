@@ -1,5 +1,8 @@
 ! ~/.Xresources
 
+Xcursor.theme: KryptonBlackRH
+Xcursor.size: 24
+
 URxvt*font: xft:JetBrainsMono Nerd Font:size=11,xft:Symbols Nerd Font:size=11
 URxvt*scrollBar: false
 
