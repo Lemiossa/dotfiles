@@ -1,0 +1,24 @@
+[global]
+    font = JetBrainsMono 10
+    format = "<b>%s</b>\n%b"
+    width = 300
+    height = 100
+    offset = 10x40
+    transparency = 10
+    frame_color = "#504945"
+    separator_color = "#504945"
+
+[urgency_low]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 5
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    timeout = 8
+
+[urgency_critical]
+    background = "#cc241d"
+    foreground = "#ebdbb2"
+    timeout = 0

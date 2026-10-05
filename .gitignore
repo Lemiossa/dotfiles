@@ -1,0 +1,8 @@
+# Generated/cache files
+home/.config/mpd/database
+home/.config/mpd/mpd.log
+home/.config/mpd/pid
+home/.config/mpd/state
+home/.config/mpd/sticker.sqlite
+home/.vim/undo/*
+!home/.vim/undo/.gitkeep
