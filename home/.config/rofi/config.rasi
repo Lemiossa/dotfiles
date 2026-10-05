@@ -4,29 +4,4 @@ configuration {
     show-icons: true;
 }
 
-* {
-    background: #282828;
-    foreground: #ebdbb2;
-    accent:    #fabd2f;
-    border-color: #504945;
-}
-
-window {
-    width: 30%;
-    border: 2;
-    border-radius: 0;
-}
-
-mainbox {
-    padding: 10;
-}
-
-element selected {
-    background-color: @accent;
-    text-color: @background;
-}
-
-inputbar {
-    children: [prompt, entry];
-    padding: 5;
-}
+@theme "/usr/share/rofi/themes/gruvbox-dark.rasi"

@@ -12,6 +12,14 @@ fi
 
 source ~/.bashrc
 
+# Start a D-Bus session bus if there isn't one; without it, user services
+# (pipewire, pipewire-pulse, wireplumber, dunst...) fail to start on TTY login.
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    DBUS_OUTPUT="$(dbus-daemon --session --fork --print-address=1 --print-pid=1)"
+    export DBUS_SESSION_BUS_ADDRESS="$(printf '%s\n' "$DBUS_OUTPUT" | sed -n '1p')"
+    export DBUS_SESSION_BUS_PID="$(printf '%s\n' "$DBUS_OUTPUT" | sed -n '2p')"
+fi
+
 export XCURSOR_THEME="${CURSOR_THEME:-Adwaita}"
 export XCURSOR_SIZE="${CURSOR_SIZE:-24}"
 
