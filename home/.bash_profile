@@ -33,3 +33,7 @@ if [ ! -x "$SERVICES_FILE" ]; then
 fi
 
 "$SERVICES_FILE" &
+
+if [ "$(tty)" = "/dev/tty1" ]; then
+    exec startx
+fi
