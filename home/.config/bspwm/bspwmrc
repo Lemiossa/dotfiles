@@ -37,8 +37,8 @@ bspc rule -a Nm-connection-editor state=floating
 bspc rule -a feh state=floating
 bspc rule -a Qemu-system-i386 state=floating
 
-bspc config normal_border_color  "#504945"
-bspc config focused_border_color "#FABD2F"
+bspc config normal_border_color  "#514D59"
+bspc config focused_border_color "#E5C07B"
 
 xsetroot -cursor_name left_ptr &
 

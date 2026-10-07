@@ -15,7 +15,6 @@ au BufRead,BufNewFile *.asm,*.ASM set ft=nasm
 " Plugins
 call plug#begin() 
 
-Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'

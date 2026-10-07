@@ -72,5 +72,6 @@ startx
 The wallpaper is set by bspwmrc from `~/Pictures/Wallpapers/` (currently `viozene-circuits-dark.png`).
 
 ### Third Party
-Wallpapers: https://gruvbox-wallpapers.pages.dev/
+- Vim/lightline/Alacritty theme: https://github.com/Lemiossa/Viozene
+- Gruvbox wallpapers: https://gruvbox-wallpapers.pages.dev/
 
