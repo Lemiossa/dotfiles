@@ -69,7 +69,7 @@ Then start the graphical session with:
 startx
 ```
 
-The wallpaper is set by bspwmrc from `~/Pictures/Wallpapers/` (currently `beach.png`).
+The wallpaper is set by bspwmrc from `~/Pictures/Wallpapers/` (currently `viozene-circuits-dark.png`).
 
 ### Third Party
 Wallpapers: https://gruvbox-wallpapers.pages.dev/
