@@ -17,8 +17,7 @@ call plug#begin()
 
 Plug 'morhetz/gruvbox'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
@@ -33,9 +32,9 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme gruvbox
+colorscheme Viozene
 
-let g:airline_theme = 'gruvbox'
+let g:lightline = { 'colorscheme': 'Viozene' }
 
 " Autopairs
 au FileType c,cpp,javascript let b:AutoPairs = AutoPairsDefine({'/*':'*/'})
