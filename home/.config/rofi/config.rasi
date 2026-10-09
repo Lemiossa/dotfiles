@@ -2,42 +2,115 @@ configuration {
     font: "JetBrainsMono 10";
     modi: "drun,run,window";
     show-icons: true;
+    display-drun: "apps";
+    drun-display-format: "{name}";
 }
 
 /* Viozene */
 * {
-    bg:       #15121C;
-    bg-alt:   #332F3A;
-    fg:       #CAC3D2;
-    accent:   #E5C07B;
-    urgent:   #E06C75;
+    bg:     #15121C;
+    bg-alt: #332F3A;
+    line:   #514D59;
+    fg:     #CAC3D2;
+    fg-dim: #8E8895;
+    accent: #9B7EDE;
+    urgent: #E06C75;
+
     background-color: transparent;
-    text-color: @fg;
+    border: 0;
+    border-radius: 0;
+    spacing: 0;
+
+    /* rofi 2.0 resolve os estados dos elementos por estas variaveis */
+    background:      @bg;
+    lightbg:         @bg;
+    foreground:      @fg;
+
+    normal-foreground:           @fg;
+    active-foreground:           @accent;
+    urgent-foreground:           @urgent;
+    alternate-normal-foreground: @fg;
+    alternate-active-foreground: @accent;
+    alternate-urgent-foreground: @urgent;
+
+    selected-normal-background: @accent;
+    selected-active-background: @accent;
+    selected-urgent-background: @accent;
+    selected-normal-foreground: @bg;
+    selected-active-foreground: @bg;
+    selected-urgent-foreground: @bg;
+
+    normal-background:      @bg;
+    active-background:      @bg;
+    urgent-background:      @bg;
+    alternate-normal-background: @bg;
+    alternate-active-background: @bg;
+    alternate-urgent-background: @bg;
+
+    separatorcolor: @line;
+    red:             @urgent;
+    blue:            @accent;
 }
 
 window {
     background-color: @bg;
-    border: 2px;
-    border-color: @accent;
-    border-radius: 8px;
-    width: 40%;
+    border: 1px;
+    border-color: @line;
+    width: 34%;
 }
 
-mainbox { padding: 12px; }
+mainbox { padding: 8px; }
 
 inputbar {
-    background-color: transparent;
-    border: 0 0 2px 0;
-    border-color: @accent;
-    padding: 0 0 8px 0;
+    background-color: @bg;
+    border: 0;
+    border-bottom: 1px;
+    border-color: @line;
+    padding: 0 0 6px 0;
+    spacing: 6px;
     children: [ prompt, entry ];
 }
 
-prompt { text-color: @accent; margin: 0 8px 0 0; }
-entry { text-color: @fg; placeholder: "buscar..."; }
+prompt { text-color: @accent; }
 
-listview { lines: 8; padding: 8px 0 0 0; }
+entry {
+    background-color: @bg;
+    text-color: @fg;
+    placeholder: "search";
+    placeholder-color: @fg-dim;
+}
 
-element { padding: 6px 10px; border-radius: 4px; }
+textbox { background-color: @bg; text-color: @fg; }
+message { background-color: @bg; text-color: @fg; border: 0; }
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+    scrollbar: false;
+    background-color: @bg;
+    border: 0;
+    padding: 4px 0 0 0;
+    spacing: 0;
+}
+
+element {
+    padding: 4px 6px;
+    spacing: 8px;
+    background-color: @bg;
+    text-color: @fg;
+}
+
+element normal { background-color: @bg; text-color: @fg; }
+element urgent { background-color: @bg; text-color: @urgent; }
+element active { background-color: @bg; text-color: @accent; }
+element alternate { background-color: @bg; }
+element placeholder { background-color: @bg; text-color: @fg-dim; }
+
 element selected { background-color: @accent; text-color: @bg; }
-element urgent { background-color: @urgent; text-color: @bg; }
+element selected.normal { background-color: @accent; text-color: @bg; }
+element selected.active { background-color: @accent; text-color: @bg; }
+element selected.urgent { background-color: @urgent; text-color: @bg; }
+
+element-icon { size: 20px; vertical-align: 0.5; background-color: @bg; }
+element-text { background-color: inherit; }
