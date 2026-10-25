@@ -13,6 +13,11 @@ fi
 
 "$SERVICES_FILE" &
 
+# PATHS
+if [ -d "$HOME/.local/bin" ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
 if [ "$(tty)" = "/dev/tty1" ]; then
     exec startx
 fi
