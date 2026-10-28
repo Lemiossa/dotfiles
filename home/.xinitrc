@@ -1,4 +1,4 @@
 #!/bin/sh
 
-# Start the window manager
+# Iniciar o gerenciador de janelas
 exec bspwm

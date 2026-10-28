@@ -1,24 +1,37 @@
 [global]
     font = JetBrainsMono 10
     format = "<b>%s</b>\n%b"
-    width = 300
-    height = 100
-    offset = 10x40
-    transparency = 10
+    markup = full
+    width = 320
+    height = 120
+    offset = 12x48
+    origin = top-right
+    padding = 12
+    horizontal_padding = 14
+    gap_size = 8
+    corner_radius = 10
+    frame_width = 2
     frame_color = "#514D59"
     separator_color = "#514D59"
+    icon_position = left
+    max_icon_size = 48
+    enable_recursive_icon_lookup = true
+    icon_theme = Adwaita
 
 [urgency_low]
     background = "#15121C"
     foreground = "#CAC3D2"
+    frame_color = "#514D59"
     timeout = 5
 
 [urgency_normal]
     background = "#15121C"
     foreground = "#CAC3D2"
+    frame_color = "#E5C07B"
     timeout = 8
 
 [urgency_critical]
-    background = "#E06C75"
-    foreground = "#15121C"
+    background = "#15121C"
+    foreground = "#CAC3D2"
+    frame_color = "#E06C75"
     timeout = 0

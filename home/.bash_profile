@@ -17,8 +17,8 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     exec dbus-run-session "$HOME/.start.sh"
 fi
 
-# Non-tty1 logins: start a session bus manually so user services work,
-# without replacing the interactive shell.
+# Logins em terminais diferentes de tty1: inicia o barramento de sessão manualmente para
+# que os serviços do usuário funcionem, sem substituir o shell interativo.
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
     DBUS_OUTPUT="$(dbus-daemon --session --fork --print-address=1 --print-pid=1)"
     export DBUS_SESSION_BUS_ADDRESS="$(printf '%s\n' "$DBUS_OUTPUT" | sed -n '1p')"

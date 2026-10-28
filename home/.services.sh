@@ -1,5 +1,5 @@
 #!/bin/sh
-# This file initializes the user services(no X11)
+# Este arquivo inicializa os serviços do usuário (sem X11)
 
 exec_service() {
     local service="$1"

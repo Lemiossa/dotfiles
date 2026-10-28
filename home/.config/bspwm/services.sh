@@ -1,5 +1,5 @@
 #!/bin/sh
-# This file executes services for bspwm
+# Este arquivo executa os serviços para o bspwm
 
 exec_service() {
     local service="$1"
@@ -12,6 +12,5 @@ exec_service() {
     "$service" "$@" &
 }
 
-exec_service polybar &
-exec_service sxhkd &
-
+exec_service polybar main
+exec_service sxhkd

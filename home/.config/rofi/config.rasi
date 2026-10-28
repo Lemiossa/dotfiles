@@ -59,15 +59,15 @@ window {
     width: 34%;
 }
 
-mainbox { padding: 8px; }
+mainbox { padding: 14px; }
 
 inputbar {
     background-color: @bg;
     border: 0;
     border-bottom: 1px;
     border-color: @line;
-    padding: 0 0 6px 0;
-    spacing: 6px;
+    padding: 4px 6px 10px 6px;
+    spacing: 8px;
     children: [ prompt, entry ];
 }
 
@@ -90,13 +90,14 @@ listview {
     scrollbar: false;
     background-color: @bg;
     border: 0;
-    padding: 4px 0 0 0;
-    spacing: 0;
+    padding: 8px 0 0 0;
+    spacing: 2px;
 }
 
 element {
-    padding: 4px 6px;
-    spacing: 8px;
+    padding: 6px 10px;
+    spacing: 10px;
+    border-radius: 6px;
     background-color: @bg;
     text-color: @fg;
 }
@@ -112,5 +113,5 @@ element selected.normal { background-color: @accent; text-color: @bg; }
 element selected.active { background-color: @accent; text-color: @bg; }
 element selected.urgent { background-color: @urgent; text-color: @bg; }
 
-element-icon { size: 20px; vertical-align: 0.5; background-color: @bg; }
+element-icon { size: 24px; vertical-align: 0.5; background-color: @bg; }
 element-text { background-color: inherit; }

@@ -1,4 +1,4 @@
-# .bashrc
+# Configurações do bash
 [[ $- != *i* ]] && return
 
 export HISTCONTROL=ignoreboth:erasedups

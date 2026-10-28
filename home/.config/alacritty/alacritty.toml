@@ -1,4 +1,4 @@
-# Alacritty config - Viozene
+# Configuração do Alacritty - Viozene
 
 [font]
 size = 11.0
@@ -7,8 +7,9 @@ size = 11.0
 family = "JetBrainsMono"
 
 [window]
-opacity = 0.95
-padding = { x = 8, y = 8 }
+opacity = 0.92
+padding = { x = 14, y = 12 }
+dynamic_padding = true
 
 [colors.primary]
 background = "#15121C"
@@ -24,30 +25,30 @@ background = "#A6DA95"
 
 [colors.normal]
 black = "#514D59"
-red = "#9B7EDE"
-green = "#7AA2F7"
-yellow = "#D18BEA"
-blue = "#A6DA95"
-magenta = "#E06C75"
+red = "#E06C75"
+green = "#A6DA95"
+yellow = "#E5C07B"
+blue = "#7AA2F7"
+magenta = "#9B7EDE"
 cyan = "#7DCFFF"
 white = "#CAC3D2"
 
 [colors.bright]
 black = "#6F6A77"
-red = "#AA92E2"
-green = "#90AEF6"
-yellow = "#D69CEB"
-blue = "#B3DBA7"
-magenta = "#E2838E"
+red = "#E2838E"
+green = "#B3DBA7"
+yellow = "#ECCB8F"
+blue = "#90AEF6"
+magenta = "#AA92E2"
 cyan = "#92D2FC"
 white = "#E8E0F0"
 
 [colors.dim]
 black = "#332F3A"
-red = "#8068B7"
-green = "#6685CB"
-yellow = "#AB73C1"
-blue = "#89B27D"
-magenta = "#B75A63"
+red = "#B75A63"
+green = "#89B27D"
+yellow = "#B79A62"
+blue = "#6685CB"
+magenta = "#8068B7"
 cyan = "#68A9D2"
 white = "#ACA5B3"

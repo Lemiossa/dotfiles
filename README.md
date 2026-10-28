@@ -2,16 +2,17 @@
 
 This is my dotfiles.
 
-## Requeriments
+## Requisitos
 
 ### Base
-- xorg
-- startx
+- xorg (xinit, xsetroot)
+- dbus (dbus-run-session, dbus-daemon)
+- setxkbmap
 - feh
 - pipewire
 - pipewire-pulse
 - wireplumber
-- dunst 
+- dunst
 - bspwm
 - sxhkd
 - polybar
@@ -22,13 +23,13 @@ This is my dotfiles.
 - pavucontrol
 - alacritty
 - rofi
-- font-jetbrains-mono (used by polybar)
-- vim (plugins via vim-plug, install them on first run with `:PlugInstall`)
+- font-jetbrains-mono (usado pelo polybar)
+- vim (plugins via vim-plug, instale na primeira execução com `:PlugInstall`)
 
-### For better experince
-For animations:
+### Para uma melhor experiência
+Para animações:
 - picom
-For Musics:
+Para música:
 - mpd
 - mpc
 - ncmpcpp
