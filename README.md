@@ -25,6 +25,7 @@ This is my dotfiles.
 - rofi
 - font-jetbrains-mono (usado pelo polybar)
 - vim (plugins via vim-plug, instale na primeira execução com `:PlugInstall`)
+- nerd-fonts
 
 ### Para uma melhor experiência
 Para animações:
@@ -44,7 +45,7 @@ doas apk update
 doas setup-xorg-base
 doas apk add polybar bspwm sxhkd feh pipewire pipewire-pulse \
         wireplumber dunst gvim vim xclip shadow adwaita-icon-theme \
-        pavucontrol alacritty rofi font-jetbrains-mono
+        pavucontrol alacritty rofi font-jetbrains-mono nerd-fonts-all
 # Optional
 doas apk add mpd mpc ncmpcpp picom
 ```
