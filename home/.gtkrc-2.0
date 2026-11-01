@@ -1,0 +1,7 @@
+# GTK2 - Gruvbox Purple
+gtk-theme-name = "Gruvbox-Plus-Purple-Dark"
+gtk-icon-theme-name = "Gruvbox-Plus-Dark"
+gtk-cursor-theme-name = "Gruvbox-Cursors"
+gtk-cursor-theme-size = 24
+gtk-font-name = "JetBrainsMono Nerd Font 10"
+gtk-application-prefer-dark-theme = 1

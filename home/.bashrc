@@ -9,7 +9,7 @@ shopt -s checkwinsize
 shopt -s cdspell
 shopt -s dirspell
 
-alias ls='ls'
+alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
 alias l='ls -la'
@@ -26,7 +26,12 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
-export PS1='\[\e[38;5;141m\]\u@\h \[\e[38;5;75m\]\w \[\e[38;5;245m\]$ \[\e[0m\]'
+export PS1='\[\e[38;5;175m\]\u@\h \[\e[38;5;108m\]\w \[\e[38;5;214m\]$ \[\e[0m\]'
+
+# Cores do ls (Gruvbox Purple)
+if command -v dircolors >/dev/null 2>&1 && [ -f "$HOME/.dircolors" ]; then
+	eval "$(dircolors -b "$HOME/.dircolors")"
+fi
 
 if [ -d "$HOME/.local/bin" ]; then
 	export PATH="$HOME/.local/bin:$PATH"

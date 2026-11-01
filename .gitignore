@@ -6,3 +6,7 @@ home/.config/mpd/state
 home/.config/mpd/sticker.sqlite
 home/.vim/undo/*
 !home/.vim/undo/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc

@@ -10,7 +10,7 @@ fi
 
 source ~/.bashrc
 
-export XCURSOR_THEME="${CURSOR_THEME:-Adwaita}"
+export XCURSOR_THEME="${CURSOR_THEME:-Gruvbox-Cursors}"
 export XCURSOR_SIZE="${CURSOR_SIZE:-24}"
 
 if [ "$(tty)" = "/dev/tty1" ]; then

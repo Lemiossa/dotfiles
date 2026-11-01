@@ -1,0 +1,31 @@
+# ncmpcpp - aparência Gruvbox Purple
+# Somente opções visuais. O restante usa os padrões do ncmpcpp.
+
+colors_enabled = yes
+
+# Janelas
+main_window_color = 223
+header_window_color = 175
+window_border_color = 239
+alternative_ui_separator_color = 239:b
+
+# Barra de progresso
+progressbar_color = 245:b
+progressbar_elapsed_color = 175:b
+progressbar_look = "─╼"
+
+# Status e estados
+statusbar_color = 223
+statusbar_time_color = 175:b
+player_state_color = 175:b
+state_line_color = 245
+state_flags_color = 175:b
+volume_color = 175
+empty_tag_color = 245
+
+# Destaques
+color1 = 223
+color2 = 108
+
+# Visualizador
+visualizer_color = 175, 132, 108, 109, 214, 167, 208

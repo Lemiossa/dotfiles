@@ -31,9 +31,12 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme Viozene
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_italic = 1
+let g:gruvbox_bold = 1
+colorscheme gruvbox-purple
 
-let g:lightline = { 'colorscheme': 'Viozene' }
+let g:lightline = { 'colorscheme': 'gruvbox_purple' }
 
 " Autopairs
 au FileType c,cpp,javascript let b:AutoPairs = AutoPairsDefine({'/*':'*/'})

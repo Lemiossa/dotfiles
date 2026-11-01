@@ -16,4 +16,8 @@ if command -v picom >/dev/null 2>&1; then
     exec_service picom
 fi
 
+if command -v xsettingsd >/dev/null 2>&1; then
+    pgrep -f '[x]settingsd' >/dev/null 2>&1 || exec_service xsettingsd
+fi
+
 exec_service dunst

@@ -6,15 +6,16 @@ configuration {
     drun-display-format: "{name}";
 }
 
-/* Viozene */
+/* Gruvbox Purple */
 * {
-    bg:     #15121C;
-    bg-alt: #332F3A;
-    line:   #514D59;
-    fg:     #CAC3D2;
-    fg-dim: #8E8895;
-    accent: #9B7EDE;
-    urgent: #E06C75;
+    bg:     #1D2021;
+    bg-alt: #282828;
+    line:   #3C3836;
+    fg:     #EBDBB2;
+    fg-dim: #A89984;
+    accent: #D3869B;
+    accent-alt: #B16286;
+    urgent: #FB4934;
 
     background-color: transparent;
     border: 0;
@@ -110,7 +111,7 @@ element placeholder { background-color: @bg; text-color: @fg-dim; }
 
 element selected { background-color: @accent; text-color: @bg; }
 element selected.normal { background-color: @accent; text-color: @bg; }
-element selected.active { background-color: @accent; text-color: @bg; }
+element selected.active { background-color: @accent-alt; text-color: @bg; }
 element selected.urgent { background-color: @urgent; text-color: @bg; }
 
 element-icon { size: 24px; vertical-align: 0.5; background-color: @bg; }

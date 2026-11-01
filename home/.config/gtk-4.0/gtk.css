@@ -1,0 +1,43 @@
+/* Gruvbox Purple - GTK4 / libadwaita */
+@define-color accent_bg_color #D3869B;
+@define-color accent_fg_color #1D2021;
+@define-color accent_color #D3869B;
+
+@define-color destructive_bg_color #FB4934;
+@define-color destructive_fg_color #1D2021;
+@define-color destructive_color #FB4934;
+
+@define-color success_bg_color #B8BB26;
+@define-color success_fg_color #1D2021;
+@define-color success_color #B8BB26;
+
+@define-color warning_bg_color #FABD2F;
+@define-color warning_fg_color #1D2021;
+@define-color warning_color #FABD2F;
+
+@define-color error_bg_color #FB4934;
+@define-color error_fg_color #1D2021;
+@define-color error_color #FB4934;
+
+@define-color window_bg_color #1D2021;
+@define-color window_fg_color #EBDBB2;
+@define-color view_bg_color #282828;
+@define-color view_fg_color #EBDBB2;
+@define-color headerbar_bg_color #282828;
+@define-color headerbar_fg_color #EBDBB2;
+@define-color headerbar_border_color #3C3836;
+@define-color card_bg_color #3C3836;
+@define-color card_fg_color #EBDBB2;
+@define-color popover_bg_color #3C3836;
+@define-color popover_fg_color #EBDBB2;
+@define-color sidebar_bg_color #282828;
+@define-color sidebar_fg_color #EBDBB2;
+@define-color secondary_sidebar_bg_color #1D2021;
+@define-color secondary_sidebar_fg_color #EBDBB2;
+@define-color dialog_bg_color #282828;
+@define-color dialog_fg_color #EBDBB2;
+
+selection {
+    background-color: #D3869B;
+    color: #1D2021;
+}
