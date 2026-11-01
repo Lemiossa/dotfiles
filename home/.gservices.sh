@@ -13,7 +13,7 @@ exec_service() {
 }
 
 if command -v picom >/dev/null 2>&1; then
-    exec_service picom
+    #exec_service picom
 fi
 
 if command -v xsettingsd >/dev/null 2>&1; then
