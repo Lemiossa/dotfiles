@@ -1,4 +1,4 @@
-" Configs 
+" Configurações
 set number
 set relativenumber
 set tabstop=4
@@ -38,18 +38,18 @@ colorscheme gruvbox-purple
 
 let g:lightline = { 'colorscheme': 'gruvbox_purple' }
 
-" Autopairs
+" Auto-pares
 au FileType c,cpp,javascript let b:AutoPairs = AutoPairsDefine({'/*':'*/'})
 au FileType vim,html let b:AutoPairs = AutoPairsDefine({'<':'>'})
 
-" Map
+" Mapeamentos
 set clipboard=unnamedplus
 let mapleader=","
 
 " NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-" Autocomplete
+" Autocompletar
 set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 set updatetime=300
@@ -58,7 +58,7 @@ inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
-" Indentation
+" Indentação
 set list
 set listchars=tab:»·,trail:·
 

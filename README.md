@@ -1,6 +1,8 @@
 # Dotfiles
 
-This is my dotfiles.
+Estes são meus dotfiles.
+
+![Terminal com fastfetch](screenshots/terminal-fastfetch.png)
 
 ## Requisitos
 
@@ -60,9 +62,9 @@ O wallpaper fica em `~/Pictures/Wallpapers/gruvbox-purple.png` e pode ser regera
 python3 scripts/generate-wallpaper.py
 ```
 
-## Install
+## Instalação
 
-The first step is install all packages
+O primeiro passo é instalar todos os pacotes.
 
 ### Alpine
 ```sh
@@ -71,17 +73,17 @@ doas setup-xorg-base
 doas apk add polybar bspwm sxhkd feh pipewire pipewire-pulse \
         wireplumber dunst gvim vim xclip shadow adwaita-icon-theme \
         pavucontrol alacritty rofi font-jetbrains-mono nerd-fonts-all
-# Optional
+# Opcional
 doas apk add mpd mpc ncmpcpp picom
 ```
 
-After this, set the bash to default shell and copy the home/ files
+Depois disso, defina o bash como shell padrão e copie os arquivos de `home/`:
 ```sh
 chsh -s $(which bash)
 cp -af home/. ~/
 ```
 
-Make sure the scripts are executable:
+Certifique-se de que os scripts são executáveis:
 ```sh
 chmod +x ~/.xinitrc ~/.services.sh ~/.gservices.sh ~/.start.sh ~/.config/bspwm/bspwmrc ~/.config/bspwm/services.sh scripts/install-appearance.sh
 ```
@@ -91,22 +93,21 @@ Instale os assets visuais (sem root):
 ./scripts/install-appearance.sh
 ```
 
-Update font cache:
+Atualize o cache de fontes:
 ```sh
 fc-cache -fv
 ```
 
-Then start the graphical session with:
+Em seguida, inicie a sessão gráfica com:
 ```sh
 startx
 ```
 
-The wallpaper is set by bspwmrc from `~/Pictures/Wallpapers/` (currently `gruvbox-purple.png`).
+O wallpaper é definido pelo bspwmrc a partir de `~/Pictures/Wallpapers/` (atualmente `gruvbox-purple.png`).
 
-### Third Party
-- GTK theme: https://github.com/SylEleuth/gruvbox-plus-gtk
-- Icon pack: https://github.com/SylEleuth/gruvbox-plus-icon-pack
-- Cursors: https://github.com/sainnhe/capitaine-cursors (variante Gruvbox)
+### Projetos de terceiros
+- Tema GTK: https://github.com/SylEleuth/gruvbox-plus-gtk
+- Pacote de ícones: https://github.com/SylEleuth/gruvbox-plus-icon-pack
+- Cursores: https://github.com/sainnhe/capitaine-cursors (variante Gruvbox)
 - Vim/lightline: https://github.com/morhetz/gruvbox (adaptado com destaque roxo)
-- Gruvbox wallpapers: https://gruvbox-wallpapers.pages.dev/
-
+- Wallpapers Gruvbox: https://gruvbox-wallpapers.pages.dev/
