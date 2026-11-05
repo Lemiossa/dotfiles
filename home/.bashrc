@@ -26,7 +26,7 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
-export PS1='\[\e[38;5;175m\]\u@\h \[\e[38;5;108m\]\w \[\e[38;5;214m\]$ \[\e[0m\]'
+export PS1='\[\e[38;5;108m\]\w \[\e[38;5;214m\]$ \[\e[0m\]'
 
 # Cores do ls (Gruvbox Purple)
 if command -v dircolors >/dev/null 2>&1 && [ -f "$HOME/.dircolors" ]; then
