@@ -37,7 +37,9 @@ chmod +x compile_all.sh
 
 O `compile_all.sh` detecta automaticamente `doas` (Alpine), `sudo` (demais)
 ou executa `make install` diretamente se você já for root. Os binários são
-instalados em `/usr/local/bin`.
+instalados em `/usr/local/bin`. Ele também verifica antes se `tic` está
+disponível: o `make install` do st usa `tic -sx st.info` para registrar o
+terminfo `st-256color` (pacote `ncurses`, ou `ncurses-bin` no Debian/Ubuntu).
 
 ## 4. Cache de fontes e plugins do vim
 

@@ -17,12 +17,14 @@ sudo apt install -y --no-install-recommends \
     fonts-jetbrains-mono fontconfig procps \
     iw wireless-tools curl ca-certificates bash git unzip emptty \
     pipewire pipewire-pulse wireplumber dunst \
-    mpd mpc ncmpcpp picom sudo
+    mpd mpc ncmpcpp picom ncurses-bin sudo
 ```
 
 `x11-xserver-utils` fornece `xsetroot`, `xset` e `xrdb`; `x11-xkb-utils`
 fornece `setxkbmap`; `pulseaudio-utils` fornece `pactl`, usado por `volume.sh`;
 `wireless-tools` fornece `iwgetid`, usado como fallback em `network.sh`.
+`ncurses-bin` fornece `tic`, usado pelo `make install` do st para registrar o
+terminfo `st-256color`.
 
 ## 2. Fontes Nerd
 

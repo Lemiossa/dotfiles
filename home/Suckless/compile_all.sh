@@ -12,6 +12,12 @@ else
 	exit 1
 fi
 
+# O 'make install' do st executa 'tic -sx st.info' para registrar o terminfo.
+if ! command -v tic >/dev/null 2>&1; then
+	echo "Erro: 'tic' não encontrado. Instale ncurses (ncurses-bin no Debian/Ubuntu) antes de compilar o st." >&2
+	exit 1
+fi
+
 for d in dwm dwmblocks dmenu st; do
 	(cd "$HOME/Suckless/$d" && make && $SUDO make install && make clean)
 done

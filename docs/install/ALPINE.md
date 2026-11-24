@@ -16,13 +16,14 @@ doas apk add --no-cache \
     build-base setxkbmap xinit xset wireless-tools procps xz \
     git unzip emptty \
     pipewire pipewire-pulse wireplumber dunst \
-    mpc mpd ncmpcpp picom
+    mpc mpd ncmpcpp picom ncurses
 ```
 
 - `setup-xorg-base` faz parte do `alpine-conf`, presente em uma instalação padrão do Alpine.
 - `dbus-openrc` é necessário: o pacote `dbus` sozinho **não** traz o script `/etc/init.d/dbus` no Alpine 3.24.
 - `wireless-tools` fornece `iwgetid`, usado como fallback em `network.sh`.
 - `nerd-fonts-all` + `font-jetbrains-mono` cobrem as fontes pedidas pelo `config.h` do dwm e pelo rofi.
+- `ncurses` fornece o `tic`, usado pelo `make install` do st para registrar o terminfo `st-256color`.
 
 ## 2. Serviços
 

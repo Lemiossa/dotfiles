@@ -15,7 +15,7 @@ sudo dnf install -y \
     jetbrains-mono-fonts fontconfig procps-ng \
     iw curl bash git unzip \
     pipewire pipewire-pulseaudio wireplumber dunst \
-    mpc ncmpcpp picom sudo
+    mpc ncmpcpp picom ncurses sudo
 ```
 
 Diferenças em relação ao Alpine que foram validadas nos repositórios do Fedora 42:
@@ -28,6 +28,7 @@ Diferenças em relação ao Alpine que foram validadas nos repositórios do Fedo
 - `xsetroot`, `xrdb`, `xset` e `setxkbmap` são pacotes avulsos.
 - `wireless-tools`/`iwgetid` não existem nos repositórios. O `network.sh` usa `iw`
   primeiro e só cai para `iwgetid` como fallback, então a barra continua funcionando.
+- `ncurses` fornece o `tic`, usado pelo `make install` do st para registrar o terminfo `st-256color`.
 - `mpd` não está nos repositórios oficiais. Se quiser o player de música:
 
   ```sh

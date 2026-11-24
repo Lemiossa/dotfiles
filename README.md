@@ -29,6 +29,7 @@ Usa dwm
 - bash
 - iw
 - wireless-tools
+- ncurses (fornece `tic`, usado pelo `make install` do st; no Debian/Ubuntu o pacote é `ncurses-bin`)
 
 ### Aparência (opcional)
 Para instalar o tema visual completo:
