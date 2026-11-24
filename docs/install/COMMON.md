@@ -18,7 +18,24 @@ $SUDO cp -af root/. /
 chmod +x ~/.config/dwmblocks/scripts/*.sh ~/.local/share/dwm/*.sh ~/.local/bin/*
 ```
 
-## 2. Diretórios usados pelos configs
+O pacote `root/` já instala `/usr/local/bin/disable-emptty-getty` como executável.
+
+## 2. Liberar a TTY do emptty (evitar conflito com getty)
+
+O `emptty` usa `TTY_NUMBER=1` por padrão neste repositório. Se o getty também
+estiver ativo nessa TTY, os dois disputam o console. O script abaixo lê o
+`TTY_NUMBER` de `/etc/emptty/conf` e desativa apenas o getty daquela TTY:
+comenta a linha correspondente em `/etc/inittab` (Alpine/OpenRC) e recarrega o
+init, ou desativa `getty@ttyN.service` (systemd). As outras TTYs continuam com
+login normal.
+
+```sh
+disable-emptty-getty
+```
+
+Para outra TTY, passe o número: `disable-emptty-getty tty2`.
+
+## 3. Diretórios usados pelos configs
 
 O `.vimrc` guarda undo em `~/.vim/undo`, o `mpd` espera `~/Music` e
 `~/.config/mpd/playlists`. Crie-os antes de abrir vim/mpd:
@@ -27,7 +44,7 @@ O `.vimrc` guarda undo em `~/.vim/undo`, o `mpd` espera `~/Music` e
 mkdir -p ~/.vim/undo ~/Music ~/.config/mpd/playlists
 ```
 
-## 3. Compilar o dwm, dmenu, st e dwmblocks
+## 4. Compilar o dwm, dmenu, st e dwmblocks
 
 ```sh
 cd ~/Suckless
@@ -41,7 +58,7 @@ instalados em `/usr/local/bin`. Ele também verifica antes se `tic` está
 disponível: o `make install` do st usa `tic -sx st.info` para registrar o
 terminfo `st-256color` (pacote `ncurses`, ou `ncurses-bin` no Debian/Ubuntu).
 
-## 4. Cache de fontes e plugins do vim
+## 5. Cache de fontes e plugins do vim
 
 ```sh
 fc-cache -fv

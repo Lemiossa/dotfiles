@@ -30,6 +30,15 @@ sudo systemctl enable emptty.service
 ```
 
 O serviço lê `/etc/emptty/conf`, instalado a partir de `root/` neste repositório.
+
+O `getty@tty1.service` do systemd também usa `tty1` e entra em conflito com o
+emptty. A etapa 2 de [COMMON.md](COMMON.md) desativa apenas essa unidade; para
+aplicar imediatamente:
+
+```sh
+sudo systemctl disable --now getty@tty1.service
+```
+
 Se preferir `startx`, inicie com `startx dwm` (o patch de autostart do dwm
 executa `~/.local/share/dwm/autostart.sh`).
 

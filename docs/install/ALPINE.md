@@ -34,6 +34,16 @@ doas rc-update add emptty default
 
 O `emptty` lê `/etc/emptty/conf`, que é instalado a partir de `root/` neste repositório.
 
+O `inittab` padrão do Alpine inicia getty em `tty1`…`tty6`. Como o emptty usa
+`tty1`, os dois entram em conflito. A etapa 2 de [COMMON.md](COMMON.md) remove o
+getty da TTY do emptty e recarrega o init. Para aplicar imediatamente nesta
+etapa, antes de copiar `root/`:
+
+```sh
+doas sed -i '/^tty1::respawn:.*getty/s/^/#/' /etc/inittab
+doas kill -HUP 1
+```
+
 ## 3. Continuar
 
 Siga [COMMON.md](COMMON.md) para copiar os dotfiles, ajustar permissões,

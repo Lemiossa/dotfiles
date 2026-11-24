@@ -1,0 +1,64 @@
+#!/bin/sh
+# Libera a TTY usada pelo emptty: getty e emptty não podem rodar na mesma TTY.
+# Uso: disable-emptty-getty [ttyN|N]
+
+set -e
+
+CONF=/etc/emptty/conf
+if [ ! -f "$CONF" ]; then
+    # No Debian a unit é templada e usa /etc/emptty/conf-ttyN.
+    CONF=$(ls /etc/emptty/conf-tty* 2>/dev/null | head -n 1)
+fi
+
+TTY_ARG=${1:-}
+if [ -n "$TTY_ARG" ]; then
+    TTY=$TTY_ARG
+else
+    TTY_NUMBER=$(sed -n 's/^[[:space:]]*TTY_NUMBER[[:space:]]*=[[:space:]]*\(.*\)$/\1/p' \
+        "$CONF" 2>/dev/null | tail -n 1)
+    TTY_NUMBER=${TTY_NUMBER:-1}
+    case "$TTY_NUMBER" in
+        tty*) TTY=$TTY_NUMBER ;;
+        *) TTY="tty$TTY_NUMBER" ;;
+    esac
+fi
+
+case "$TTY" in
+    tty[0-9]*)
+        case "${TTY#tty}" in
+            ''|*[!0-9]*) echo "Erro: TTY inválida: $TTY" >&2; exit 1 ;;
+        esac
+        ;;
+    *) echo "Erro: TTY inválida: $TTY" >&2; exit 1 ;;
+esac
+
+if [ "$(id -u)" -ne 0 ]; then
+    if command -v doas >/dev/null 2>&1; then
+        exec doas "$0" "$@"
+    elif command -v sudo >/dev/null 2>&1; then
+        exec sudo "$0" "$@"
+    fi
+    echo "Erro: este script precisa de root (doas ou sudo)." >&2
+    exit 1
+fi
+
+if [ -d /run/systemd/system ]; then
+    echo "==> systemd: desativando getty@$TTY.service"
+    systemctl disable --now "getty@$TTY.service" 2>/dev/null || true
+elif [ -f /etc/inittab ]; then
+    echo "==> OpenRC/BusyBox: comentando o getty de $TTY em /etc/inittab"
+    if grep -Eq "^${TTY}::respawn:.*getty" /etc/inittab; then
+        sed -i "/^${TTY}::respawn:.*getty/s/^/#/" /etc/inittab
+    fi
+    # Em alguns sistemas o getty também é um serviço OpenRC (agetty.ttyN).
+    if command -v rc-update >/dev/null 2>&1; then
+        rc-update del "agetty.$TTY" default 2>/dev/null || true
+        rc-service "agetty.$TTY" stop 2>/dev/null || true
+    fi
+    # Recarrega o inittab; encerra o getty que já estava rodando nessa TTY.
+    kill -HUP 1 2>/dev/null || telinit q 2>/dev/null || true
+else
+    echo "Aviso: init não reconhecido; desative manualmente o getty em $TTY." >&2
+fi
+
+echo "Pronto: $TTY fica livre para o emptty."

@@ -53,8 +53,10 @@ Os comandos de instalação dependem da distro e estão em `docs/install/`:
 - [Debian / Ubuntu](docs/install/DEBIAN_UBUNTU.md) — usa `sudo`
 - [Fedora](docs/install/FEDORA.md) — usa `sudo`
 
-As etapas comuns (cópia dos dotfiles, permissões, compilação do suckless e
-plugins do vim) estão em [docs/install/COMMON.md](docs/install/COMMON.md).
+As etapas comuns (cópia dos dotfiles, liberação da TTY do emptty, permissões,
+compilação do suckless e plugins do vim) estão em
+[docs/install/COMMON.md](docs/install/COMMON.md). O getty na TTY usada pelo
+emptty é desativado automaticamente para evitar conflito no console.
 
 ## Wallpaper
 

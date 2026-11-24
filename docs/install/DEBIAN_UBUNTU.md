@@ -55,6 +55,14 @@ A unit `emptty@.service` do Debian lê `/etc/emptty/conf-tty1`, não
 sudo cp /etc/emptty/conf /etc/emptty/conf-tty1
 ```
 
+O `getty@tty1.service` do systemd também usa `tty1` e entra em conflito com o
+`emptty@tty1.service`. A etapa 2 de [COMMON.md](COMMON.md) desativa apenas essa
+unidade; para aplicar imediatamente:
+
+```sh
+sudo systemctl disable --now getty@tty1.service
+```
+
 ## 4. Continuar
 
 Siga [COMMON.md](COMMON.md) para copiar os dotfiles, ajustar permissões,
