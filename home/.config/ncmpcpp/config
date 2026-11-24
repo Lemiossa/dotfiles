@@ -1,0 +1,31 @@
+# ncmpcpp - aparência Catppuccin Mocha
+# Somente opções visuais. O restante usa os padrões do ncmpcpp.
+
+colors_enabled = yes
+
+# Janelas
+main_window_color = 255
+header_window_color = 141
+window_border_color = 239
+alternative_ui_separator_color = 239:b
+
+# Barra de progresso
+progressbar_color = 62:b
+progressbar_elapsed_color = 141:b
+progressbar_look = "─╼"
+
+# Status e estados
+statusbar_color = 255
+statusbar_time_color = 141:b
+player_state_color = 141:b
+state_line_color = 62
+state_flags_color = 141:b
+volume_color = 141
+empty_tag_color = 62
+
+# Destaques
+color1 = 255
+color2 = 117
+
+# Visualizador
+visualizer_color = 141, 213, 84, 117, 215, 203, 255

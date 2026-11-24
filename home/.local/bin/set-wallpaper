@@ -1,0 +1,8 @@
+#!/bin/sh
+# set-wallpaper <imagem>
+
+wp="$HOME/.local/share/wallpaper"
+
+[ -f "$1" ] || { echo "uso: ${0##*/} <imagem>" >&2; exit 1; }
+
+cp -- "$1" "$wp" && feh --bg-fill "$wp"
