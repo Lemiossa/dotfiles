@@ -52,6 +52,7 @@ Os comandos de instalação dependem da distro e estão em `docs/install/`:
 - [Arch Linux](docs/install/ARCH.md) — usa `sudo`
 - [Debian / Ubuntu](docs/install/DEBIAN_UBUNTU.md) — usa `sudo`
 - [Fedora](docs/install/FEDORA.md) — usa `sudo`
+- [Void Linux](docs/install/VOID.md) — usa `sudo` e runit
 
 As etapas comuns (cópia dos dotfiles, liberação da TTY do emptty, permissões,
 compilação do suckless e plugins do vim) estão em

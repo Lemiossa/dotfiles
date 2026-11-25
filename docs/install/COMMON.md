@@ -26,8 +26,8 @@ O `emptty` usa `TTY_NUMBER=1` por padrão neste repositório. Se o getty também
 estiver ativo nessa TTY, os dois disputam o console. O script abaixo lê o
 `TTY_NUMBER` de `/etc/emptty/conf` e desativa apenas o getty daquela TTY:
 comenta a linha correspondente em `/etc/inittab` (Alpine/OpenRC) e recarrega o
-init, ou desativa `getty@ttyN.service` (systemd). As outras TTYs continuam com
-login normal.
+init, desativa `getty@ttyN.service` (systemd) ou marca `agetty-ttyN` como
+`down` no runit (Void). As outras TTYs continuam com login normal.
 
 ```sh
 disable-emptty-getty

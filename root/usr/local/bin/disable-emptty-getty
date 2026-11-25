@@ -57,6 +57,15 @@ elif [ -f /etc/inittab ]; then
     fi
     # Recarrega o inittab; encerra o getty que já estava rodando nessa TTY.
     kill -HUP 1 2>/dev/null || telinit q 2>/dev/null || true
+elif [ -d /etc/sv ] && command -v sv >/dev/null 2>&1; then
+    # Void Linux: o getty é o serviço runit agetty-ttyN.
+    echo "==> runit: desativando agetty-$TTY"
+    service="agetty-$TTY"
+    if [ -d "/etc/sv/$service" ]; then
+        touch "/etc/sv/$service/down"
+        rm -f "/var/service/$service" "/etc/runit/runsvdir/default/$service"
+        sv down "$service" 2>/dev/null || true
+    fi
 else
     echo "Aviso: init não reconhecido; desative manualmente o getty em $TTY." >&2
 fi
