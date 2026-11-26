@@ -37,4 +37,4 @@ else
 fi
 
 [ -n "$mem" ] || mem='?'
-printf ' %s%%' "$mem"
+printf ' %s%% ' "$mem"

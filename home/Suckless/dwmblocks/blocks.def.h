@@ -12,6 +12,7 @@ static const Block blocks[] = {
 	{"^b#fab387^^c#11111b^ ",               "$HOME/.config/dwmblocks/scripts/battery.sh",     20,		0},
 };
 
-// Um espaço com a cor do bloco, reset e um espaço normal entre blocos.
+// Cada script termina com um espaço na cor do bloco; o delim só volta
+// às cores normais da barra antes do próximo bloco.
 static char delim[] = "^d^";
 static unsigned int delimLen = sizeof(delim);
