@@ -9,7 +9,8 @@ Use `sudo` (o `doas` não faz parte da instalação padrão do Arch).
 ```sh
 sudo pacman -Syu
 sudo pacman -S --needed \
-    base-devel xorg xorg-xinit xorg-xsetroot xorg-xset xorg-setxkbmap xorg-xrdb \
+    base-devel libx11 libxinerama libxft \
+    xorg xorg-xinit xorg-xsetroot xorg-xset xorg-setxkbmap xorg-xrdb \
     dbus feh fzf gvim xclip adwaita-icon-theme pavucontrol rofi \
     ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols \
     emptty curl bash iw wireless_tools fontconfig procps-ng \
@@ -21,6 +22,8 @@ sudo pacman -S --needed \
 - `gvim` já fornece o comando `vim`; instalar `vim` separadamente gera conflito.
 - `ttf-jetbrains-mono-nerd` e `ttf-nerd-fonts-symbols` cobrem as duas fontes do `config.h` do dwm.
 - `wireless_tools` fornece `iwgetid`, usado como fallback em `network.sh`.
+- `libx11`, `libxinerama` e `libxft` fornecem os headers/bibliotecas usados por
+  `-lX11 -lXinerama -lXft` no dwm/dmenu e pelo `pkg-config` do st.
 - `ncurses` fornece o `tic`, usado pelo `make install` do st para registrar o terminfo `st-256color`.
 
 ## 2. Sessão

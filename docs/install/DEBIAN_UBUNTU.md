@@ -11,8 +11,8 @@ Use `sudo` (o `doas` não faz parte da instalação padrão de Debian/Ubuntu).
 sudo apt update
 sudo apt install -y --no-install-recommends \
     xinit x11-xserver-utils x11-xkb-utils xauth dbus \
-    build-essential libx11-dev libxinerama-dev libfreetype-dev \
-    libfontconfig1-dev pkg-config \
+    build-essential libx11-dev libxinerama-dev libxft-dev \
+    libfreetype-dev libfontconfig1-dev pkg-config \
     feh fzf vim vim-gtk3 xclip adwaita-icon-theme pavucontrol rofi pulseaudio-utils \
     fonts-jetbrains-mono fontconfig procps \
     iw wireless-tools curl ca-certificates bash git unzip emptty \
@@ -20,6 +20,10 @@ sudo apt install -y --no-install-recommends \
     mpd mpc ncmpcpp picom ncurses-bin sudo
 ```
 
+`libx11-dev`, `libxinerama-dev`, `libxft-dev`, `libfreetype-dev`,
+`libfontconfig1-dev` e `pkg-config` fornecem os headers/bibliotecas usados por
+`-lX11 -lXinerama -lXft` no dwm/dmenu e pelo `pkg-config` do st (o
+`libxft-dev` é indispensável: `libfreetype-dev` sozinho não fornece `-lXft`).
 `x11-xserver-utils` fornece `xsetroot`, `xset` e `xrdb`; `x11-xkb-utils`
 fornece `setxkbmap`; `pulseaudio-utils` fornece `pactl`, usado por `volume.sh`;
 `wireless-tools` fornece `iwgetid`, usado como fallback em `network.sh`.

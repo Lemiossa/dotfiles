@@ -5,34 +5,50 @@ Usa dwm
 
 ## Requisitos
 
+Os nomes dos pacotes variam por distro; os comandos prontos estão em
+[docs/install/](docs/install/).
+
 ### Base
-- xorg (xinit, xsetroot)
+- xorg (xinit, xsetroot, xset, xrdb, xauth)
 - dbus (dbus-run-session, dbus-daemon)
 - setxkbmap
 - feh
-- make e um compilador C (gcc/clang) para compilar dwm, st, dmenu e dwmblocks
-- pipewire
-- pipewire-pulse
-- wireplumber
+- pipewire, wireplumber e `pipewire-pulse` (no Void o comando já vem do pacote `pipewire`)
 - dunst
-- gvim
+- gvim / vim (o `gvim` fornece `vim` no Arch e no Fedora; nos demais, instale ambos)
+- plugins do vim via vim-plug (precisam de `git` e `fzf`; instale na primeira execução com `:PlugInstall`)
 - xclip
 - shadow
 - adwaita-icon-theme
 - pavucontrol
 - rofi
 - font-jetbrains-mono (usada pelo rofi)
-- vim (plugins via vim-plug, instale na primeira execução com `:PlugInstall`)
-- nerd-fonts
+- nerd-fonts (JetBrainsMono Nerd Font e Symbols Nerd Font, usadas pelo dwm e pelo st)
+- fontconfig (`fc-cache`)
 - emptty
-- curl
+- curl e ca-certificates
 - bash
-- iw
-- wireless-tools
+- iw e wireless-tools (`iwgetid`, usado como fallback no `network.sh`)
+- pulseaudio-utils (`pactl`, usado no `volume.sh`)
+- procps/procps-ng (utilitários como `free` e `ps`)
+- sudo ou doas (para o `make install`)
 - ncurses (fornece `tic`, usado pelo `make install` do st; no Debian/Ubuntu o pacote é `ncurses-bin`)
 
+### Bibliotecas para compilar o suckless
+O dwm e o dmenu linkam `-lX11 -lXinerama -lfontconfig -lXft`; o st usa
+`pkg-config` para fontconfig/freetype e também linka `-lXft`. Instale os
+arquivos de desenvolvimento:
+
+- libX11
+- libXinerama
+- libXft
+- freetype2
+- fontconfig
+- pkg-config
+- make e um compilador C (gcc/clang) para compilar dwm, st, dmenu e dwmblocks
+
 ### Aparência (opcional)
-Para instalar o tema visual completo:
+Para instalar o tema visual completo (o `git` também é usado pelo vim-plug):
 - git
 - unzip
 
@@ -58,6 +74,12 @@ As etapas comuns (cópia dos dotfiles, liberação da TTY do emptty, permissões
 compilação do suckless e plugins do vim) estão em
 [docs/install/COMMON.md](docs/install/COMMON.md). O getty na TTY usada pelo
 emptty é desativado automaticamente para evitar conflito no console.
+
+Os binários do suckless vão para `/usr/local/bin`. O `dwm.desktop` usa caminho
+absoluto e define o PATH da sessão, e o `autostart.sh` faz o mesmo para os
+filhos — isso evita o erro "dwm não está na PATH" com login managers que não
+carregam `.profile`/`.bashrc` (como o emptty sob runit no Void) e funciona em
+qualquer distro.
 
 ## Wallpaper
 
@@ -143,6 +165,12 @@ Gimp, Pavucontrol, Nm-connection-editor, feh e Qemu (i386).
 ## Aparência
 
 Tema Catppuccin Mocha, fonte JetBrainsMono Nerd Font, borda de 2px, gaps de 12px e área principal com 52% da largura.
+
+A barra do dwmblocks usa o patch status2d: cada bloco tem fundo em uma cor de
+destaque diferente (mauve, green, blue, yellow, teal e peach) e texto escuro
+(`#11111b`), como um "chip". As cores ficam em
+`home/Suckless/dwmblocks/blocks.def.h`, no prefixo `^b#...^^c#...^` de cada
+bloco; `^d^` no separador volta às cores normais da barra.
 
 ## Patches do dwm
 

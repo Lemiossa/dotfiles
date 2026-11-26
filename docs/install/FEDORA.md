@@ -9,7 +9,7 @@ Use `sudo` (o `doas` não faz parte da instalação padrão do Fedora).
 ```sh
 sudo dnf install -y \
     xorg-x11-xinit xsetroot xrdb xset setxkbmap xorg-x11-xauth dbus dbus-daemon \
-    gcc make libX11-devel libXinerama-devel freetype-devel \
+    gcc make libX11-devel libXinerama-devel libXft-devel freetype-devel \
     fontconfig-devel pkgconf-pkg-config \
     feh fzf vim-enhanced vim-X11 pulseaudio-utils xclip adwaita-icon-theme pavucontrol rofi \
     jetbrains-mono-fonts fontconfig procps-ng \
@@ -25,6 +25,9 @@ Diferenças em relação ao Alpine que foram validadas nos repositórios do Fedo
   `dbus-daemon`/`dbus-run-session`.
 - `vim-X11` fornece `gvim` e `vim-enhanced` fornece `vim`; `pulseaudio-utils`
   fornece `pactl`, usado por `volume.sh`.
+- `libX11-devel`, `libXinerama-devel`, `libXft-devel`, `freetype-devel`,
+  `fontconfig-devel` e `pkgconf-pkg-config` fornecem os headers/bibliotecas
+  usados por `-lX11 -lXinerama -lXft` no dwm/dmenu e pelo `pkg-config` do st.
 - `xsetroot`, `xrdb`, `xset` e `setxkbmap` são pacotes avulsos.
 - `wireless-tools`/`iwgetid` não existem nos repositórios. O `network.sh` usa `iw`
   primeiro e só cai para `iwgetid` como fallback, então a barra continua funcionando.

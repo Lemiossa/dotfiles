@@ -13,7 +13,8 @@ doas setup-xorg-base
 doas apk add --no-cache \
     bash curl dbus dbus-openrc feh fontconfig fzf gvim vim iw shadow \
     adwaita-icon-theme pavucontrol rofi font-jetbrains-mono nerd-fonts-all \
-    build-base setxkbmap xinit xset wireless-tools procps xz \
+    build-base libx11-dev libxinerama-dev libxft-dev pkgconfig \
+    setxkbmap xinit xset wireless-tools procps xz \
     git unzip emptty \
     pipewire pipewire-pulse wireplumber dunst \
     mpc mpd ncmpcpp picom ncurses
@@ -23,6 +24,9 @@ doas apk add --no-cache \
 - `dbus-openrc` é necessário: o pacote `dbus` sozinho **não** traz o script `/etc/init.d/dbus` no Alpine 3.24.
 - `wireless-tools` fornece `iwgetid`, usado como fallback em `network.sh`.
 - `nerd-fonts-all` + `font-jetbrains-mono` cobrem as fontes pedidas pelo `config.h` do dwm e pelo rofi.
+- `libx11-dev`, `libxinerama-dev`, `libxft-dev` e `pkgconfig` fornecem os
+  headers/bibliotecas usados por `-lX11 -lXinerama -lXft` no dwm/dmenu e pelo
+  `pkg-config` do st.
 - `ncurses` fornece o `tic`, usado pelo `make install` do st para registrar o terminfo `st-256color`.
 
 ## 2. Serviços

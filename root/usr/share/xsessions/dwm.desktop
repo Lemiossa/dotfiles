@@ -1,6 +1,9 @@
 [Desktop Entry]
 Name=dwm
 Comment=Dynamic window manager
-Exec=dwm
-TryExec=dwm
+# Login managers não carregam .profile/.bashrc e alguns init systems iniciam
+# serviços sem /usr/local/bin no PATH. Caminho absoluto + env garantem o PATH
+# para o dwm e, por herança, para st, dmenu, dwmblocks e o autostart.
+Exec=/usr/bin/env PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin /usr/local/bin/dwm
+TryExec=/usr/local/bin/dwm
 Type=Application

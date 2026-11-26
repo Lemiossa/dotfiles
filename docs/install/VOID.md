@@ -58,6 +58,22 @@ sudo touch /etc/sv/agetty-tty1/down
 sudo rm -f /var/service/agetty-tty1 /etc/runit/runsvdir/default/agetty-tty1
 ```
 
+### Sessão e PATH (runit)
+
+É no Void que o problema do PATH aparece com mais frequência: o stage 2 do
+runit exporta `PATH=/usr/bin:/usr/sbin` para os serviços e o emptty repassa
+esse PATH para a sessão. Um `Exec=dwm` falharia com "executable file not found
+in $PATH" mesmo com `/usr/local/bin/dwm` instalado.
+
+A correção vale para **todas** as distros e já vem no repositório: o
+`dwm.desktop` chama o dwm por caminho absoluto e define o PATH da sessão, e o
+`autostart.sh` exporta o mesmo PATH para os filhos. Veja a explicação em
+[COMMON.md](COMMON.md). Depois de copiar `root/` e compilar:
+
+```sh
+test -x /usr/local/bin/dwm && grep '^Exec=' /usr/share/xsessions/dwm.desktop
+```
+
 ## 3. Continuar
 
 Siga [COMMON.md](COMMON.md) para copiar os dotfiles, liberar a TTY do

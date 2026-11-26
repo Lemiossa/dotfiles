@@ -58,6 +58,34 @@ instalados em `/usr/local/bin`. Ele também verifica antes se `tic` está
 disponível: o `make install` do st usa `tic -sx st.info` para registrar o
 terminfo `st-256color` (pacote `ncurses`, ou `ncurses-bin` no Debian/Ubuntu).
 
+### Sessão dwm: PATH do login manager
+
+Os binários do suckless ficam em `/usr/local/bin`, mas login managers **não**
+carregam `.bashrc`/`.profile`. Em alguns init systems (o runit do Void, por
+exemplo) o PATH dos serviços é apenas `/usr/bin:/usr/sbin`, e o emptty reclama
+que `dwm` não está na PATH mesmo com `/usr/local/bin/dwm` existindo.
+
+O `/usr/share/xsessions/dwm.desktop` instalado por `root/` já resolve isso em
+qualquer distro, usando caminho absoluto e definindo o PATH da sessão:
+
+```desktop
+Exec=/usr/bin/env PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin /usr/local/bin/dwm
+TryExec=/usr/local/bin/dwm
+```
+
+Como o `DEFAULT_SESSION=dwm` do `/etc/emptty/conf` casa com o `Name=dwm`, nada
+muda na seleção da sessão. O `~/.local/share/dwm/autostart.sh` também exporta
+o mesmo PATH antes de iniciar `dwmblocks`, `feh`, `picom` etc. Assim `st`,
+`dmenu`, `dwmblocks` e os scripts da barra são encontrados por herança,
+independentemente do PATH do serviço do emptty.
+
+Depois de compilar, vale conferir:
+
+```sh
+ls -l /usr/local/bin/dwm /usr/local/bin/dmenu /usr/local/bin/dwmblocks /usr/local/bin/st
+grep '^Exec=' /usr/share/xsessions/dwm.desktop
+```
+
 ## 5. Cache de fontes e plugins do vim
 
 ```sh
