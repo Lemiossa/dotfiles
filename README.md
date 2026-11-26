@@ -170,7 +170,11 @@ A barra do dwmblocks usa o patch status2d: cada bloco tem fundo em uma cor de
 destaque diferente (mauve, green, blue, yellow, teal e peach) e texto escuro
 (`#11111b`), como um "chip". As cores ficam em
 `home/Suckless/dwmblocks/blocks.def.h`, no prefixo `^b#...^^c#...^` de cada
-bloco; `^d^` no separador volta às cores normais da barra.
+bloco; `^d^` no separador volta às cores normais da barra. Cada script termina
+com um espaço na cor do bloco, antes do `^d^`, para dar o mesmo respiro à
+direita.
+
+![Barra do dwm com os blocos coloridos](docs/images/dwm-desktop.png)
 
 ## Patches do dwm
 
